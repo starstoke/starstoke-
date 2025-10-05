@@ -26,7 +26,7 @@
       background: #000;
       position: relative;
       font-weight: 100;
-      text-transform: lowercase;
+      text-transform: none; /* Removed lowercase text-transform */
     }
 
     #vanta-bg {
@@ -87,6 +87,18 @@
       font-weight: 100;
       letter-spacing: 0.1em;
       transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.5);
     }
 
     .nav-links a:hover {
@@ -310,12 +322,12 @@
       gap: 30px;
     }
 
-    .card, .news-card, .partner-card, .stream-item, .artist-card {
+    .card, .news-card, .partner-card, .artist-card {
       cursor: pointer;
       transition: transform 0.3s ease;
     }
 
-    .card:hover, .news-card:hover, .partner-card:hover, .stream-item:hover, .artist-card:hover {
+    .card:hover, .news-card:hover, .partner-card:hover, .artist-card:hover {
       transform: scale(1.05);
     }
 
@@ -408,51 +420,6 @@
       font-weight: 100;
     }
 
-    .stream-item {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-      backdrop-filter: blur(20px);
-      transition: all 0.3s ease;
-    }
-
-    .stream-item:hover {
-      transform: translateX(8px);
-      border-color: rgba(255, 255, 255, 0.15);
-    }
-
-    .stream-info h3 {
-      font-size: 1.2rem;
-      margin-bottom: 6px;
-      font-weight: 100;
-    }
-
-    .stream-info p {
-      color: #999;
-      font-size: 0.9rem;
-      font-weight: 100;
-    }
-
-    .live-badge {
-      background: linear-gradient(135deg, #ff0050, #ff4e00);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 100;
-      letter-spacing: 0.05em;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
-
     .partners {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -502,7 +469,7 @@
       font-family: inherit;
       transition: all 0.3s ease;
       font-weight: 100;
-      text-transform: lowercase;
+      text-transform: none; /* Removed lowercase text-transform */
     }
 
     input:focus, textarea:focus, select:focus {
@@ -514,7 +481,7 @@
     input::placeholder, textarea::placeholder {
       color: #666;
       font-weight: 100;
-      text-transform: lowercase;
+      text-transform: none; /* Removed lowercase text-transform */
     }
 
     textarea {
@@ -626,8 +593,8 @@
 
     .lang-switch {
       position: fixed;
-      top: 70px;
-      right: 30px;
+      top: 20px;
+      right: 20px;
       z-index: 1000;
       display: flex;
       gap: 8px;
@@ -662,8 +629,8 @@
 
     @media (max-width: 768px) {
       .lang-switch {
-        top: 60px;
-        right: 20px;
+        top: 10px;
+        right: 10px;
         padding: 6px;
       }
 
@@ -679,6 +646,11 @@
 
       .nav-links a {
         font-size: 0.9rem;
+      }
+
+      .nav-links a:not(:last-child)::after {
+        right: -7.5px;
+        height: 15px;
       }
 
       header {
@@ -730,14 +702,19 @@
   <div id="vanta-bg"></div>
   <div class="grain-overlay"></div>
 
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ru">RU</button>
+  </div>
+
   <nav>
     <div class="container">
       <div class="nav-links">
-        <a href="#news">news</a>
-        <a href="#shop">shop</a>
-        <a href="#releases">releases</a>
-        <a href="#about">about</a>
-        <a href="#contact">contact us</a>
+        <a href="#news">News</a>
+        <a href="#shop">Shop</a>
+        <a href="#artists">Artists</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact Us</a>
       </div>
     </div>
   </nav>
@@ -745,27 +722,27 @@
   <div class="content-wrapper">
     <div class="container">
       <header>
-        <h1 class="logo">st<span class="star">★</span>rstoke</h1>
-        <p class="tagline">independent music label. shaping the future of sound with exceptional artists.</p>
+        <h1 class="logo">St<span class="star">★</span>rstoke</h1>
+        <p class="tagline">Independent music label. Shaping the future of sound with exceptional artists.</p>
       </header>
 
       <section class="section" id="news">
-        <h2 class="section-title">news block</h2>
+        <h2 class="section-title">News Block</h2>
         <div class="news-banner">
           <div class="news-banner-item active" onclick="window.open('news/release-dj-nexus.html', '_blank');">
             <img src="https://via.placeholder.com/600x300?text=DJ+Nexus+Release" alt="DJ Nexus Release">
-            <h3 class="card-title">dj nexus release</h3>
-            <p class="card-subtitle">album "digital dreams" — 12 tracks redefining reality</p>
+            <h3 class="card-title">DJ Nexus Release</h3>
+            <p class="card-subtitle">Album "Digital Dreams" — 12 tracks redefining reality</p>
           </div>
           <div class="news-banner-item" onclick="window.open('news/festival.html', '_blank');">
             <img src="https://via.placeholder.com/600x300?text=Starstoke+at+Festival" alt="Starstoke at Festival">
-            <h3 class="card-title">starstoke at festival</h3>
-            <p class="card-subtitle">label artists to perform at a major music event</p>
+            <h3 class="card-title">Starstoke at Festival</h3>
+            <p class="card-subtitle">Label artists to perform at a major music event</p>
           </div>
           <div class="news-banner-item" onclick="window.open('news/new-collection.html', '_blank');">
             <img src="https://via.placeholder.com/600x300?text=New+Collection" alt="New Collection">
-            <h3 class="card-title">new collection</h3>
-            <p class="card-subtitle">exclusive clothing line from top designers</p>
+            <h3 class="card-title">New Collection</h3>
+            <p class="card-subtitle">Exclusive clothing line from top designers</p>
           </div>
         </div>
         <div class="news-banner-controls">
@@ -777,56 +754,56 @@
           <div class="news-card" onclick="window.open('news/release-dj-nexus.html', '_blank');">
             <div class="news-image"></div>
             <div class="news-content">
-              <div class="news-date">october 5, 2025</div>
-              <h3 class="card-title">dj nexus release</h3>
-              <p class="card-subtitle">album "digital dreams" — 12 tracks redefining reality</p>
+              <div class="news-date">October 5, 2025</div>
+              <h3 class="card-title">DJ Nexus Release</h3>
+              <p class="card-subtitle">Album "Digital Dreams" — 12 tracks redefining reality</p>
             </div>
           </div>
           <div class="news-card" onclick="window.open('news/festival.html', '_blank');">
             <div class="news-image"></div>
             <div class="news-content">
-              <div class="news-date">october 1, 2025</div>
-              <h3 class="card-title">starstoke at festival</h3>
-              <p class="card-subtitle">label artists to perform at a major music event</p>
+              <div class="news-date">October 1, 2025</div>
+              <h3 class="card-title">Starstoke at Festival</h3>
+              <p class="card-subtitle">Label artists to perform at a major music event</p>
             </div>
           </div>
           <div class="news-card" onclick="window.open('news/new-collection.html', '_blank');">
             <div class="news-image"></div>
             <div class="news-content">
-              <div class="news-date">september 28, 2025</div>
-              <h3 class="card-title">new collection</h3>
-              <p class="card-subtitle">exclusive clothing line from top designers</p>
+              <div class="news-date">September 28, 2025</div>
+              <h3 class="card-title">New Collection</h3>
+              <p class="card-subtitle">Exclusive clothing line from top designers</p>
             </div>
           </div>
         </div>
       </section>
 
       <section class="section" id="shop">
-        <h2 class="section-title">shop</h2>
+        <h2 class="section-title">Shop</h2>
         <div class="merch-showcase">
           <div class="merch-item active" data-category="clothing" onclick="window.open('shop/t-shirt.html', 'popup', 'width=600,height=400');">
             <img src="https://via.placeholder.com/300x300?text=T-Shirt" alt="Starstoke T-Shirt">
-            <h3 class="card-title">starstoke t-shirt</h3>
-            <p class="card-subtitle">minimalist design, premium quality</p>
-            <div class="card-price">from $30</div>
+            <h3 class="card-title">Starstoke T-Shirt</h3>
+            <p class="card-subtitle">Minimalist design, premium quality</p>
+            <div class="card-price">From $30</div>
           </div>
           <div class="merch-item" data-category="accessories" onclick="window.open('shop/cap.html', 'popup', 'width=600,height=400');">
             <img src="https://via.placeholder.com/300x300?text=Cap" alt="Limited Cap">
-            <h3 class="card-title">limited cap</h3>
-            <p class="card-subtitle">limited edition, top standard</p>
-            <div class="card-price">from $20</div>
+            <h3 class="card-title">Limited Cap</h3>
+            <p class="card-subtitle">Limited edition, top standard</p>
+            <div class="card-price">From $20</div>
           </div>
           <div class="merch-item" data-category="footwear" onclick="window.open('shop/sneakers.html', 'popup', 'width=600,height=400');">
             <img src="https://via.placeholder.com/300x300?text=Sneakers" alt="Sneakers Collab">
-            <h3 class="card-title">sneakers collab</h3>
-            <p class="card-subtitle">collaborative collection with leading brands</p>
-            <div class="card-price">from $80</div>
+            <h3 class="card-title">Sneakers Collab</h3>
+            <p class="card-subtitle">Collaborative collection with leading brands</p>
+            <div class="card-price">From $80</div>
           </div>
           <div class="merch-item" data-category="accessories" onclick="window.open('shop/accessories.html', 'popup', 'width=600,height=400');">
             <img src="https://via.placeholder.com/300x300?text=Accessories" alt="Accessories">
-            <h3 class="card-title">accessories</h3>
-            <p class="card-subtitle">headphones, bags, and other essentials</p>
-            <div class="card-price">from $10</div>
+            <h3 class="card-title">Accessories</h3>
+            <p class="card-subtitle">Headphones, bags, and other essentials</p>
+            <div class="card-price">From $10</div>
           </div>
         </div>
         <div class="merch-controls">
@@ -837,155 +814,127 @@
         </div>
         <div class="grid">
           <div class="card" data-category="clothing" onclick="window.open('shop/clothing.html', 'popup', 'width=600,height=400');">
-            <h3 class="card-title">clothing</h3>
-            <p class="card-subtitle">t-shirts, hoodies, and other wardrobe essentials</p>
-            <div class="card-price">from $20</div>
+            <h3 class="card-title">Clothing</h3>
+            <p class="card-subtitle">T-shirts, hoodies, and other wardrobe essentials</p>
+            <div class="card-price">From $20</div>
           </div>
           <div class="card" data-category="accessories" onclick="window.open('shop/accessories.html', 'popup', 'width=600,height=400');">
-            <h3 class="card-title">accessories</h3>
-            <p class="card-subtitle">unique items for style</p>
-            <div class="card-price">from $10</div>
+            <h3 class="card-title">Accessories</h3>
+            <p class="card-subtitle">Unique items for style</p>
+            <div class="card-price">From $10</div>
           </div>
           <div class="card" data-category="footwear" onclick="window.open('shop/footwear.html', 'popup', 'width=600,height=400');">
-            <h3 class="card-title">footwear</h3>
-            <p class="card-subtitle">collaborations with top brands</p>
-            <div class="card-price">from $80</div>
+            <h3 class="card-title">Footwear</h3>
+            <p class="card-subtitle">Collaborations with top brands</p>
+            <div class="card-price">From $80</div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="releases">
-        <h2 class="section-title">releases</h2>
+      <section class="section" id="artists">
+        <h2 class="section-title">Artists</h2>
         <div class="grid">
-          <div class="news-card" onclick="window.open('releases/dj-nexus.html', '_blank');">
+          <div class="news-card" onclick="window.open('artists/dj-nexus.html', '_blank');">
             <div class="news-image"></div>
             <div class="news-content">
-              <div class="news-date">october 5, 2025</div>
-              <h3 class="card-title">dj nexus release</h3>
-              <p class="card-subtitle">album "digital dreams" — 12 tracks redefining reality</p>
+              <div class="news-date">October 5, 2025</div>
+              <h3 class="card-title">DJ Nexus Release</h3>
+              <p class="card-subtitle">Album "Digital Dreams" — 12 tracks redefining reality</p>
             </div>
           </div>
-          <div class="news-card" onclick="window.open('releases/luna-vibes.html', '_blank');">
+          <div class="news-card" onclick="window.open('artists/luna-vibes.html', '_blank');">
             <div class="news-image"></div>
             <div class="news-content">
-              <div class="news-date">october 1, 2025</div>
-              <h3 class="card-title">luna vibes single</h3>
-              <p class="card-subtitle">track "moonlight" now on all platforms</p>
+              <div class="news-date">October 1, 2025</div>
+              <h3 class="card-title">Luna Vibes Single</h3>
+              <p class="card-subtitle">Track "Moonlight" now on all platforms</p>
             </div>
           </div>
-          <div class="news-card" onclick="window.open('releases/cyber-flow.html', '_blank');">
+          <div class="news-card" onclick="window.open('artists/cyber-flow.html', '_blank');">
             <div class="news-image"></div>
             <div class="news-content">
-              <div class="news-date">september 28, 2025</div>
-              <h3 class="card-title">cyber flow mixtape</h3>
-              <p class="card-subtitle">new mixtape "urban pulse" available for streaming</p>
+              <div class="news-date">September 28, 2025</div>
+              <h3 class="card-title">Cyber Flow Mixtape</h3>
+              <p class="card-subtitle">New mixtape "Urban Pulse" available for streaming</p>
             </div>
           </div>
         </div>
       </section>
 
       <section class="section" id="about">
-        <h2 class="section-title">about</h2>
-        <p>starstoke label is an independent music label founded to promote unique artists and create music that shapes the future of sound. we collaborate with talented musicians, producers, and designers to create not just music, but a lifestyle.</p>
-        <p>our mission is to support creativity and innovation in the music industry, providing a platform for self-expression and experimentation.</p>
+        <h2 class="section-title">About</h2>
+        <p>Starstoke Label is an independent music label founded to promote unique artists and create music that shapes the future of sound. We collaborate with talented musicians, producers, and designers to create not just music, but a lifestyle.</p>
+        <p>Our mission is to support creativity and innovation in the music industry, providing a platform for self-expression and experimentation.</p>
       </section>
 
       <section class="section" id="contact">
-        <h2 class="section-title">contact us</h2>
+        <h2 class="section-title">Contact Us</h2>
         <form id="contact-form" action="https://formspree.io/f/your-form-hash" method="POST">
           <div class="form-group">
-            <input type="text" name="name" placeholder="your name" required>
+            <input type="text" name="name" placeholder="Your name" required>
           </div>
           <div class="form-group">
-            <input type="email" name="email" placeholder="your@email.com" required>
+            <input type="email" name="email" placeholder="Your@email.com" required>
           </div>
           <div class="form-group">
             <select name="category" required>
-              <option value="">select category</option>
-              <option value="artist">artist</option>
-              <option value="producer">producer</option>
-              <option value="dj">dj</option>
-              <option value="other">other</option>
+              <option value="">Select category</option>
+              <option value="artist">Artist</option>
+              <option value="producer">Producer</option>
+              <option value="dj">DJ</option>
+              <option value="other">Other</option>
             </select>
           </div>
           <div class="form-group">
-            <input type="text" name="links" placeholder="soundcloud, youtube, spotify">
+            <input type="text" name="links" placeholder="Soundcloud, Youtube, Spotify">
           </div>
           <div class="form-group">
-            <textarea name="message" placeholder="describe your work" required></textarea>
+            <textarea name="message" placeholder="Describe your work" required></textarea>
           </div>
-          <button type="submit">submit application</button>
+          <button type="submit">Submit Application</button>
         </form>
       </section>
 
       <section class="section">
-        <h2 class="section-title">partners</h2>
+        <h2 class="section-title">Partners</h2>
         <div class="partners">
-          <div class="partner-card" onclick="window.open('partners/supreme.html', '_blank');">supreme</div>
-          <div class="partner-card" onclick="window.open('partners/nike.html', '_blank');">nike</div>
-          <div class="partner-card" onclick="window.open('partners/adidas.html', '_blank');">adidas</div>
-          <div class="partner-card" onclick="window.open('partners/vans.html', '_blank');">vans</div>
+          <!-- Partners removed as requested -->
         </div>
       </section>
 
       <section class="section">
-        <h2 class="section-title">streams</h2>
-        <div class="stream-list">
-          <div class="stream-item" onclick="window.open('streams/live-concert.html', '_blank');">
-            <div class="stream-info">
-              <h3>live concert</h3>
-              <p>friday, 8:00 pm est</p>
-            </div>
-            <div class="live-badge">live</div>
-          </div>
-          <div class="stream-item" onclick="window.open('streams/track-creation.html', '_blank');">
-            <div class="stream-info">
-              <h3>track creation</h3>
-              <p>monday, 6:00 pm est</p>
-            </div>
-          </div>
-          <div class="stream-item" onclick="window.open('streams/qa.html', '_blank');">
-            <div class="stream-info">
-              <h3>q&a session</h3>
-              <p>wednesday, 7:00 pm est</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">artists</h2>
+        <h2 class="section-title">Artists</h2>
         <div class="grid">
           <div class="card artist-card" onclick="window.open('artists/dj-nexus.html', '_blank');">
             <div class="artist-info">
-              <div class="artist-genre">electronic / house</div>
-              <h3 class="card-title">dj nexus</h3>
+              <div class="artist-genre">Electronic / House</div>
+              <h3 class="card-title">DJ Nexus</h3>
             </div>
           </div>
           <div class="card artist-card" onclick="window.open('artists/luna-vibes.html', '_blank');">
             <div class="artist-info">
-              <div class="artist-genre">r&b / soul</div>
-              <h3 class="card-title">luna vibes</h3>
+              <div class="artist-genre">R&B / Soul</div>
+              <h3 class="card-title">Luna Vibes</h3>
             </div>
           </div>
           <div class="card artist-card" onclick="window.open('artists/cyber-flow.html', '_blank');">
             <div class="artist-info">
-              <div class="artist-genre">hip-hop / trap</div>
-              <h3 class="card-title">cyber flow</h3>
+              <div class="artist-genre">Hip-Hop / Trap</div>
+              <h3 class="card-title">Cyber Flow</h3>
             </div>
           </div>
         </div>
       </section>
 
       <footer>
-        <h2 class="logo" style="font-size: 2.5rem; margin-bottom: 20px;">st<span class="star">★</span>rstoke</h2>
+        <h2 class="logo" style="font-size: 2.5rem; margin-bottom: 20px;">St<span class="star">★</span>rstoke</h2>
         <div class="social-links">
-          <a href="#">instagram</a>
-          <a href="#">soundcloud</a>
-          <a href="#">youtube</a>
-          <a href="#">telegram</a>
+          <a href="#">Instagram</a>
+          <a href="#">Soundcloud</a>
+          <a href="#">Youtube</a>
+          <a href="#">Telegram</a>
         </div>
-        <p class="copyright">© 2025 starstoke label. all rights reserved.</p>
+        <p class="copyright">© 2025 Starstoke Label. All rights reserved.</p>
       </footer>
     </div>
   </div>
@@ -993,6 +942,194 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
   <script>
+    // Language switcher data
+    const translations = {
+      en: {
+        nav: ['News', 'Shop', 'Artists', 'About', 'Contact Us'],
+        tagline: 'Independent music label. Shaping the future of sound with exceptional artists.',
+        news_title: 'News Block',
+        news_items: [
+          {
+            title: 'DJ Nexus Release',
+            subtitle: 'Album "Digital Dreams" — 12 tracks redefining reality',
+            date: 'October 5, 2025'
+          },
+          {
+            title: 'Starstoke at Festival',
+            subtitle: 'Label artists to perform at a major music event',
+            date: 'October 1, 2025'
+          },
+          {
+            title: 'New Collection',
+            subtitle: 'Exclusive clothing line from top designers',
+            date: 'September 28, 2025'
+          }
+        ],
+        shop_title: 'Shop',
+        shop_items: [
+          {
+            title: 'Starstoke T-Shirt',
+            subtitle: 'Minimalist design, premium quality',
+            price: 'From $30'
+          },
+          {
+            title: 'Limited Cap',
+            subtitle: 'Limited edition, top standard',
+            price: 'From $20'
+          },
+          {
+            title: 'Sneakers Collab',
+            subtitle: 'Collaborative collection with leading brands',
+            price: 'From $80'
+          },
+          {
+            title: 'Accessories',
+            subtitle: 'Headphones, bags, and other essentials',
+            price: 'From $10'
+          }
+        ],
+        shop_grid: [
+          { title: 'Clothing', subtitle: 'T-shirts, hoodies, and other wardrobe essentials', price: 'From $20' },
+          { title: 'Accessories', subtitle: 'Unique items for style', price: 'From $10' },
+          { title: 'Footwear', subtitle: 'Collaborations with top brands', price: 'From $80' }
+        ],
+        artists_title: 'Artists',
+        artists_items: [
+          {
+            title: 'DJ Nexus Release',
+            subtitle: 'Album "Digital Dreams" — 12 tracks redefining reality',
+            date: 'October 5, 2025'
+          },
+          {
+            title: 'Luna Vibes Single',
+            subtitle: 'Track "Moonlight" now on all platforms',
+            date: 'October 1, 2025'
+          },
+          {
+            title: 'Cyber Flow Mixtape',
+            subtitle: 'New mixtape "Urban Pulse" available for streaming',
+            date: 'September 28, 2025'
+          }
+        ],
+        about_title: 'About',
+        about_text: [
+          'Starstoke Label is an independent music label founded to promote unique artists and create music that shapes the future of sound. We collaborate with talented musicians, producers, and designers to create not just music, but a lifestyle.',
+          'Our mission is to support creativity and innovation in the music industry, providing a platform for self-expression and experimentation.'
+        ],
+        contact_title: 'Contact Us',
+        form: {
+          name: 'Your name',
+          email: 'Your@email.com',
+          category: 'Select category',
+          category_options: ['Artist', 'Producer', 'DJ', 'Other'],
+          links: 'Soundcloud, Youtube, Spotify',
+          message: 'Describe your work',
+          submit: 'Submit Application'
+        },
+        partners_title: 'Partners',
+        artists_section_title: 'Artists',
+        artists_cards: [
+          { genre: 'Electronic / House', title: 'DJ Nexus' },
+          { genre: 'R&B / Soul', title: 'Luna Vibes' },
+          { genre: 'Hip-Hop / Trap', title: 'Cyber Flow' }
+        ],
+        footer_social: ['Instagram', 'Soundcloud', 'Youtube', 'Telegram'],
+        copyright: '© 2025 Starstoke Label. All rights reserved.'
+      },
+      ru: {
+        nav: ['Новости', 'Магазин', 'Артисты', 'О нас', 'Связаться с нами'],
+        tagline: 'Независимый музыкальный лейбл. Формируем будущее звука с выдающимися артистами.',
+        news_title: 'Блок новостей',
+        news_items: [
+          {
+            title: 'Релиз DJ Nexus',
+            subtitle: 'Альбом "Цифровые мечты" — 12 треков, переосмысливающих реальность',
+            date: '5 октября 2025'
+          },
+          {
+            title: 'Starstoke на фестивале',
+            subtitle: 'Артисты лейбла выступят на крупном музыкальном событии',
+            date: '1 октября 2025'
+          },
+          {
+            title: 'Новая коллекция',
+            subtitle: 'Эксклюзивная линия одежды от ведущих дизайнеров',
+            date: '28 сентября 2025'
+          }
+        ],
+        shop_title: 'Магазин',
+        shop_items: [
+          {
+            title: 'Футболка Starstoke',
+            subtitle: 'Минималистичный дизайн, премиальное качество',
+            price: 'От $30'
+          },
+          {
+            title: 'Лимитированная кепка',
+            subtitle: 'Лимитированная серия, высший стандарт',
+            price: 'От $20'
+          },
+          {
+            title: 'Кроссовки Collab',
+            subtitle: 'Коллаборация с ведущими брендами',
+            price: 'От $80'
+          },
+          {
+            title: 'Аксессуары',
+            subtitle: 'Наушники, сумки и другие необходимые вещи',
+            price: 'От $10'
+          }
+        ],
+        shop_grid: [
+          { title: 'Одежда', subtitle: 'Футболки, худи и другие предметы гардероба', price: 'От $20' },
+          { title: 'Аксессуары', subtitle: 'Уникальные предметы для стиля', price: 'От $10' },
+          { title: 'Обувь', subtitle: 'Коллаборации с ведущими брендами', price: 'От $80' }
+        ],
+        artists_title: 'Артисты',
+        artists_items: [
+          {
+            title: 'Релиз DJ Nexus',
+            subtitle: 'Альбом "Цифровые мечты" — 12 треков, переосмысливающих реальность',
+            date: '5 октября 2025'
+          },
+          {
+            title: 'Сингл Luna Vibes',
+            subtitle: 'Трек "Лунный свет" теперь на всех платформах',
+            date: '1 октября 2025'
+          },
+          {
+            title: 'Микстейп Cyber Flow',
+            subtitle: 'Новый микстейп "Городской пульс" доступен для стриминга',
+            date: '28 сентября 2025'
+          }
+        ],
+        about_title: 'О нас',
+        about_text: [
+          'Starstoke Label — независимый музыкальный лейбл, основанный для продвижения уникальных артистов и создания музыки, которая формирует будущее звука. Мы сотрудничаем с талантливыми музыкантами, продюсерами и дизайнерами, чтобы создавать не просто музыку, а стиль жизни.',
+          'Наша миссия — поддерживать творчество и инновации в музыкальной индустрии, предоставляя платформу для самовыражения и экспериментов.'
+        ],
+        contact_title: 'Связаться с нами',
+        form: {
+          name: 'Ваше имя',
+          email: 'Ваш@email.com',
+          category: 'Выберите категорию',
+          category_options: ['Артист', 'Продюсер', 'Ди-джей', 'Другое'],
+          links: 'Soundcloud, Youtube, Spotify',
+          message: 'Опишите вашу работу',
+          submit: 'Отправить заявку'
+        },
+        partners_title: 'Партнеры',
+        artists_section_title: 'Артисты',
+        artists_cards: [
+          { genre: 'Электроника / Хаус', title: 'DJ Nexus' },
+          { genre: 'R&B / Соул', title: 'Luna Vibes' },
+          { genre: 'Хип-хоп / Трэп', title: 'Cyber Flow' }
+        ],
+        footer_social: ['Instagram', 'Soundcloud', 'Youtube', 'Telegram'],
+        copyright: '© 2025 Starstoke Label. Все права защищены.'
+      }
+    };
+
     // Initialize Vanta.js with error handling
     document.addEventListener('DOMContentLoaded', () => {
       try {
@@ -1011,32 +1148,45 @@
           maxDistance: 28.0,
           spacing: 20.0,
           showDots: true,
-          lineOpacity: 0.5 // Initial line opacity
+          lineOpacity: 0.5
         });
 
         // Slow rotation and zoom animation
         function animateVanta() {
           if (vantaEffect && vantaEffect.three && vantaEffect.three.camera) {
-            vantaEffect.three.camera.rotation.y += 0.0005; // Slow rotation
+            vantaEffect.three.camera.rotation.y += 0.0005;
           }
           requestAnimationFrame(animateVanta);
         }
         animateVanta();
 
-        // Color change with smooth line transitions
-        const colors = [0xff0000, 0xff9900, 0xffff00, 0x00ff00, 0x0000ff, 0x9900ff];
-        let currentOpacity = 0.5;
-        setInterval(() => {
-          const randomColor = colors[Math.floor(Math.random() * colors.length)];
-          currentOpacity = 0; // Fade out
-          vantaEffect.setOptions({ lineOpacity: currentOpacity });
-          setTimeout(() => {
-            vantaEffect.setOptions({ color: randomColor, lineOpacity: 0.5 }); // Fade in new color
-          }, 1000);
-          setTimeout(() => {
-            vantaEffect.setOptions({ color: 0xffd700, lineOpacity: 0.5 }); // Return to default
-          }, 2000);
-        }, 3000); // Every 3 seconds
+        // Smoother color change
+        const colors = [0xffd700, 0xffa500, 0xff6347, 0x00ced1, 0x9370db, 0x98fb98];
+        let currentColorIndex = 0;
+        function changeColor() {
+          const nextColorIndex = (currentColorIndex + 1) % colors.length;
+          const startColor = colors[currentColorIndex];
+          const endColor = colors[nextColorIndex];
+          let progress = 0;
+
+          function interpolateColor() {
+            progress += 0.02;
+            if (progress >= 1) {
+              currentColorIndex = nextColorIndex;
+              vantaEffect.setOptions({ color: endColor, lineOpacity: 0.5 });
+              setTimeout(changeColor, 4000);
+              return;
+            }
+            const r = Math.floor((1 - progress) * ((startColor >> 16) & 255) + progress * ((endColor >> 16) & 255));
+            const g = Math.floor((1 - progress) * ((startColor >> 8) & 255) + progress * ((endColor >> 8) & 255));
+            const b = Math.floor((1 - progress) * (startColor & 255) + progress * (endColor & 255));
+            const newColor = (r << 16) + (g << 8) + b;
+            vantaEffect.setOptions({ color: newColor, lineOpacity: 0.5 });
+            requestAnimationFrame(interpolateColor);
+          }
+          interpolateColor();
+        }
+        setTimeout(changeColor, 4000);
 
         // Simulate zoom
         let zoomDirection = 1;
@@ -1050,104 +1200,196 @@
         }, 100);
       } catch (error) {
         console.error('Vanta.js failed to initialize:', error);
-        document.getElementById('vanta-bg').style.background = '#000'; // Fallback
+        document.getElementById('vanta-bg').style.background = '#000';
       }
-    });
 
-    // Section visibility observer
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+      // Language switcher
+      const langButtons = document.querySelectorAll('.lang-btn');
+      const updateContent = (lang) => {
+        const data = translations[lang];
+
+        // Update navigation
+        document.querySelectorAll('.nav-links a').forEach((link, i) => {
+          link.textContent = data.nav[i];
+        });
+
+        // Update header
+        document.querySelector('.tagline').textContent = data.tagline;
+
+        // Update news section
+        document.querySelector('#news .section-title').textContent = data.news_title;
+        document.querySelectorAll('.news-banner-item').forEach((item, i) => {
+          item.querySelector('.card-title').textContent = data.news_items[i].title;
+          item.querySelector('.card-subtitle').textContent = data.news_items[i].subtitle;
+        });
+        document.querySelectorAll('.news-card').forEach((card, i) => {
+          card.querySelector('.news-date').textContent = data.news_items[i].date;
+          card.querySelector('.card-title').textContent = data.news_items[i].title;
+          card.querySelector('.card-subtitle').textContent = data.news_items[i].subtitle;
+        });
+
+        // Update shop section
+        document.querySelector('#shop .section-title').textContent = data.shop_title;
+        document.querySelectorAll('.merch-item').forEach((item, i) => {
+          item.querySelector('.card-title').textContent = data.shop_items[i].title;
+          item.querySelector('.card-subtitle').textContent = data.shop_items[i].subtitle;
+          item.querySelector('.card-price').textContent = data.shop_items[i].price;
+        });
+        document.querySelectorAll('#shop .grid .card').forEach((card, i) => {
+          card.querySelector('.card-title').textContent = data.shop_grid[i].title;
+          card.querySelector('.card-subtitle').textContent = data.shop_grid[i].subtitle;
+          card.querySelector('.card-price').textContent = data.shop_grid[i].price;
+        });
+
+        // Update artists section
+        document.querySelector('#artists .section-title').textContent = data.artists_title;
+        document.querySelectorAll('#artists .news-card').forEach((card, i) => {
+          card.querySelector('.news-date').textContent = data.artists_items[i].date;
+          card.querySelector('.card-title').textContent = data.artists_items[i].title;
+          card.querySelector('.card-subtitle').textContent = data.artists_items[i].subtitle;
+        });
+
+        // Update about section
+        document.querySelector('#about .section-title').textContent = data.about_title;
+        document.querySelectorAll('#about p').forEach((p, i) => {
+          p.textContent = data.about_text[i];
+        });
+
+        // Update contact section
+        document.querySelector('#contact .section-title').textContent = data.contact_title;
+        document.querySelector('#contact-form input[name="name"]').placeholder = data.form.name;
+        document.querySelector('#contact-form input[name="email"]').placeholder = data.form.email;
+        document.querySelector('#contact-form select[name="category"]').firstElementChild.textContent = data.form.category;
+        document.querySelectorAll('#contact-form select[name="category"] option:not(:first-child)').forEach((option, i) => {
+          option.textContent = data.form.category_options[i];
+        });
+        document.querySelector('#contact-form input[name="links"]').placeholder = data.form.links;
+        document.querySelector('#contact-form textarea[name="message"]').placeholder = data.form.message;
+        document.querySelector('#contact-form button').textContent = data.form.submit;
+
+        // Update partners section
+        document.querySelector('.section .section-title').textContent = data.partners_title;
+
+        // Update artists cards section
+        document.querySelectorAll('.section')[6].querySelector('.section-title').textContent = data.artists_section_title;
+        document.querySelectorAll('.artist-card').forEach((card, i) => {
+          card.querySelector('.artist-genre').textContent = data.artists_cards[i].genre;
+          card.querySelector('.card-title').textContent = data.artists_cards[i].title;
+        });
+
+        // Update footer
+        document.querySelectorAll('.social-links a').forEach((link, i) => {
+          link.textContent = data.footer_social[i];
+        });
+        document.querySelector('.copyright').textContent = data.copyright;
+      };
+
+      langButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          langButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          updateContent(button.dataset.lang);
+        });
       });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
-    });
 
-    sections.forEach(section => observer.observe(section));
+      // Initialize with English
+      updateContent('en');
 
-    // Smooth scrolling for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
+      // Section visibility observer
+      const sections = document.querySelectorAll('.section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
       });
-    });
 
-    // News banner carousel
-    const newsBannerItems = document.querySelectorAll('.news-banner-item');
-    const newsBannerControls = document.querySelectorAll('.news-banner-control');
-    let currentNewsIndex = 0;
+      sections.forEach(section => observer.observe(section));
 
-    function showNewsBannerItem(index) {
-      newsBannerItems.forEach((item, i) => {
-        item.classList.toggle('active', i === index);
+      // Smooth scrolling for nav links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
       });
-      newsBannerControls.forEach((control, i) => {
-        control.classList.toggle('active', i === index);
+
+      // News banner carousel
+      const newsBannerItems = document.querySelectorAll('.news-banner-item');
+      const newsBannerControls = document.querySelectorAll('.news-banner-control');
+      let currentNewsIndex = 0;
+
+      function showNewsBannerItem(index) {
+        newsBannerItems.forEach((item, i) => {
+          item.classList.toggle('active', i === index);
+        });
+        newsBannerControls.forEach((control, i) => {
+          control.classList.toggle('active', i === index);
+        });
+        currentNewsIndex = index;
+      }
+
+      newsBannerControls.forEach((control, index) => {
+        control.addEventListener('click', () => showNewsBannerItem(index));
       });
-      currentNewsIndex = index;
-    }
 
-    newsBannerControls.forEach((control, index) => {
-      control.addEventListener('click', () => showNewsBannerItem(index));
-    });
+      setInterval(() => {
+        const nextNewsIndex = (currentNewsIndex + 1) % newsBannerItems.length;
+        showNewsBannerItem(nextNewsIndex);
+      }, 5000);
 
-    setInterval(() => {
-      const nextNewsIndex = (currentNewsIndex + 1) % newsBannerItems.length;
-      showNewsBannerItem(nextNewsIndex);
-    }, 5000);
+      // Merch carousel
+      const merchItems = document.querySelectorAll('.merch-item');
+      const merchControls = document.querySelectorAll('.merch-control');
+      let currentMerchIndex = 0;
 
-    // Merch carousel
-    const merchItems = document.querySelectorAll('.merch-item');
-    const merchControls = document.querySelectorAll('.merch-control');
-    let currentMerchIndex = 0;
+      function showMerchItem(index) {
+        merchItems.forEach((item, i) => {
+          item.classList.toggle('active', i === index);
+        });
+        merchControls.forEach((control, i) => {
+          control.classList.toggle('active', i === index);
+        });
+        currentMerchIndex = index;
+      }
 
-    function showMerchItem(index) {
-      merchItems.forEach((item, i) => {
-        item.classList.toggle('active', i === index);
+      merchControls.forEach((control, index) => {
+        control.addEventListener('click', () => showMerchItem(index));
       });
-      merchControls.forEach((control, i) => {
-        control.classList.toggle('active', i === index);
-      });
-      currentMerchIndex = index;
-    }
 
-    merchControls.forEach((control, index) => {
-      control.addEventListener('click', () => showMerchItem(index));
-    });
+      setInterval(() => {
+        const nextMerchIndex = (currentMerchIndex + 1) % merchItems.length;
+        showMerchItem(nextMerchIndex);
+      }, 5000);
 
-    setInterval(() => {
-      const nextMerchIndex = (currentMerchIndex + 1) % merchItems.length;
-      showMerchItem(nextMerchIndex);
-    }, 5000);
-
-    // Contact form submission
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const form = event.target;
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          alert('Message sent successfully!');
-          form.reset();
-        } else {
+      // Contact form submission
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const form = event.target;
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(response => {
+          if (response.ok) {
+            alert('Message sent successfully!');
+            form.reset();
+          } else {
+            alert('Error sending message. Please try again.');
+          }
+        }).catch(error => {
           alert('Error sending message. Please try again.');
-        }
-      }).catch(error => {
-        alert('Error sending message. Please try again.');
+        });
       });
     });
   </script>
