@@ -182,7 +182,7 @@
 
     .news-banner {
       position: relative;
-      height: 600px; /* Increased height for prominence */
+      height: 600px;
       margin-bottom: 40px;
       overflow: hidden;
       border-radius: 24px;
@@ -196,7 +196,7 @@
       width: 100%;
       height: 100%;
       opacity: 0;
-      transition: opacity 1.5s ease-in-out; /* Slower fade transition */
+      transition: opacity 1.5s ease-in-out;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -217,7 +217,7 @@
     }
 
     .news-banner-item .card-title {
-      font-size: clamp(2.5rem, 5vw, 4rem); /* Larger headline */
+      font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 200;
       margin-bottom: 15px;
       text-align: center;
@@ -308,6 +308,15 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
+    }
+
+    .card, .news-card, .partner-card, .stream-item, .artist-card {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover, .news-card:hover, .partner-card:hover, .stream-item:hover, .artist-card:hover {
+      transform: scale(1.05);
     }
 
     .card {
@@ -743,17 +752,17 @@
       <section class="section" id="news">
         <h2 class="section-title">news block</h2>
         <div class="news-banner">
-          <div class="news-banner-item active">
+          <div class="news-banner-item active" onclick="window.location.href='news/release-dj-nexus.html';">
             <img src="https://via.placeholder.com/600x300?text=DJ+Nexus+Release" alt="DJ Nexus Release">
             <h3 class="card-title">dj nexus release</h3>
             <p class="card-subtitle">album "digital dreams" — 12 tracks redefining reality</p>
           </div>
-          <div class="news-banner-item">
+          <div class="news-banner-item" onclick="window.location.href='news/festival.html';">
             <img src="https://via.placeholder.com/600x300?text=Starstoke+at+Festival" alt="Starstoke at Festival">
             <h3 class="card-title">starstoke at festival</h3>
             <p class="card-subtitle">label artists to perform at a major music event</p>
           </div>
-          <div class="news-banner-item">
+          <div class="news-banner-item" onclick="window.location.href='news/new-collection.html';">
             <img src="https://via.placeholder.com/600x300?text=New+Collection" alt="New Collection">
             <h3 class="card-title">new collection</h3>
             <p class="card-subtitle">exclusive clothing line from top designers</p>
@@ -765,55 +774,55 @@
           <div class="news-banner-control"></div>
         </div>
         <div class="grid">
-          <div class="news-card">
+          <a href="news/release-dj-nexus.html" class="news-card">
             <div class="news-image"></div>
             <div class="news-content">
               <div class="news-date">october 5, 2025</div>
               <h3 class="card-title">dj nexus release</h3>
               <p class="card-subtitle">album "digital dreams" — 12 tracks redefining reality</p>
             </div>
-          </div>
-          <div class="news-card">
+          </a>
+          <a href="news/festival.html" class="news-card">
             <div class="news-image"></div>
             <div class="news-content">
               <div class="news-date">october 1, 2025</div>
               <h3 class="card-title">starstoke at festival</h3>
               <p class="card-subtitle">label artists to perform at a major music event</p>
             </div>
-          </div>
-          <div class="news-card">
+          </a>
+          <a href="news/new-collection.html" class="news-card">
             <div class="news-image"></div>
             <div class="news-content">
               <div class="news-date">september 28, 2025</div>
               <h3 class="card-title">new collection</h3>
               <p class="card-subtitle">exclusive clothing line from top designers</p>
             </div>
-          </div>
+          </a>
         </div>
       </section>
 
       <section class="section" id="shop">
         <h2 class="section-title">shop</h2>
         <div class="merch-showcase">
-          <div class="merch-item active" data-category="clothing">
+          <div class="merch-item active" data-category="clothing" onclick="window.location.href='shop/t-shirt.html';">
             <img src="https://via.placeholder.com/300x300?text=T-Shirt" alt="Starstoke T-Shirt">
             <h3 class="card-title">starstoke t-shirt</h3>
             <p class="card-subtitle">minimalist design, premium quality</p>
             <div class="card-price">from $30</div>
           </div>
-          <div class="merch-item" data-category="accessories">
+          <div class="merch-item" data-category="accessories" onclick="window.location.href='shop/cap.html';">
             <img src="https://via.placeholder.com/300x300?text=Cap" alt="Limited Cap">
             <h3 class="card-title">limited cap</h3>
             <p class="card-subtitle">limited edition, top standard</p>
             <div class="card-price">from $20</div>
           </div>
-          <div class="merch-item" data-category="footwear">
+          <div class="merch-item" data-category="footwear" onclick="window.location.href='shop/sneakers.html';">
             <img src="https://via.placeholder.com/300x300?text=Sneakers" alt="Sneakers Collab">
             <h3 class="card-title">sneakers collab</h3>
             <p class="card-subtitle">collaborative collection with leading brands</p>
             <div class="card-price">from $80</div>
           </div>
-          <div class="merch-item" data-category="accessories">
+          <div class="merch-item" data-category="accessories" onclick="window.location.href='shop/accessories.html';">
             <img src="https://via.placeholder.com/300x300?text=Accessories" alt="Accessories">
             <h3 class="card-title">accessories</h3>
             <p class="card-subtitle">headphones, bags, and other essentials</p>
@@ -827,51 +836,51 @@
           <div class="merch-control"></div>
         </div>
         <div class="grid">
-          <div class="card" data-category="clothing">
+          <a href="shop/clothing.html" class="card" data-category="clothing">
             <h3 class="card-title">clothing</h3>
             <p class="card-subtitle">t-shirts, hoodies, and other wardrobe essentials</p>
             <div class="card-price">from $20</div>
-          </div>
-          <div class="card" data-category="accessories">
+          </a>
+          <a href="shop/accessories.html" class="card" data-category="accessories">
             <h3 class="card-title">accessories</h3>
             <p class="card-subtitle">unique items for style</p>
             <div class="card-price">from $10</div>
-          </div>
-          <div class="card" data-category="footwear">
+          </a>
+          <a href="shop/footwear.html" class="card" data-category="footwear">
             <h3 class="card-title">footwear</h3>
             <p class="card-subtitle">collaborations with top brands</p>
             <div class="card-price">from $80</div>
-          </div>
+          </a>
         </div>
       </section>
 
       <section class="section" id="releases">
         <h2 class="section-title">releases</h2>
         <div class="grid">
-          <div class="news-card">
+          <a href="releases/dj-nexus.html" class="news-card">
             <div class="news-image"></div>
             <div class="news-content">
               <div class="news-date">october 5, 2025</div>
               <h3 class="card-title">dj nexus release</h3>
               <p class="card-subtitle">album "digital dreams" — 12 tracks redefining reality</p>
             </div>
-          </div>
-          <div class="news-card">
+          </a>
+          <a href="releases/luna-vibes.html" class="news-card">
             <div class="news-image"></div>
             <div class="news-content">
               <div class="news-date">october 1, 2025</div>
               <h3 class="card-title">luna vibes single</h3>
               <p class="card-subtitle">track "moonlight" now on all platforms</p>
             </div>
-          </div>
-          <div class="news-card">
+          </a>
+          <a href="releases/cyber-flow.html" class="news-card">
             <div class="news-image"></div>
             <div class="news-content">
               <div class="news-date">september 28, 2025</div>
               <h3 class="card-title">cyber flow mixtape</h3>
               <p class="card-subtitle">new mixtape "urban pulse" available for streaming</p>
             </div>
-          </div>
+          </a>
         </div>
       </section>
 
@@ -883,15 +892,15 @@
 
       <section class="section" id="contact">
         <h2 class="section-title">contact us</h2>
-        <form>
+        <form id="contact-form" action="https://formspree.io/f/your-form-hash" method="POST">
           <div class="form-group">
-            <input type="text" placeholder="your name" required>
+            <input type="text" name="name" placeholder="your name" required>
           </div>
           <div class="form-group">
-            <input type="email" placeholder="your@email.com" required>
+            <input type="email" name="email" placeholder="your@email.com" required>
           </div>
           <div class="form-group">
-            <select required>
+            <select name="category" required>
               <option value="">select category</option>
               <option value="artist">artist</option>
               <option value="producer">producer</option>
@@ -900,10 +909,10 @@
             </select>
           </div>
           <div class="form-group">
-            <input type="text" placeholder="soundcloud, youtube, spotify">
+            <input type="text" name="links" placeholder="soundcloud, youtube, spotify">
           </div>
           <div class="form-group">
-            <textarea placeholder="describe your work" required></textarea>
+            <textarea name="message" placeholder="describe your work" required></textarea>
           </div>
           <button type="submit">submit application</button>
         </form>
@@ -912,59 +921,59 @@
       <section class="section">
         <h2 class="section-title">partners</h2>
         <div class="partners">
-          <div class="partner-card">supreme</div>
-          <div class="partner-card">nike</div>
-          <div class="partner-card">adidas</div>
-          <div class="partner-card">vans</div>
+          <a href="partners/supreme.html" class="partner-card">supreme</a>
+          <a href="partners/nike.html" class="partner-card">nike</a>
+          <a href="partners/adidas.html" class="partner-card">adidas</a>
+          <a href="partners/vans.html" class="partner-card">vans</a>
         </div>
       </section>
 
       <section class="section">
         <h2 class="section-title">streams</h2>
         <div class="stream-list">
-          <div class="stream-item">
+          <a href="streams/live-concert.html" class="stream-item">
             <div class="stream-info">
               <h3>live concert</h3>
               <p>friday, 8:00 pm est</p>
             </div>
             <div class="live-badge">live</div>
-          </div>
-          <div class="stream-item">
+          </a>
+          <a href="streams/track-creation.html" class="stream-item">
             <div class="stream-info">
               <h3>track creation</h3>
               <p>monday, 6:00 pm est</p>
             </div>
-          </div>
-          <div class="stream-item">
+          </a>
+          <a href="streams/qa.html" class="stream-item">
             <div class="stream-info">
               <h3>q&a session</h3>
               <p>wednesday, 7:00 pm est</p>
             </div>
-          </div>
+          </a>
         </div>
       </section>
 
       <section class="section">
         <h2 class="section-title">artists</h2>
         <div class="grid">
-          <div class="card artist-card">
+          <a href="artists/dj-nexus.html" class="card artist-card">
             <div class="artist-info">
               <div class="artist-genre">electronic / house</div>
               <h3 class="card-title">dj nexus</h3>
             </div>
-          </div>
-          <div class="card artist-card">
+          </a>
+          <a href="artists/luna-vibes.html" class="card artist-card">
             <div class="artist-info">
               <div class="artist-genre">r&b / soul</div>
               <h3 class="card-title">luna vibes</h3>
             </div>
-          </div>
-          <div class="card artist-card">
+          </a>
+          <a href="artists/cyber-flow.html" class="card artist-card">
             <div class="artist-info">
               <div class="artist-genre">hip-hop / trap</div>
               <h3 class="card-title">cyber flow</h3>
             </div>
-          </div>
+          </a>
         </div>
       </section>
 
@@ -1203,6 +1212,28 @@
       element.addEventListener('click', () => {
         const category = element.dataset.category;
         window.location.href = `#${category}`;
+      });
+    });
+
+    // Contact form submission handling
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default submission
+      const form = event.target;
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          alert('Message sent successfully!');
+          form.reset(); // Clear form
+        } else {
+          alert('There was an error sending the message. Please try again.');
+        }
+      }).catch(error => {
+        alert('There was an error sending the message. Please try again.');
       });
     });
   </script>
