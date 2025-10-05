@@ -202,7 +202,7 @@
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 24px;
       padding: 40px 30px;
@@ -258,6 +258,34 @@
       display: inline-block;
     }
 
+    .star-stock {
+      font-size: 0.8rem;
+      color: #FFD700;
+      margin-left: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+
+    .partner-banner {
+      background: linear-gradient(135deg, #FFA500, #FF4500);
+      color: #000;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    .text-plaque {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
     .artist-card {
       height: 400px;
       padding: 0;
@@ -291,7 +319,7 @@
     }
 
     .stream-item {
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 16px;
       padding: 24px;
@@ -362,7 +390,7 @@
     form {
       max-width: 600px;
       margin: 0 auto;
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 24px;
       padding: 50px;
@@ -434,7 +462,7 @@
     }
 
     .news-card {
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 24px;
       overflow: hidden;
@@ -592,40 +620,46 @@
 <body>
   <div id="vanta-bg"></div>
   <div class="grain-overlay"></div>
+  <div class="lang-switch">
+    <button class="lang-btn active">RU</button>
+    <button class="lang-btn">EN</button>
+  </div>
 
   <div class="content-wrapper">
     <div class="container">
       <header>
         <h1 class="logo">st<span class="star">★</span>rstoke</h1>
-        <p class="tagline">независимый музыкальный лейбл. формируем будущее звука с исключительными артистами.</p>
+        <p class="tagline">независимый музыкальный лейбл. формируем будущее звука с исключительными артистами. / independent music label. shaping the future of sound with exceptional artists.</p>
       </header>
 
       <section class="section">
-        <h2 class="section-title">мерч</h2>
+        <h2 class="section-title">мерч / merch (star shop)</h2>
         <div class="merch-showcase">
           <div class="merch-item active" data-category="clothing">
             <img src="https://via.placeholder.com/300x300?text=Футболка" alt="Футболка Starstoke">
-            <h3 class="card-title">футболка starstoke</h3>
-            <p class="card-subtitle">минималистичный дизайн, премиум качество</p>
-            <div class="card-price">от 3000 ₽</div>
+            <h3 class="card-title">футболка starstoke <span class="star-stock">★ star stock</span></h3>
+            <p class="card-subtitle">минималистичный дизайн, премиум качество / minimalist design, premium quality</p>
+            <div class="card-price">от 3000 ₽ / from 3000 ₽</div>
           </div>
           <div class="merch-item" data-category="accessories">
             <img src="https://via.placeholder.com/300x300?text=Кепка" alt="Кепка Limited">
-            <h3 class="card-title">кепка limited</h3>
-            <p class="card-subtitle">ограниченный тираж, высший стандарт</p>
-            <div class="card-price">от 2000 ₽</div>
+            <h3 class="card-title">кепка limited <span class="star-stock">★ star stock</span></h3>
+            <p class="card-subtitle">ограниченный тираж, высший стандарт / limited edition, highest standard</p>
+            <div class="card-price">от 2000 ₽ / from 2000 ₽</div>
           </div>
           <div class="merch-item" data-category="footwear">
+            <div class="partner-banner">вещи от партнёров / partner items</div>
             <img src="https://via.placeholder.com/300x300?text=Кроссовки" alt="Коллаборация Sneakers">
             <h3 class="card-title">коллаборация sneakers</h3>
-            <p class="card-subtitle">совместная коллекция с ведущими брендами</p>
-            <div class="card-price">от 8000 ₽</div>
+            <p class="card-subtitle">совместная коллекция с ведущими брендами / collaborative collection with leading brands</p>
+            <div class="card-price">от 8000 ₽ / from 8000 ₽</div>
           </div>
           <div class="merch-item" data-category="accessories">
+            <div class="partner-banner">вещи от партнёров / partner items</div>
             <img src="https://via.placeholder.com/300x300?text=Аксессуары" alt="Аксессуары">
             <h3 class="card-title">аксессуары</h3>
-            <p class="card-subtitle">наушники, сумки и другие элементы</p>
-            <div class="card-price">от 1000 ₽</div>
+            <p class="card-subtitle">наушники, сумки и другие элементы / headphones, bags and other items</p>
+            <div class="card-price">от 1000 ₽ / from 1000 ₽</div>
           </div>
         </div>
         <div class="merch-controls">
@@ -636,25 +670,45 @@
         </div>
         <div class="grid">
           <div class="card" data-category="clothing">
-            <h3 class="card-title">одежда</h3>
-            <p class="card-subtitle">футболки, худи и другие элементы гардероба</p>
-            <div class="card-price">от 2000 ₽</div>
+            <div class="text-plaque">
+              <h3 class="card-title">одежда / clothing <span class="star-stock">★ star stock</span></h3>
+              <p class="card-subtitle">футболки, худи и другие элементы гардероба / t-shirts, hoodies and other wardrobe items</p>
+            </div>
+            <div class="card-price">от 2000 ₽ / from 2000 ₽</div>
           </div>
           <div class="card" data-category="accessories">
-            <h3 class="card-title">аксессуары</h3>
-            <p class="card-subtitle">уникальные предметы для стиля</p>
-            <div class="card-price">от 1000 ₽</div>
+            <div class="text-plaque">
+              <h3 class="card-title">аксессуары / accessories</h3>
+              <p class="card-subtitle">уникальные предметы для стиля / unique items for style</p>
+            </div>
+            <div class="card-price">от 1000 ₽ / from 1000 ₽</div>
+          </div>
+          <div class="card" data-category="bags">
+            <div class="text-plaque">
+              <h3 class="card-title">сумки / bags</h3>
+              <p class="card-subtitle">стильные сумки для повседневного использования / stylish bags for everyday use</p>
+            </div>
+            <div class="card-price">от 3000 ₽ / from 3000 ₽</div>
           </div>
           <div class="card" data-category="footwear">
-            <h3 class="card-title">обувь</h3>
-            <p class="card-subtitle">коллаборации с топ-брендами</p>
-            <div class="card-price">от 8000 ₽</div>
+            <div class="text-plaque">
+              <h3 class="card-title">обувь / footwear</h3>
+              <p class="card-subtitle">коллаборации с топ-брендами / collaborations with top brands</p>
+            </div>
+            <div class="card-price">от 8000 ₽ / from 8000 ₽</div>
+          </div>
+          <div class="card" data-category="other">
+            <div class="text-plaque">
+              <h3 class="card-title">другое / other</h3>
+              <p class="card-subtitle">различные товары / various items</p>
+            </div>
+            <div class="card-price">от 500 ₽ / from 500 ₽</div>
           </div>
         </div>
       </section>
 
       <section class="section">
-        <h2 class="section-title">партнёры</h2>
+        <h2 class="section-title">партнёры / partners</h2>
         <div class="partners">
           <div class="partner-card">supreme</div>
           <div class="partner-card">nike</div>
@@ -664,32 +718,32 @@
       </section>
 
       <section class="section">
-        <h2 class="section-title">стримы</h2>
+        <h2 class="section-title">стримы / streams</h2>
         <div class="stream-list">
           <div class="stream-item">
             <div class="stream-info">
-              <h3>живой концерт</h3>
-              <p>пятница, 20:00 мск</p>
+              <h3>живой концерт / live concert</h3>
+              <p>пятница, 20:00 мск / friday, 20:00 msk</p>
             </div>
             <div class="live-badge">live</div>
           </div>
           <div class="stream-item">
             <div class="stream-info">
-              <h3>создание треков</h3>
-              <p>понедельник, 18:00 мск</p>
+              <h3>создание треков / track creation</h3>
+              <p>понедельник, 18:00 мск / monday, 18:00 msk</p>
             </div>
           </div>
           <div class="stream-item">
             <div class="stream-info">
-              <h3>вопросы и ответы</h3>
-              <p>среда, 19:00 мск</p>
+              <h3>вопросы и ответы / q&a</h3>
+              <p>среда, 19:00 мск / wednesday, 19:00 msk</p>
             </div>
           </div>
         </div>
       </section>
 
       <section class="section">
-        <h2 class="section-title">артисты</h2>
+        <h2 class="section-title">артисты / artists</h2>
         <div class="grid">
           <div class="card artist-card">
             <div class="artist-info">
@@ -713,58 +767,58 @@
       </section>
 
       <section class="section">
-        <h2 class="section-title">присоединиться</h2>
+        <h2 class="section-title">присоединиться / join</h2>
         <form>
           <div class="form-group">
-            <input type="text" placeholder="ваше имя" required>
+            <input type="text" placeholder="ваше имя / your name" required>
           </div>
           <div class="form-group">
             <input type="email" placeholder="your@email.com" required>
           </div>
           <div class="form-group">
             <select required>
-              <option value="">выберите категорию</option>
-              <option value="artist">артист</option>
-              <option value="producer">продюсер</option>
-              <option value="dj">диджей</option>
-              <option value="other">другое</option>
+              <option value="">выберите категорию / select category</option>
+              <option value="artist">артист / artist</option>
+              <option value="producer">продюсер / producer</option>
+              <option value="dj">диджей / dj</option>
+              <option value="other">другое / other</option>
             </select>
           </div>
           <div class="form-group">
             <input type="text" placeholder="soundcloud, youtube, spotify">
           </div>
           <div class="form-group">
-            <textarea placeholder="опишите ваше творчество" required></textarea>
+            <textarea placeholder="опишите ваше творчество / describe your work" required></textarea>
           </div>
-          <button type="submit">отправить заявку</button>
+          <button type="submit">отправить заявку / submit application</button>
         </form>
       </section>
 
       <section class="section">
-        <h2 class="section-title">новости</h2>
+        <h2 class="section-title">новости / news</h2>
         <div class="grid">
           <div class="news-card">
             <div class="news-image"></div>
             <div class="news-content">
-              <div class="news-date">5 октября 2025</div>
-              <h3 class="card-title">релиз от dj nexus</h3>
-              <p class="card-subtitle">альбом "digital dreams" — 12 треков, переосмысливающих реальность</p>
+              <div class="news-date">5 октября 2025 / october 5, 2025</div>
+              <h3 class="card-title">релиз от dj nexus / release from dj nexus</h3>
+              <p class="card-subtitle">альбом "digital dreams" — 12 треков, переосмысливающих реальность / album "digital dreams" — 12 tracks redefining reality</p>
             </div>
           </div>
           <div class="news-card">
             <div class="news-image"></div>
             <div class="news-content">
-              <div class="news-date">1 октября 2025</div>
-              <h3 class="card-title">starstoke на фестивале</h3>
-              <p class="card-subtitle">артисты лейбла выступят на ключевом музыкальном событии</p>
+              <div class="news-date">1 октября 2025 / october 1, 2025</div>
+              <h3 class="card-title">starstoke на фестивале / starstoke at the festival</h3>
+              <p class="card-subtitle">артисты лейбла выступят на ключевом музыкальном событии / label artists perform at key music event</p>
             </div>
           </div>
           <div class="news-card">
             <div class="news-image"></div>
             <div class="news-content">
-              <div class="news-date">28 сентября 2025</div>
-              <h3 class="card-title">новая коллекция</h3>
-              <p class="card-subtitle">эксклюзивная линейка одежды от ведущих дизайнеров</p>
+              <div class="news-date">28 сентября 2025 / september 28, 2025</div>
+              <h3 class="card-title">новая коллекция / new collection</h3>
+              <p class="card-subtitle">эксклюзивная линейка одежды от ведущих дизайнеров / exclusive clothing line from leading designers</p>
             </div>
           </div>
         </div>
@@ -778,7 +832,7 @@
           <a href="#">youtube</a>
           <a href="#">telegram</a>
         </div>
-        <p class="copyright">© 2025 starstoke label. все права защищены.</p>
+        <p class="copyright">© 2025 starstoke label. все права защищены. / all rights reserved.</p>
       </footer>
     </div>
   </div>
@@ -788,8 +842,8 @@
   <script>
     VANTA.NET({
       el: "#vanta-bg",
-      mouseControls: true,
-      touchControls: true,
+      mouseControls: false,
+      touchControls: false,
       gyroControls: false,
       minHeight: 200.00,
       minWidth: 200.00,
