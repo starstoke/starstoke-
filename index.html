@@ -244,15 +244,15 @@
 
     .news-banner-item img, .tv-item img {
       max-width: 90%;
-      max-height: 50%; /* Adjusted for TV section to balance GIF and text */
-      object-fit: cover; /* Use 'contain' if GIF has specific aspect ratio */
+      max-height: 50%;
+      object-fit: cover;
       margin-bottom: 12px;
       border-radius: 20px;
       loading: lazy;
     }
 
     .news-banner-item .card-title, .tv-item .card-title {
-      font-size: clamp(2.2rem, 4.5vw, 2.8rem); /* Larger for TV section */
+      font-size: clamp(2.2rem, 4.5vw, 2.8rem);
       font-weight: 700;
       font-family: 'Inter', sans-serif;
       margin-bottom: 10px;
@@ -263,7 +263,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-shadow: 0 0 10px rgba(255, 248, 225, 0.5); /* Subtle glow */
+      text-shadow: 0 0 10px rgba(255, 248, 225, 0.5);
     }
 
     .news-banner-item .card-subtitle, .tv-item .card-subtitle {
@@ -487,6 +487,7 @@
       overflow: hidden;
       border-radius: 20px;
       margin: 0 8px;
+      cursor: default; /* Disable cursor pointer */
     }
 
     .artist-card img {
@@ -790,7 +791,7 @@
       }
 
       .news-banner-item .card-title, .tv-item .card-title {
-        font-size: clamp(1.8rem, 3.8vw, 2.2rem); /* Adjusted for mobile */
+        font-size: clamp(1.8rem, 3.8vw, 2.2rem);
       }
 
       .news-banner-item .card-subtitle, .tv-item .card-subtitle {
@@ -798,7 +799,7 @@
       }
 
       .news-banner-item img, .tv-item img {
-        max-height: 45%; /* Adjusted for mobile */
+        max-height: 45%;
       }
 
       .news-image {
@@ -974,13 +975,46 @@
         <h2 class="section-title">Artists</h2>
         <div class="artist-carousel">
           <div class="artist-grid">
-            <div class="card artist-card" onclick="window.open('artists/keisha-pigagor.html', '_blank');">
-              <img src="IMG_7476.jpeg" alt="Keisha Pigagor" loading="lazy">
+            <div class="card artist-card">
+              <img src="https://via.placeholder.com/600x400?text=Slut+Online" alt="Slut Online" loading="lazy">
               <div class="artist-info">
-                <div class="artist-genre">Electronic / House</div>
-                <h3 class="card-title">Keisha Pigagor</h3>
+                <h3 class="card-title">Slut Online</h3>
               </div>
             </div>
+            <div class="card artist-card">
+              <img src="https://via.placeholder.com/600x400?text=lindtayl0r" alt="lindtayl0r" loading="lazy">
+              <div class="artist-info">
+                <h3 class="card-title">lindtayl0r</h3>
+              </div>
+            </div>
+            <div class="card artist-card">
+              <img src="https://via.placeholder.com/600x400?text=XSDC" alt="XSDC" loading="lazy">
+              <div class="artist-info">
+                <h3 class="card-title">XSDC</h3>
+              </div>
+            </div>
+            <div class="card artist-card">
+              <img src="https://via.placeholder.com/600x400?text=James+Junt" alt="James Junt" loading="lazy">
+              <div class="artist-info">
+                <h3 class="card-title">James Junt</h3>
+              </div>
+            </div>
+            <div class="card artist-card">
+              <img src="https://via.placeholder.com/600x400?text=Vacuum" alt="Vacuum" loading="lazy">
+              <div class="artist-info">
+                <h3 class="card-title">Vacuum</h3>
+              </div>
+            </div>
+            <div class="card artist-card">
+              <img src="https://via.placeholder.com/600x400?text=NExXxUS" alt="NExXxUS" loading="lazy">
+              <div class="artist-info">
+                <h3 class="card-title">NExXxUS</h3>
+              </div>
+            </div>
+          </div>
+          <div class="artist-controls">
+            <div class="artist-control prev"><svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L2 10L10 18" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div class="artist-control next"><svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L10 10L2 18" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
           </div>
         </div>
       </section>
@@ -989,13 +1023,13 @@
         <h2 class="section-title">Starstoke TV</h2>
         <div class="tv-showcase">
           <div class="tv-item active" onclick="window.open('https://starstoke.github.io/Broadcast/', '_blank');">
-            <img src="starstoke-tv-preview.gif" alt="Starstoke TV Preview" loading="lazy">
+            <img src="-8590732687137490012-ezgif.com-video-to-gif-converter.gif" alt="Starstoke TV Preview" loading="lazy">
             <h3 class="card-title">StarstokeTV Watch Live!</h3>
             <p class="card-subtitle">Tune in!</p>
           </div>
         </div>
         <div class="grid">
-          <!-- No tv-card elements as per request -->
+          <!-- No tv-card elements as per original -->
         </div>
       </section>
 
@@ -1084,7 +1118,6 @@
           lineOpacity: isMobile ? 0.15 : 0.25
         });
 
-        // Simplified Vanta animation for better performance
         if (!isMobile) {
           function animateVanta() {
             if (vantaEffect && vantaEffect.three && vantaEffect.three.camera) {
@@ -1148,7 +1181,7 @@
           const targetId = this.getAttribute('href');
           const target = document.querySelector(targetId);
           if (target) {
-            const offset = 70; // Adjusted for fixed nav height
+            const offset = 70;
             const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
             window.scrollTo({
               top: elementPosition - offset,
@@ -1206,6 +1239,39 @@
         showMerchItem(nextMerchIndex);
       }, 6000);
 
+      // Artist carousel
+      const artistItems = document.querySelectorAll('.artist-card');
+      const artistControls = document.querySelectorAll('.artist-control');
+      let currentArtistIndex = 0;
+
+      function showArtistItem(index) {
+        const totalItems = artistItems.length;
+        index = (index + totalItems) % totalItems; // Ensure index stays in bounds
+        artistItems.forEach((item, i) => {
+          item.classList.toggle('active', i === index);
+        });
+        const translateX = -index * 100;
+        document.querySelector('.artist-grid').style.transform = `translateX(${translateX}%)`;
+        currentArtistIndex = index;
+      }
+
+      artistControls.forEach(control => {
+        control.addEventListener('click', () => {
+          if (control.classList.contains('prev')) {
+            showArtistItem(currentArtistIndex - 1);
+          } else if (control.classList.contains('next')) {
+            showArtistItem(currentArtistIndex + 1);
+          }
+        });
+      });
+
+      setInterval(() => {
+        showArtistItem(currentArtistIndex + 1);
+      }, 6000);
+
+      // Initialize first artist as active
+      showArtistItem(0);
+
       // Currency selector
       const currencyButtons = document.querySelectorAll('.currency-btn');
       const prices = document.querySelectorAll('.card-price .currency');
@@ -1245,4 +1311,3 @@
     });
   </script>
 </body>
-</html>
