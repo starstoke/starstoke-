@@ -26,7 +26,7 @@
       background: #000;
       position: relative;
       font-weight: 100;
-      text-transform: none; /* Removed lowercase text-transform */
+      text-transform: none;
     }
 
     #vanta-bg {
@@ -469,7 +469,7 @@
       font-family: inherit;
       transition: all 0.3s ease;
       font-weight: 100;
-      text-transform: none; /* Removed lowercase text-transform */
+      text-transform: none;
     }
 
     input:focus, textarea:focus, select:focus {
@@ -481,7 +481,7 @@
     input::placeholder, textarea::placeholder {
       color: #666;
       font-weight: 100;
-      text-transform: none; /* Removed lowercase text-transform */
+      text-transform: none;
     }
 
     textarea {
@@ -834,28 +834,22 @@
       <section class="section" id="artists">
         <h2 class="section-title">Artists</h2>
         <div class="grid">
-          <div class="news-card" onclick="window.open('artists/dj-nexus.html', '_blank');">
-            <div class="news-image"></div>
-            <div class="news-content">
-              <div class="news-date">October 5, 2025</div>
-              <h3 class="card-title">DJ Nexus Release</h3>
-              <p class="card-subtitle">Album "Digital Dreams" — 12 tracks redefining reality</p>
+          <div class="card artist-card" onclick="window.open('artists/dj-nexus.html', '_blank');">
+            <div class="artist-info">
+              <div class="artist-genre">Electronic / House</div>
+              <h3 class="card-title">DJ Nexus</h3>
             </div>
           </div>
-          <div class="news-card" onclick="window.open('artists/luna-vibes.html', '_blank');">
-            <div class="news-image"></div>
-            <div class="news-content">
-              <div class="news-date">October 1, 2025</div>
-              <h3 class="card-title">Luna Vibes Single</h3>
-              <p class="card-subtitle">Track "Moonlight" now on all platforms</p>
+          <div class="card artist-card" onclick="window.open('artists/luna-vibes.html', '_blank');">
+            <div class="artist-info">
+              <div class="artist-genre">R&B / Soul</div>
+              <h3 class="card-title">Luna Vibes</h3>
             </div>
           </div>
-          <div class="news-card" onclick="window.open('artists/cyber-flow.html', '_blank');">
-            <div class="news-image"></div>
-            <div class="news-content">
-              <div class="news-date">September 28, 2025</div>
-              <h3 class="card-title">Cyber Flow Mixtape</h3>
-              <p class="card-subtitle">New mixtape "Urban Pulse" available for streaming</p>
+          <div class="card artist-card" onclick="window.open('artists/cyber-flow.html', '_blank');">
+            <div class="artist-info">
+              <div class="artist-genre">Hip-Hop / Trap</div>
+              <h3 class="card-title">Cyber Flow</h3>
             </div>
           </div>
         </div>
@@ -895,34 +889,10 @@
         </form>
       </section>
 
-      <section class="section">
+      <section class="section" id="partners">
         <h2 class="section-title">Partners</h2>
         <div class="partners">
           <!-- Partners removed as requested -->
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Artists</h2>
-        <div class="grid">
-          <div class="card artist-card" onclick="window.open('artists/dj-nexus.html', '_blank');">
-            <div class="artist-info">
-              <div class="artist-genre">Electronic / House</div>
-              <h3 class="card-title">DJ Nexus</h3>
-            </div>
-          </div>
-          <div class="card artist-card" onclick="window.open('artists/luna-vibes.html', '_blank');">
-            <div class="artist-info">
-              <div class="artist-genre">R&B / Soul</div>
-              <h3 class="card-title">Luna Vibes</h3>
-            </div>
-          </div>
-          <div class="card artist-card" onclick="window.open('artists/cyber-flow.html', '_blank');">
-            <div class="artist-info">
-              <div class="artist-genre">Hip-Hop / Trap</div>
-              <h3 class="card-title">Cyber Flow</h3>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -994,22 +964,10 @@
           { title: 'Footwear', subtitle: 'Collaborations with top brands', price: 'From $80' }
         ],
         artists_title: 'Artists',
-        artists_items: [
-          {
-            title: 'DJ Nexus Release',
-            subtitle: 'Album "Digital Dreams" — 12 tracks redefining reality',
-            date: 'October 5, 2025'
-          },
-          {
-            title: 'Luna Vibes Single',
-            subtitle: 'Track "Moonlight" now on all platforms',
-            date: 'October 1, 2025'
-          },
-          {
-            title: 'Cyber Flow Mixtape',
-            subtitle: 'New mixtape "Urban Pulse" available for streaming',
-            date: 'September 28, 2025'
-          }
+        artists_cards: [
+          { genre: 'Electronic / House', title: 'DJ Nexus' },
+          { genre: 'R&B / Soul', title: 'Luna Vibes' },
+          { genre: 'Hip-Hop / Trap', title: 'Cyber Flow' }
         ],
         about_title: 'About',
         about_text: [
@@ -1027,12 +985,6 @@
           submit: 'Submit Application'
         },
         partners_title: 'Partners',
-        artists_section_title: 'Artists',
-        artists_cards: [
-          { genre: 'Electronic / House', title: 'DJ Nexus' },
-          { genre: 'R&B / Soul', title: 'Luna Vibes' },
-          { genre: 'Hip-Hop / Trap', title: 'Cyber Flow' }
-        ],
         footer_social: ['Instagram', 'Soundcloud', 'Youtube', 'Telegram'],
         copyright: '© 2025 Starstoke Label. All rights reserved.'
       },
@@ -1086,22 +1038,10 @@
           { title: 'Обувь', subtitle: 'Коллаборации с ведущими брендами', price: 'От $80' }
         ],
         artists_title: 'Артисты',
-        artists_items: [
-          {
-            title: 'Релиз DJ Nexus',
-            subtitle: 'Альбом "Цифровые мечты" — 12 треков, переосмысливающих реальность',
-            date: '5 октября 2025'
-          },
-          {
-            title: 'Сингл Luna Vibes',
-            subtitle: 'Трек "Лунный свет" теперь на всех платформах',
-            date: '1 октября 2025'
-          },
-          {
-            title: 'Микстейп Cyber Flow',
-            subtitle: 'Новый микстейп "Городской пульс" доступен для стриминга',
-            date: '28 сентября 2025'
-          }
+        artists_cards: [
+          { genre: 'Электроника / Хаус', title: 'DJ Nexus' },
+          { genre: 'R&B / Соул', title: 'Luna Vibes' },
+          { genre: 'Хип-хоп / Трэп', title: 'Cyber Flow' }
         ],
         about_title: 'О нас',
         about_text: [
@@ -1119,12 +1059,6 @@
           submit: 'Отправить заявку'
         },
         partners_title: 'Партнеры',
-        artists_section_title: 'Артисты',
-        artists_cards: [
-          { genre: 'Электроника / Хаус', title: 'DJ Nexus' },
-          { genre: 'R&B / Соул', title: 'Luna Vibes' },
-          { genre: 'Хип-хоп / Трэп', title: 'Cyber Flow' }
-        ],
         footer_social: ['Instagram', 'Soundcloud', 'Youtube', 'Telegram'],
         copyright: '© 2025 Starstoke Label. Все права защищены.'
       }
@@ -1206,82 +1140,127 @@
       // Language switcher
       const langButtons = document.querySelectorAll('.lang-btn');
       const updateContent = (lang) => {
-        const data = translations[lang];
+        try {
+          const data = translations[lang];
 
-        // Update navigation
-        document.querySelectorAll('.nav-links a').forEach((link, i) => {
-          link.textContent = data.nav[i];
-        });
+          // Update navigation
+          const navLinks = document.querySelectorAll('.nav-links a');
+          navLinks.forEach((link, i) => {
+            if (data.nav[i]) link.textContent = data.nav[i];
+          });
 
-        // Update header
-        document.querySelector('.tagline').textContent = data.tagline;
+          // Update header
+          const tagline = document.querySelector('.tagline');
+          if (tagline) tagline.textContent = data.tagline;
 
-        // Update news section
-        document.querySelector('#news .section-title').textContent = data.news_title;
-        document.querySelectorAll('.news-banner-item').forEach((item, i) => {
-          item.querySelector('.card-title').textContent = data.news_items[i].title;
-          item.querySelector('.card-subtitle').textContent = data.news_items[i].subtitle;
-        });
-        document.querySelectorAll('.news-card').forEach((card, i) => {
-          card.querySelector('.news-date').textContent = data.news_items[i].date;
-          card.querySelector('.card-title').textContent = data.news_items[i].title;
-          card.querySelector('.card-subtitle').textContent = data.news_items[i].subtitle;
-        });
+          // Update news section
+          const newsTitle = document.querySelector('#news .section-title');
+          if (newsTitle) newsTitle.textContent = data.news_title;
+          const newsBannerItems = document.querySelectorAll('.news-banner-item');
+          newsBannerItems.forEach((item, i) => {
+            if (data.news_items[i]) {
+              const title = item.querySelector('.card-title');
+              const subtitle = item.querySelector('.card-subtitle');
+              if (title) title.textContent = data.news_items[i].title;
+              if (subtitle) subtitle.textContent = data.news_items[i].subtitle;
+            }
+          });
+          const newsCards = document.querySelectorAll('.news-card');
+          newsCards.forEach((card, i) => {
+            if (data.news_items[i]) {
+              const date = card.querySelector('.news-date');
+              const title = card.querySelector('.card-title');
+              const subtitle = card.querySelector('.card-subtitle');
+              if (date) date.textContent = data.news_items[i].date;
+              if (title) title.textContent = data.news_items[i].title;
+              if (subtitle) subtitle.textContent = data.news_items[i].subtitle;
+            }
+          });
 
-        // Update shop section
-        document.querySelector('#shop .section-title').textContent = data.shop_title;
-        document.querySelectorAll('.merch-item').forEach((item, i) => {
-          item.querySelector('.card-title').textContent = data.shop_items[i].title;
-          item.querySelector('.card-subtitle').textContent = data.shop_items[i].subtitle;
-          item.querySelector('.card-price').textContent = data.shop_items[i].price;
-        });
-        document.querySelectorAll('#shop .grid .card').forEach((card, i) => {
-          card.querySelector('.card-title').textContent = data.shop_grid[i].title;
-          card.querySelector('.card-subtitle').textContent = data.shop_grid[i].subtitle;
-          card.querySelector('.card-price').textContent = data.shop_grid[i].price;
-        });
+          // Update shop section
+          const shopTitle = document.querySelector('#shop .section-title');
+          if (shopTitle) shopTitle.textContent = data.shop_title;
+          const merchItems = document.querySelectorAll('.merch-item');
+          merchItems.forEach((item, i) => {
+            if (data.shop_items[i]) {
+              const title = item.querySelector('.card-title');
+              const subtitle = item.querySelector('.card-subtitle');
+              const price = item.querySelector('.card-price');
+              if (title) title.textContent = data.shop_items[i].title;
+              if (subtitle) subtitle.textContent = data.shop_items[i].subtitle;
+              if (price) price.textContent = data.shop_items[i].price;
+            }
+          });
+          const shopCards = document.querySelectorAll('#shop .grid .card');
+          shopCards.forEach((card, i) => {
+            if (data.shop_grid[i]) {
+              const title = card.querySelector('.card-title');
+              const subtitle = card.querySelector('.card-subtitle');
+              const price = card.querySelector('.card-price');
+              if (title) title.textContent = data.shop_grid[i].title;
+              if (subtitle) subtitle.textContent = data.shop_grid[i].subtitle;
+              if (price) price.textContent = data.shop_grid[i].price;
+            }
+          });
 
-        // Update artists section
-        document.querySelector('#artists .section-title').textContent = data.artists_title;
-        document.querySelectorAll('#artists .news-card').forEach((card, i) => {
-          card.querySelector('.news-date').textContent = data.artists_items[i].date;
-          card.querySelector('.card-title').textContent = data.artists_items[i].title;
-          card.querySelector('.card-subtitle').textContent = data.artists_items[i].subtitle;
-        });
+          // Update artists section
+          const artistsTitle = document.querySelector('#artists .section-title');
+          if (artistsTitle) artistsTitle.textContent = data.artists_title;
+          const artistCards = document.querySelectorAll('.artist-card');
+          artistCards.forEach((card, i) => {
+            if (data.artists_cards[i]) {
+              const genre = card.querySelector('.artist-genre');
+              const title = card.querySelector('.card-title');
+              if (genre) genre.textContent = data.artists_cards[i].genre;
+              if (title) title.textContent = data.artists_cards[i].title;
+            }
+          });
 
-        // Update about section
-        document.querySelector('#about .section-title').textContent = data.about_title;
-        document.querySelectorAll('#about p').forEach((p, i) => {
-          p.textContent = data.about_text[i];
-        });
+          // Update about section
+          const aboutTitle = document.querySelector('#about .section-title');
+          if (aboutTitle) aboutTitle.textContent = data.about_title;
+          const aboutParagraphs = document.querySelectorAll('#about p');
+          aboutParagraphs.forEach((p, i) => {
+            if (data.about_text[i]) p.textContent = data.about_text[i];
+          });
 
-        // Update contact section
-        document.querySelector('#contact .section-title').textContent = data.contact_title;
-        document.querySelector('#contact-form input[name="name"]').placeholder = data.form.name;
-        document.querySelector('#contact-form input[name="email"]').placeholder = data.form.email;
-        document.querySelector('#contact-form select[name="category"]').firstElementChild.textContent = data.form.category;
-        document.querySelectorAll('#contact-form select[name="category"] option:not(:first-child)').forEach((option, i) => {
-          option.textContent = data.form.category_options[i];
-        });
-        document.querySelector('#contact-form input[name="links"]').placeholder = data.form.links;
-        document.querySelector('#contact-form textarea[name="message"]').placeholder = data.form.message;
-        document.querySelector('#contact-form button').textContent = data.form.submit;
+          // Update contact section
+          const contactTitle = document.querySelector('#contact .section-title');
+          if (contactTitle) contactTitle.textContent = data.contact_title;
+          const form = document.querySelector('#contact-form');
+          if (form) {
+            const nameInput = form.querySelector('input[name="name"]');
+            const emailInput = form.querySelector('input[name="email"]');
+            const categorySelect = form.querySelector('select[name="category"]');
+            const linksInput = form.querySelector('input[name="links"]');
+            const messageTextarea = form.querySelector('textarea[name="message"]');
+            const submitButton = form.querySelector('button');
+            if (nameInput) nameInput.placeholder = data.form.name;
+            if (emailInput) emailInput.placeholder = data.form.email;
+            if (categorySelect) categorySelect.firstElementChild.textContent = data.form.category;
+            const categoryOptions = categorySelect.querySelectorAll('option:not(:first-child)');
+            categoryOptions.forEach((option, i) => {
+              if (data.form.category_options[i]) option.textContent = data.form.category_options[i];
+            });
+            if (linksInput) linksInput.placeholder = data.form.links;
+            if (messageTextarea) messageTextarea.placeholder = data.form.message;
+            if (submitButton) submitButton.textContent = data.form.submit;
+          }
 
-        // Update partners section
-        document.querySelector('.section .section-title').textContent = data.partners_title;
+          // Update partners section
+          const partnersTitle = document.querySelector('#partners .section-title');
+          if (partnersTitle) partnersTitle.textContent = data.partners_title;
 
-        // Update artists cards section
-        document.querySelectorAll('.section')[6].querySelector('.section-title').textContent = data.artists_section_title;
-        document.querySelectorAll('.artist-card').forEach((card, i) => {
-          card.querySelector('.artist-genre').textContent = data.artists_cards[i].genre;
-          card.querySelector('.card-title').textContent = data.artists_cards[i].title;
-        });
-
-        // Update footer
-        document.querySelectorAll('.social-links a').forEach((link, i) => {
-          link.textContent = data.footer_social[i];
-        });
-        document.querySelector('.copyright').textContent = data.copyright;
+          // Update footer
+          const socialLinks = document.querySelectorAll('.social-links a');
+          socialLinks.forEach((link, i) => {
+            if (data.footer_social[i]) link.textContent = data.footer_social[i];
+          });
+          const copyright = document.querySelector('.copyright');
+          if (copyright) copyright.textContent = data.copyright;
+        } catch (error) {
+          console.error('Error updating content:', error);
+        }
       };
 
       langButtons.forEach(button => {
@@ -1373,24 +1352,27 @@
       }, 5000);
 
       // Contact form submission
-      document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const form = event.target;
-        fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        }).then(response => {
-          if (response.ok) {
-            alert('Message sent successfully!');
-            form.reset();
-          } else {
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+          event.preventDefault();
+          const form = event.target;
+          fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          }).then(response => {
+            if (response.ok) {
+              alert('Message sent successfully!');
+              form.reset();
+            } else {
+              alert('Error sending message. Please try again.');
+            }
+          }).catch(error => {
             alert('Error sending message. Please try again.');
-          }
-        }).catch(error => {
-          alert('Error sending message. Please try again.');
+          });
         });
-      });
+      }
     });
   </script>
 </body>
