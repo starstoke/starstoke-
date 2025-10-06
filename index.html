@@ -6,7 +6,7 @@
   <title>Starstoke Label</title>
   <meta name="description" content="Starstoke Label – Independent Music Label created for artists.">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
 
     * {
       margin: 0;
@@ -191,8 +191,8 @@
     }
 
     .section-title {
-      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
-      font-weight: 100;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
       margin-bottom: 40px;
       text-align: center;
       letter-spacing: 0.2em;
@@ -200,6 +200,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      text-transform: uppercase;
     }
 
     .section-subtitle {
@@ -212,7 +213,7 @@
       margin-bottom: 40px;
     }
 
-    .news-banner, .tv-showcase {
+    .news-banner, .tv-showcase, .gallery-showcase {
       position: relative;
       height: 350px;
       margin-bottom: 25px;
@@ -223,7 +224,7 @@
       backdrop-filter: blur(12px);
     }
 
-    .news-banner-item, .tv-item {
+    .news-banner-item, .tv-item, .gallery-item {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -237,11 +238,11 @@
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
     }
 
-    .news-banner-item.active, .tv-item.active {
+    .news-banner-item.active, .tv-item.active, .gallery-item.active {
       opacity: 1;
     }
 
-    .news-banner-item img, .tv-item img {
+    .news-banner-item img, .tv-item img, .gallery-item img {
       max-width: 90%;
       max-height: 45%;
       object-fit: cover;
@@ -250,15 +251,16 @@
       loading: lazy;
     }
 
-    .news-banner-item .card-title, .tv-item .card-title {
-      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-      font-weight: 100;
+    .news-banner-item .card-title, .tv-item .card-title, .gallery-item .card-title {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 700;
       margin-bottom: 10px;
       text-align: center;
       letter-spacing: 0.15em;
+      text-transform: uppercase;
     }
 
-    .news-banner-item .card-subtitle, .tv-item .card-subtitle {
+    .news-banner-item .card-subtitle, .tv-item .card-subtitle, .gallery-item .card-subtitle {
       font-size: clamp(0.75rem, 1.4vw, 0.85rem);
       max-width: 90%;
       text-align: center;
@@ -267,14 +269,14 @@
       letter-spacing: 0.1em;
     }
 
-    .news-banner-controls, .tv-controls {
+    .news-banner-controls, .tv-controls, .gallery-controls {
       display: flex;
       justify-content: center;
       gap: 8px;
       margin-top: 12px;
     }
 
-    .news-banner-control, .tv-control {
+    .news-banner-control, .tv-control, .gallery-control {
       width: 8px;
       height: 8px;
       border-radius: 50%;
@@ -283,7 +285,7 @@
       transition: background 0.4s cubic-bezier(0.33, 0, 0.66, 1);
     }
 
-    .news-banner-control.active, .tv-control.active {
+    .news-banner-control.active, .tv-control.active, .gallery-control.active {
       background: #FFF8E1;
     }
 
@@ -435,10 +437,11 @@
     }
 
     .card-title {
-      font-size: 1.1rem;
-      font-weight: 100;
+      font-size: clamp(1.4rem, 2vw, 1.6rem);
+      font-weight: 700;
       margin-bottom: 8px;
       letter-spacing: 0.15em;
+      text-transform: uppercase;
     }
 
     .card-subtitle {
@@ -761,7 +764,7 @@
       }
 
       .section-title {
-        font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+        font-size: clamp(1.6rem, 3vw, 2rem);
         margin-bottom: 25px;
       }
 
@@ -776,15 +779,15 @@
         gap: 15px;
       }
 
-      .news-banner, .merch-showcase, .tv-showcase {
+      .news-banner, .merch-showcase, .tv-showcase, .gallery-showcase {
         height: 280px;
       }
 
-      .news-banner-item .card-title, .tv-item .card-title {
-        font-size: clamp(1.4rem, 3vw, 1.8rem);
+      .news-banner-item .card-title, .tv-item .card-title, .gallery-item .card-title {
+        font-size: clamp(1.6rem, 3.5vw, 2rem);
       }
 
-      .news-banner-item .card-subtitle, .tv-item .card-subtitle {
+      .news-banner-item .card-subtitle, .tv-item .card-subtitle, .gallery-item .card-subtitle {
         font-size: clamp(0.65rem, 1.4vw, 0.75rem);
       }
 
@@ -873,22 +876,22 @@
       </header>
 
       <section class="section" id="news">
-        <h2 class="section-title">News Block</h2>
+        <h2 class="section-title">News Blog</h2>
         <div class="news-banner">
-          <div class="news-banner-item active" onclick="window.open('news/release-dj-nexus.html', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Example+of+News" alt="DJ Nexus Release" loading="lazy">
-            <h3 class="card-title">DJ Nexus Release</h3>
-            <p class="card-subtitle">Album "Digital Dreams" — 12 tracks redefining reality</p>
+          <div class="news-banner-item active" onclick="window.open('news/updates-soon-1.html', '_blank');">
+            <img src="https://via.placeholder.com/600x300?text=Updates+Soon" alt="Updates Soon 1" loading="lazy">
+            <h3 class="card-title">Updates Soon ! 1</h3>
+            <p class="card-subtitle">Stay tuned for more information…</p>
           </div>
-          <div class="news-banner-item" onclick="window.open('news/festival.html', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Example+of+News" alt="Starstoke at Festival" loading="lazy">
-            <h3 class="card-title">Starstoke at Festival</h3>
-            <p class="card-subtitle">Label artists to perform at a major music event</p>
+          <div class="news-banner-item" onclick="window.open('news/updates-soon-2.html', '_blank');">
+            <img src="https://via.placeholder.com/600x300?text=Updates+Soon" alt="Updates Soon 2" loading="lazy">
+            <h3 class="card-title">Updates Soon ! 2</h3>
+            <p class="card-subtitle">Stay tuned for more information…</p>
           </div>
-          <div class="news-banner-item" onclick="window.open('news/new-collection.html', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Example+of+News" alt="New Collection" loading="lazy">
-            <h3 class="card-title">New Collection</h3>
-            <p class="card-subtitle">Exclusive clothing line from top designers</p>
+          <div class="news-banner-item" onclick="window.open('news/updates-soon-3.html', '_blank');">
+            <img src="https://via.placeholder.com/600x300?text=Updates+Soon" alt="Updates Soon 3" loading="lazy">
+            <h3 class="card-title">Updates Soon ! 3</h3>
+            <p class="card-subtitle">Stay tuned for more information…</p>
           </div>
         </div>
         <div class="news-banner-controls">
@@ -897,28 +900,28 @@
           <div class="news-banner-control"></div>
         </div>
         <div class="grid">
-          <div class="news-card" onclick="window.open('news/release-dj-nexus.html', '_blank');">
-            <div class="news-image" style="background-image: url('https://via.placeholder.com/600x200?text=Example+of+News');"></div>
+          <div class="news-card" onclick="window.open('news/updates-soon-1.html', '_blank');">
+            <div class="news-image" style="background-image: url('https://via.placeholder.com/600x200?text=Updates+Soon');"></div>
             <div class="news-content">
               <div class="news-date">October 5, 2025</div>
-              <h3 class="card-title">DJ Nexus Release</h3>
-              <p class="card-subtitle">Album "Digital Dreams" — 12 tracks redefining reality</p>
+              <h3 class="card-title">Updates Soon ! 1</h3>
+              <p class="card-subtitle">Stay tuned for more information…</p>
             </div>
           </div>
-          <div class="news-card" onclick="window.open('news/festival.html', '_blank');">
-            <div class="news-image" style="background-image: url('https://via.placeholder.com/600x200?text=Example+of+News');"></div>
+          <div class="news-card" onclick="window.open('news/updates-soon-2.html', '_blank');">
+            <div class="news-image" style="background-image: url('https://via.placeholder.com/600x200?text=Updates+Soon');"></div>
             <div class="news-content">
               <div class="news-date">October 1, 2025</div>
-              <h3 class="card-title">Starstoke at Festival</h3>
-              <p class="card-subtitle">Label artists to perform at a major music event</p>
+              <h3 class="card-title">Updates Soon ! 2</h3>
+              <p class="card-subtitle">Stay tuned for more information…</p>
             </div>
           </div>
-          <div class="news-card" onclick="window.open('news/new-collection.html', '_blank');">
-            <div class="news-image" style="background-image: url('https://via.placeholder.com/600x200?text=Example+of+News');"></div>
+          <div class="news-card" onclick="window.open('news/updates-soon-3.html', '_blank');">
+            <div class="news-image" style="background-image: url('https://via.placeholder.com/600x200?text=Updates+Soon');"></div>
             <div class="news-content">
               <div class="news-date">September 28, 2025</div>
-              <h3 class="card-title">New Collection</h3>
-              <p class="card-subtitle">Exclusive clothing line from top designers</p>
+              <h3 class="card-title">Updates Soon ! 3</h3>
+              <p class="card-subtitle">Stay tuned for more information…</p>
             </div>
           </div>
         </div>
@@ -1050,42 +1053,46 @@
       <section class="section" id="tv">
         <h2 class="section-title">Starstoke TV</h2>
         <div class="tv-showcase">
-          <div class="tv-item active" onclick="window.open('tv/video1.html', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Starstoke+TV+Video" alt="Starstoke TV Video 1" loading="lazy">
-            <h3 class="card-title">Live Performance</h3>
-            <p class="card-subtitle">Exclusive live session by Starstoke artists</p>
-          </div>
-          <div class="tv-item" onclick="window.open('tv/video2.html', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Starstoke+TV+Video" alt="Starstoke TV Video 2" loading="lazy">
-            <h3 class="card-title">Behind the Scenes</h3>
-            <p class="card-subtitle">A look at the making of our latest album</p>
-          </div>
-          <div class="tv-item" onclick="window.open('tv/video3.html', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Starstoke+TV+Video" alt="Starstoke TV Video 3" loading="lazy">
-            <h3 class="card-title">Artist Interview</h3>
-            <p class="card-subtitle">In-depth talk with our top artists</p>
+          <div class="tv-item active" onclick="window.open('tv/live.html', '_blank');">
+            <img src="https://via.placeholder.com/600x300?text=Starstoke+TV+Live" alt="Starstoke TV Live" loading="lazy">
+            <h3 class="card-title">Starstoke TV is Live…</h3>
+            <p class="card-subtitle">Tune in!</p>
           </div>
         </div>
-        <div class="tv-controls">
-          <div class="tv-control active"></div>
-          <div class="tv-control"></div>
-          <div class="tv-control"></div>
+        <div class="gallery-showcase">
+          <div class="gallery-item active" onclick="window.open('gallery/photo1.html', '_blank');">
+            <img src="https://via.placeholder.com/600x300?text=Star+Gallery+1" alt="Star Gallery 1" loading="lazy">
+            <h3 class="card-title">Star Gallery</h3>
+            <p class="card-subtitle">Photo 1</p>
+          </div>
+          <div class="gallery-item" onclick="window.open('gallery/photo2.html', '_blank');">
+            <img src="https://via.placeholder.com/600x300?text=Star+Gallery+2" alt="Star Gallery 2" loading="lazy">
+            <h3 class="card-title">Star Gallery</h3>
+            <p class="card-subtitle">Photo 2</p>
+          </div>
+          <div class="gallery-item" onclick="window.open('gallery/photo3.html', '_blank');">
+            <img src="https://via.placeholder.com/600x300?text=Star+Gallery+3" alt="Star Gallery 3" loading="lazy">
+            <h3 class="card-title">Star Gallery</h3>
+            <p class="card-subtitle">Photo 3</p>
+          </div>
+        </div>
+        <div class="gallery-controls">
+          <div class="gallery-control active"></div>
+          <div class="gallery-control"></div>
+          <div class="gallery-control"></div>
         </div>
         <div class="grid">
           <div class="tv-card" onclick="window.open('tv/video1.html', '_blank');">
             <img src="https://via.placeholder.com/300x300?text=Starstoke+TV+Video" alt="Live Performance" loading="lazy">
             <h3 class="card-title">Live Performance</h3>
-            <p class="card-subtitle">Exclusive live session by Starstoke artists</p>
           </div>
           <div class="tv-card" onclick="window.open('tv/video2.html', '_blank');">
             <img src="https://via.placeholder.com/300x300?text=Starstoke+TV+Video" alt="Behind the Scenes" loading="lazy">
             <h3 class="card-title">Behind the Scenes</h3>
-            <p class="card-subtitle">A look at the making of our latest album</p>
           </div>
           <div class="tv-card" onclick="window.open('tv/video3.html', '_blank');">
             <img src="https://via.placeholder.com/300x300?text=Starstoke+TV+Video" alt="Artist Interview" loading="lazy">
             <h3 class="card-title">Artist Interview</h3>
-            <p class="card-subtitle">In-depth talk with our top artists</p>
           </div>
         </div>
       </section>
@@ -1267,28 +1274,28 @@
         showNewsBannerItem(nextNewsIndex);
       }, 6000);
 
-      // TV showcase carousel
-      const tvItems = document.querySelectorAll('.tv-item');
-      const tvControls = document.querySelectorAll('.tv-control');
-      let currentTvIndex = 0;
+      // Gallery carousel
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const galleryControls = document.querySelectorAll('.gallery-control');
+      let currentGalleryIndex = 0;
 
-      function showTvItem(index) {
-        tvItems.forEach((item, i) => {
+      function showGalleryItem(index) {
+        galleryItems.forEach((item, i) => {
           item.classList.toggle('active', i === index);
         });
-        tvControls.forEach((control, i) => {
+        galleryControls.forEach((control, i) => {
           control.classList.toggle('active', i === index);
         });
-        currentTvIndex = index;
+        currentGalleryIndex = index;
       }
 
-      tvControls.forEach((control, index) => {
-        control.addEventListener('click', () => showTvItem(index));
+      galleryControls.forEach((control, index) => {
+        control.addEventListener('click', () => showGalleryItem(index));
       });
 
       setInterval(() => {
-        const nextTvIndex = (currentTvIndex + 1) % tvItems.length;
-        showTvItem(nextTvIndex);
+        const nextGalleryIndex = (currentGalleryIndex + 1) % galleryItems.length;
+        showGalleryItem(nextGalleryIndex);
       }, 6000);
 
       // Merch carousel
