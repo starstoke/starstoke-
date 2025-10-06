@@ -213,7 +213,7 @@
       margin-bottom: 40px;
     }
 
-    .news-banner, .tv-showcase, .gallery-showcase {
+    .news-banner, .tv-showcase {
       position: relative;
       height: 350px;
       margin-bottom: 25px;
@@ -224,7 +224,7 @@
       backdrop-filter: blur(12px);
     }
 
-    .news-banner-item, .tv-item, .gallery-item {
+    .news-banner-item, .tv-item {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -238,11 +238,11 @@
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
     }
 
-    .news-banner-item.active, .tv-item.active, .gallery-item.active {
+    .news-banner-item.active, .tv-item.active {
       opacity: 1;
     }
 
-    .news-banner-item img, .tv-item img, .gallery-item img {
+    .news-banner-item img, .tv-item img {
       max-width: 90%;
       max-height: 45%;
       object-fit: cover;
@@ -251,7 +251,7 @@
       loading: lazy;
     }
 
-    .news-banner-item .card-title, .tv-item .card-title, .gallery-item .card-title {
+    .news-banner-item .card-title, .tv-item .card-title {
       font-size: clamp(2rem, 4vw, 2.5rem);
       font-weight: 700;
       margin-bottom: 10px;
@@ -260,7 +260,7 @@
       text-transform: uppercase;
     }
 
-    .news-banner-item .card-subtitle, .tv-item .card-subtitle, .gallery-item .card-subtitle {
+    .news-banner-item .card-subtitle, .tv-item .card-subtitle {
       font-size: clamp(0.75rem, 1.4vw, 0.85rem);
       max-width: 90%;
       text-align: center;
@@ -269,14 +269,14 @@
       letter-spacing: 0.1em;
     }
 
-    .news-banner-controls, .tv-controls, .gallery-controls {
+    .news-banner-controls, .tv-controls {
       display: flex;
       justify-content: center;
       gap: 8px;
       margin-top: 12px;
     }
 
-    .news-banner-control, .tv-control, .gallery-control {
+    .news-banner-control, .tv-control {
       width: 8px;
       height: 8px;
       border-radius: 50%;
@@ -285,7 +285,7 @@
       transition: background 0.4s cubic-bezier(0.33, 0, 0.66, 1);
     }
 
-    .news-banner-control.active, .tv-control.active, .gallery-control.active {
+    .news-banner-control.active, .tv-control.active {
       background: #FFF8E1;
     }
 
@@ -473,7 +473,7 @@
     }
 
     .artist-card {
-      flex: 0 0 33.33%;
+      flex: 0 0 100%;
       height: 320px;
       padding: 0;
       position: relative;
@@ -779,15 +779,15 @@
         gap: 15px;
       }
 
-      .news-banner, .merch-showcase, .tv-showcase, .gallery-showcase {
+      .news-banner, .merch-showcase, .tv-showcase {
         height: 280px;
       }
 
-      .news-banner-item .card-title, .tv-item .card-title, .gallery-item .card-title {
+      .news-banner-item .card-title, .tv-item .card-title {
         font-size: clamp(1.6rem, 3.5vw, 2rem);
       }
 
-      .news-banner-item .card-subtitle, .tv-item .card-subtitle, .gallery-item .card-subtitle {
+      .news-banner-item .card-subtitle, .tv-item .card-subtitle {
         font-size: clamp(0.65rem, 1.4vw, 0.75rem);
       }
 
@@ -936,41 +936,25 @@
         </div>
         <div class="merch-showcase">
           <div class="merch-item active" data-category="clothing" onclick="window.open('https://starstoke.github.io/Shop/', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Merch+Item+1" alt="Merch Item 1" loading="lazy">
+            <img src="https://via.placeholder.com/300x300?text=Starstoke+T-Shirt" alt="Starstoke T-Shirt" loading="lazy">
           </div>
           <div class="merch-item" data-category="accessories" onclick="window.open('https://starstoke.github.io/Shop/', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Merch+Item+2" alt="Merch Item 2" loading="lazy">
+            <img src="https://via.placeholder.com/300x300?text=Limited+Cap" alt="Limited Cap" loading="lazy">
           </div>
           <div class="merch-item" data-category="footwear" onclick="window.open('https://starstoke.github.io/Shop/', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Merch+Item+3" alt="Merch Item 3" loading="lazy">
-          </div>
-          <div class="merch-item" data-category="accessories" onclick="window.open('https://starstoke.github.io/Shop/', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Merch+Item+4" alt="Merch Item 4" loading="lazy">
+            <img src="https://via.placeholder.com/300x300?text=Sneakers+Collab" alt="Sneakers Collab" loading="lazy">
           </div>
         </div>
         <div class="merch-controls">
           <div class="merch-control active"></div>
           <div class="merch-control"></div>
           <div class="merch-control"></div>
-          <div class="merch-control"></div>
         </div>
         <div class="grid">
           <div class="card" data-category="clothing" onclick="window.open('https://starstoke.github.io/Shop/', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Clothes" loading="lazy">
+            <img src="https://via.placeholder.com/300x300?text=Starstoke+T-Shirt" alt="Clothes" loading="lazy">
             <h3 class="card-title">Clothes</h3>
             <p class="card-subtitle">Clothing items from Starstoke merch and partners!</p>
-            <div class="card-price">100 <span class="currency">THB</span></div>
-          </div>
-          <div class="card" data-category="accessories" onclick="window.open('https://starstoke.github.io/Shop/', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Accessories" loading="lazy">
-            <h3 class="card-title">Accessories</h3>
-            <p class="card-subtitle">Accessory items from Starstoke merch and partners!</p>
-            <div class="card-price">100 <span class="currency">THB</span></div>
-          </div>
-          <div class="card" data-category="footwear" onclick="window.open('https://starstoke.github.io/Shop/', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Other Items" loading="lazy">
-            <h3 class="card-title">Other Items</h3>
-            <p class="card-subtitle">Interesting items from Starstoke merch, thrift and partners!</p>
             <div class="card-price">100 <span class="currency">THB</span></div>
           </div>
         </div>
@@ -980,59 +964,12 @@
         <h2 class="section-title">Artists</h2>
         <div class="artist-carousel">
           <div class="artist-grid">
-            <div class="card artist-card" onclick="window.open('artists/dj-nexus.html', '_blank');">
-              <img src="https://via.placeholder.com/280x400?text=Artist+Jane+Doe" alt="Artist Jane Doe" loading="lazy">
+            <div class="card artist-card" onclick="window.open('artists/keisha-pigagor.html', '_blank');">
+              <img src="IMG_7476.jpeg" alt="Keisha Pigagor" loading="lazy">
               <div class="artist-info">
                 <div class="artist-genre">Electronic / House</div>
-                <h3 class="card-title">Artist Jane Doe</h3>
+                <h3 class="card-title">Keisha Pigagor</h3>
               </div>
-            </div>
-            <div class="card artist-card" onclick="window.open('artists/luna-vibes.html', '_blank');">
-              <img src="https://via.placeholder.com/280x400?text=Artist+Jane+Doe" alt="Artist Jane Doe" loading="lazy">
-              <div class="artist-info">
-                <div class="artist-genre">R&B / Soul</div>
-                <h3 class="card-title">Artist Jane Doe</h3>
-              </div>
-            </div>
-            <div class="card artist-card" onclick="window.open('artists/cyber-flow.html', '_blank');">
-              <img src="https://via.placeholder.com/280x400?text=Artist+Jane+Doe" alt="Artist Jane Doe" loading="lazy">
-              <div class="artist-info">
-                <div class="artist-genre">Hip-Hop / Trap</div>
-                <h3 class="card-title">Artist Jane Doe</h3>
-              </div>
-            </div>
-            <div class="card artist-card" onclick="window.open('artists/neo-pulse.html', '_blank');">
-              <img src="https://via.placeholder.com/280x400?text=Artist+John+Smith" alt="Artist John Smith" loading="lazy">
-              <div class="artist-info">
-                <div class="artist-genre">Techno / Ambient</div>
-                <h3 class="card-title">Artist John Smith</h3>
-              </div>
-            </div>
-            <div class="card artist-card" onclick="window.open('artists/solar-beat.html', '_blank');">
-              <img src="https://via.placeholder.com/280x400?text=Artist+Alex+Ray" alt="Artist Alex Ray" loading="lazy">
-              <div class="artist-info">
-                <div class="artist-genre">Pop / Electronic</div>
-                <h3 class="card-title">Artist Alex Ray</h3>
-              </div>
-            </div>
-            <div class="card artist-card" onclick="window.open('artists/vibe-master.html', '_blank');">
-              <img src="https://via.placeholder.com/280x400?text=Artist+Emma+Lee" alt="Artist Emma Lee" loading="lazy">
-              <div class="artist-info">
-                <div class="artist-genre">Indie / Folk</div>
-                <h3 class="card-title">Artist Emma Lee</h3>
-              </div>
-            </div>
-          </div>
-          <div class="artist-controls">
-            <div class="artist-control prev">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 2L4 8L10 14" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div class="artist-control next">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 2L12 8L6 14" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-              </svg>
             </div>
           </div>
         </div>
@@ -1046,28 +983,6 @@
             <h3 class="card-title">Starstoke TV is Live…</h3>
             <p class="card-subtitle">Tune in!</p>
           </div>
-        </div>
-        <div class="gallery-showcase">
-          <div class="gallery-item active" onclick="window.open('https://starstoke.github.io/Broadcast/', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Star+Gallery+1" alt="Star Gallery 1" loading="lazy">
-            <h3 class="card-title">Star Gallery</h3>
-            <p class="card-subtitle">Photo 1</p>
-          </div>
-          <div class="gallery-item" onclick="window.open('https://starstoke.github.io/Broadcast/', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Star+Gallery+2" alt="Star Gallery 2" loading="lazy">
-            <h3 class="card-title">Star Gallery</h3>
-            <p class="card-subtitle">Photo 2</p>
-          </div>
-          <div class="gallery-item" onclick="window.open('https://starstoke.github.io/Broadcast/', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Star+Gallery+3" alt="Star Gallery 3" loading="lazy">
-            <h3 class="card-title">Star Gallery</h3>
-            <p class="card-subtitle">Photo 3</p>
-          </div>
-        </div>
-        <div class="gallery-controls">
-          <div class="gallery-control active"></div>
-          <div class="gallery-control"></div>
-          <div class="gallery-control"></div>
         </div>
         <div class="grid">
           <!-- No tv-card elements as per request -->
@@ -1133,6 +1048,9 @@
   <script>
     // Scroll to top on page load
     window.scrollTo(0, 0);
+    window.addEventListener('load', () => {
+      window.scrollTo(0, 0);
+    });
 
     document.addEventListener('DOMContentLoaded', () => {
       // Initialize Vanta.js with mobile optimization
@@ -1254,30 +1172,6 @@
         showNewsBannerItem(nextNewsIndex);
       }, 6000);
 
-      // Gallery carousel
-      const galleryItems = document.querySelectorAll('.gallery-item');
-      const galleryControls = document.querySelectorAll('.gallery-control');
-      let currentGalleryIndex = 0;
-
-      function showGalleryItem(index) {
-        galleryItems.forEach((item, i) => {
-          item.classList.toggle('active', i === index);
-        });
-        galleryControls.forEach((control, i) => {
-          control.classList.toggle('active', i === index);
-        });
-        currentGalleryIndex = index;
-      }
-
-      galleryControls.forEach((control, index) => {
-        control.addEventListener('click', () => showGalleryItem(index));
-      });
-
-      setInterval(() => {
-        const nextGalleryIndex = (currentGalleryIndex + 1) % galleryItems.length;
-        showGalleryItem(nextGalleryIndex);
-      }, 6000);
-
       // Merch carousel
       const merchItems = document.querySelectorAll('.merch-item');
       const merchControls = document.querySelectorAll('.merch-control');
@@ -1301,44 +1195,6 @@
         const nextMerchIndex = (currentMerchIndex + 1) % merchItems.length;
         showMerchItem(nextMerchIndex);
       }, 6000);
-
-      // Artist carousel
-      const artistGrid = document.querySelector('.artist-grid');
-      const artistCards = document.querySelectorAll('.artist-card');
-      const artistControls = document.querySelectorAll('.artist-control');
-      let currentArtistIndex = 0;
-      const totalArtists = artistCards.length;
-
-      function showArtistItem(index) {
-        index = (index + totalArtists) % totalArtists;
-        const isMobile = window.innerWidth <= 768;
-        const translateValue = isMobile ? -index * 100 : -index * (100 / 3);
-        artistGrid.style.transform = `translateX(${translateValue}%)`;
-        currentArtistIndex = index;
-      }
-
-      artistControls.forEach(control => {
-        control.addEventListener('click', () => {
-          if (control.classList.contains('prev')) {
-            showArtistItem(currentArtistIndex - 1);
-          } else if (control.classList.contains('next')) {
-            showArtistItem(currentArtistIndex + 1);
-          }
-        });
-      });
-
-      setInterval(() => {
-        showArtistItem(currentArtistIndex + 1);
-      }, 6000);
-
-      // Handle window resize
-      let resizeTimeout;
-      window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-          showArtistItem(currentArtistIndex);
-        }, 100);
-      });
 
       // Currency selector
       const currencyButtons = document.querySelectorAll('.currency-btn');
@@ -1378,3 +1234,5 @@
       }
     });
   </script>
+</body>
+</html>
