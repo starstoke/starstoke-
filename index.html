@@ -244,20 +244,26 @@
 
     .news-banner-item img, .tv-item img {
       max-width: 90%;
-      max-height: 45%;
-      object-fit: cover;
+      max-height: 50%; /* Adjusted for TV section to balance GIF and text */
+      object-fit: cover; /* Use 'contain' if GIF has specific aspect ratio */
       margin-bottom: 12px;
       border-radius: 20px;
       loading: lazy;
     }
 
     .news-banner-item .card-title, .tv-item .card-title {
-      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-size: clamp(2.2rem, 4.5vw, 2.8rem); /* Larger for TV section */
       font-weight: 700;
+      font-family: 'Inter', sans-serif;
       margin-bottom: 10px;
       text-align: center;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
+      background: linear-gradient(135deg, #FFF8E1 0%, #FFE0B2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 10px rgba(255, 248, 225, 0.5); /* Subtle glow */
     }
 
     .news-banner-item .card-subtitle, .tv-item .card-subtitle {
@@ -784,11 +790,15 @@
       }
 
       .news-banner-item .card-title, .tv-item .card-title {
-        font-size: clamp(1.6rem, 3.5vw, 2rem);
+        font-size: clamp(1.8rem, 3.8vw, 2.2rem); /* Adjusted for mobile */
       }
 
       .news-banner-item .card-subtitle, .tv-item .card-subtitle {
         font-size: clamp(0.65rem, 1.4vw, 0.75rem);
+      }
+
+      .news-banner-item img, .tv-item img {
+        max-height: 45%; /* Adjusted for mobile */
       }
 
       .news-image {
@@ -979,8 +989,8 @@
         <h2 class="section-title">Starstoke TV</h2>
         <div class="tv-showcase">
           <div class="tv-item active" onclick="window.open('https://starstoke.github.io/Broadcast/', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Starstoke+TV+Live" alt="Starstoke TV Live" loading="lazy">
-            <h3 class="card-title">Starstoke TV is Live…</h3>
+            <img src="starstoke-tv-preview.gif" alt="Starstoke TV Preview" loading="lazy">
+            <h3 class="card-title">StarstokeTV Watch Live!</h3>
             <p class="card-subtitle">Tune in!</p>
           </div>
         </div>
