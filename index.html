@@ -1,56 +1,1013 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Previous head content remains unchanged -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Starstoke Label</title>
+  <meta name="description" content="Starstoke Label – Independent Music Label created for artists.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #fff;
+      line-height: 1.8;
+      overflow-x: hidden;
+      background: #000;
+      position: relative;
+      font-weight: 100;
+      letter-spacing: 0.15em;
+    }
+
+    #vanta-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .grain-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      opacity: 0.03;
+      z-index: 1;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
+      padding: 80px 15px 15px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      max-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 100;
+      letter-spacing: 0.15em;
+      transition: color 0.4s cubic-bezier(0.33, 0, 0.66, 1);
+      position: relative;
+      padding: 8px 10px;
+      white-space: nowrap;
+    }
+
+    .nav-links a:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .nav-links a:hover {
+      color: #FFF8E1;
+      text-shadow: 0 0 10px rgba(255, 248, 225, 0.5);
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 60px;
+      position: relative;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 30px;
+      backdrop-filter: blur(12px);
+      margin-bottom: 50px;
+    }
+
+    .logo {
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 100;
+      letter-spacing: 0.2em;
+      color: #fff;
+      margin-bottom: 20px;
+      animation: fadeInUp 1.2s cubic-bezier(0.33, 0, 0.66, 1);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .logo .star {
+      display: inline-block;
+      color: #FFF8E1;
+      animation: sparkle 2.5s ease-in-out infinite;
+      text-shadow: 0 0 15px rgba(255, 248, 225, 0.4),
+                   0 0 30px rgba(255, 248, 225, 0.2);
+    }
+
+    @keyframes sparkle {
+      0%, 100% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+      50% { 
+        transform: scale(1.1) rotate(180deg);
+        opacity: 0.9;
+      }
+    }
+
+    .tagline {
+      font-size: clamp(0.85rem, 1.8vw, 1rem);
+      color: #ccc;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 100;
+      letter-spacing: 0.15em;
+      animation: fadeInUp 1.2s cubic-bezier(0.33, 0, 0.66, 1) 0.3s backwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section {
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s cubic-bezier(0.33, 0, 0.66, 1), transform 0.8s cubic-bezier(0.33, 0, 0.66, 1);
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 30px;
+      padding: 30px;
+      backdrop-filter: blur(12px);
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      font-weight: 100;
+      margin-bottom: 40px;
+      text-align: center;
+      letter-spacing: 0.2em;
+      background: linear-gradient(135deg, #FFF8E1 0%, #FFE0B2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      font-size: 0.85rem;
+      color: #ccc;
+      text-align: center;
+      font-weight: 100;
+      letter-spacing: 0.15em;
+      margin-top: -30px;
+      margin-bottom: 40px;
+    }
+
+    .news-banner, .tv-showcase {
+      position: relative;
+      height: 350px;
+      margin-bottom: 25px;
+      overflow: hidden;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+    }
+
+    .news-banner-item, .tv-item {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s cubic-bezier(0.33, 0, 0.66, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      cursor: pointer;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+    }
+
+    .news-banner-item.active, .tv-item.active {
+      opacity: 1;
+    }
+
+    .news-banner-item img, .tv-item img {
+      max-width: 90%;
+      max-height: 45%;
+      object-fit: cover;
+      margin-bottom: 12px;
+      border-radius: 20px;
+      loading: lazy;
+    }
+
+    .news-banner-item .card-title, .tv-item .card-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 100;
+      margin-bottom: 10px;
+      text-align: center;
+      letter-spacing: 0.15em;
+    }
+
+    .news-banner-item .card-subtitle, .tv-item .card-subtitle {
+      font-size: clamp(0.75rem, 1.4vw, 0.85rem);
+      max-width: 90%;
+      text-align: center;
+      font-weight: 100;
+      color: #ccc;
+      letter-spacing: 0.1em;
+    }
+
+    .news-banner-controls, .tv-controls {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .news-banner-control, .tv-control {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: background 0.4s cubic-bezier(0.33, 0, 0.66, 1);
+    }
+
+    .news-banner-control.active, .tv-control.active {
+      background: #FFF8E1;
+    }
+
+    .merch-showcase {
+      position: relative;
+      height: 320px;
+      margin-bottom: 25px;
+      overflow: hidden;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+    }
+
+    .merch-item {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.6s cubic-bezier(0.33, 0, 0.66, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .merch-item.active {
+      opacity: 1;
+    }
+
+    .merch-item img {
+      max-width: 90%;
+      max-height: 55%;
+      object-fit: contain;
+      margin-bottom: 12px;
+      border-radius: 20px;
+      loading: lazy;
+    }
+
+    .merch-controls {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .merch-control {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: background 0.4s cubic-bezier(0.33, 0, 0.66, 1);
+    }
+
+    .merch-control.active {
+      background: #FFF8E1;
+    }
+
+    .currency-selector {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .currency-btn {
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      color: #fff;
+      font-weight: 100;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
+      letter-spacing: 0.15em;
+      min-width: 50px;
+      text-align: center;
+    }
+
+    .currency-btn.active {
+      background: linear-gradient(135deg, #FFF8E1, #FFE0B2);
+      color: #000;
+    }
+
+    .currency-btn:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 248, 225, 0.3);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .card, .news-card, .check-this-out-card, .artist-card, .tv-card {
+      cursor: pointer;
+      transition: transform 0.4s cubic-bezier(0.33, 0, 0.66, 1);
+    }
+
+    .card:hover, .news-card:hover, .check-this-out-card:hover, .artist-card:hover, .tv-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px rgba(255, 248, 225, 0.2);
+    }
+
+    .card, .tv-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 30px;
+      padding: 30px 15px;
+      backdrop-filter: blur(12px);
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .card::before, .tv-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 248, 225, 0.2), transparent);
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.33, 0, 0.66, 1);
+    }
+
+    .card:hover, .tv-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 248, 225, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .card:hover::before, .tv-card:hover::before {
+      opacity: 1;
+    }
+
+    .card img, .tv-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      loading: lazy;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 100;
+      margin-bottom: 8px;
+      letter-spacing: 0.15em;
+    }
+
+    .card-subtitle {
+      color: #ccc;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+      font-weight: 100;
+      letter-spacing: 0.1em;
+    }
+
+    .card-price {
+      font-size: 1.3rem;
+      font-weight: 100;
+      background: linear-gradient(135deg, #FFF8E1, #FFE0B2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+    }
+
+    .artist-carousel {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .artist-grid {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.33, 0, 0.66, 1);
+    }
+
+    .artist-card {
+      flex: 0 0 33.33%;
+      height: 320px;
+      padding: 0;
+      position: relative;
+      background: linear-gradient(135deg, rgba(50, 50, 50, 0.2), rgba(20, 20, 20, 0.4));
+      overflow: hidden;
+      border-radius: 20px;
+      margin: 0 8px;
+    }
+
+    .artist-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      loading: lazy;
+    }
+
+    .artist-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+    }
+
+    .artist-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 15px;
+      z-index: 1;
+    }
+
+    .artist-genre {
+      font-size: 0.7rem;
+      color: #ccc;
+      letter-spacing: 0.15em;
+      margin-bottom: 6px;
+      font-weight: 100;
+    }
+
+    .artist-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 12px;
+      z-index: 2;
+    }
+
+    .artist-control {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
+    }
+
+    .artist-control:hover {
+      background: rgba(255, 248, 225, 0.1);
+      border-color: rgba(255, 248, 225, 0.3);
+      box-shadow: 0 0 10px rgba(255, 248, 225, 0.2);
+    }
+
+    .check-this-out {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .check-this-out-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 40px 15px;
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 100;
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
+      letter-spacing: 0.15em;
+    }
+
+    .check-this-out-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 248, 225, 0.1);
+      transform: scale(1.03);
+      box-shadow: 0 0 15px rgba(255, 248, 225, 0.2);
+    }
+
+    form {
+      max-width: 450px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 30px;
+      padding: 30px;
+      backdrop-filter: blur(12px);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: #fff;
+      font-size: 0.8rem;
+      font-family: inherit;
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
+      font-weight: 100;
+      letter-spacing: 0.1em;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: rgba(255, 248, 225, 0.2);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 10px rgba(255, 248, 225, 0.2);
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #999;
+      font-weight: 100;
+      letter-spacing: 0.1em;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    select {
+      cursor: pointer;
+      appearance: none;
+      background: rgba(255, 255, 255, 0.05);
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23ccc' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 30px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #FFF8E1, #FFE0B2);
+      color: #000;
+      border: none;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 100;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
+      letter-spacing: 0.2em;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(255, 248, 225, 0.3);
+    }
+
+    .news-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 30px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 248, 225, 0.1);
+      box-shadow: 0 0 15px rgba(255, 248, 225, 0.2);
+    }
+
+    .news-image {
+      height: 130px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .news-content {
+      padding: 15px;
+    }
+
+    .news-date {
+      color: #999;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 8px;
+      font-weight: 100;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 15px 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 60px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 30px;
+      backdrop-filter: blur(12px);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      padding: 8px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 100;
+      font-size: 0.75rem;
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
+      letter-spacing: 0.15em;
+      min-width: 70px;
+      text-align: center;
+    }
+
+    .social-links a:hover {
+      background: rgba(255, 248, 225, 0.1);
+      border-color: rgba(255, 248, 225, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 0 10px rgba(255, 248, 225, 0.2);
+    }
+
+    .copyright {
+      color: #999;
+      margin-top: 25px;
+      font-size: 0.75rem;
+      font-weight: 100;
+      letter-spacing: 0.15em;
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper {
+        padding: 70px 10px 10px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        justify-content: center;
+      }
+
+      .nav-links a {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+      }
+
+      .nav-links a:not(:last-child)::after {
+        right: -6px;
+        height: 10px;
+      }
+
+      header {
+        padding: 50px 10px 30px;
+      }
+
+      .logo {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+      }
+
+      .tagline {
+        font-size: clamp(0.75rem, 1.8vw, 0.85rem);
+        padding: 0 10px;
+      }
+
+      .section {
+        margin-bottom: 50px;
+        padding: 25px 10px;
+      }
+
+      .section-title {
+        font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+        margin-bottom: 25px;
+      }
+
+      .section-subtitle {
+        font-size: 0.75rem;
+        margin-top: -15px;
+        margin-bottom: 25px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .news-banner, .merch-showcase, .tv-showcase {
+        height: 280px;
+      }
+
+      .news-banner-item .card-title, .tv-item .card-title {
+        font-size: clamp(1.4rem, 3vw, 1.8rem);
+      }
+
+      .news-banner-item .card-subtitle, .tv-item .card-subtitle {
+        font-size: clamp(0.65rem, 1.4vw, 0.75rem);
+      }
+
+      .news-image {
+        height: 100px;
+      }
+
+      .artist-card {
+        flex: 0 0 100%;
+        height: 280px;
+        margin: 0;
+      }
+
+      .artist-controls {
+        padding: 0 8px;
+      }
+
+      .artist-control {
+        width: 30px;
+        height: 30px;
+      }
+
+      .form-group {
+        margin-bottom: 12px;
+      }
+
+      form {
+        padding: 25px 10px;
+        max-width: 100%;
+      }
+
+      input, textarea, select {
+        padding: 8px 10px;
+        font-size: 0.75rem;
+      }
+
+      button {
+        padding: 10px;
+        font-size: 0.75rem;
+      }
+
+      .currency-btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+        min-width: 45px;
+      }
+
+      .social-links a {
+        padding: 6px 15px;
+        font-size: 0.7rem;
+        min-width: 60px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
 <body>
   <div id="vanta-bg"></div>
   <div class="grain-overlay"></div>
 
-  <!-- Previous nav and other sections remain unchanged -->
+  <nav>
+    <div class="container">
+      <div class="nav-links">
+        <a href="#news">News</a>
+        <a href="#shop">Shop</a>
+        <a href="#artists">Artists</a>
+        <a href="#tv">TV</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+    </div>
+  </nav>
 
   <div class="content-wrapper">
     <div class="container">
-      <!-- Previous header, news, shop, etc. remain unchanged -->
+      <header>
+        <h1 class="logo">St<span class="star">★</span>rstoke</h1>
+        <p class="tagline">Independent music label created for artists</p>
+      </header>
+
+      <section class="section" id="news">
+        <h2 class="section-title">News Block</h2>
+        <div class="news-banner">
+          <div class="news-banner-item active" onclick="window.open('news/release-dj-nexus.html', '_blank');">
+            <img src="https://via.placeholder.com/600x300?text=Example+of+News" alt="DJ Nexus Release" loading="lazy">
+            <h3 class="card-title">DJ Nexus Release</h3>
+            <p class="card-subtitle">Album "Digital Dreams" — 12 tracks redefining reality</p>
+          </div>
+          <div class="news-banner-item" onclick="window.open('news/festival.html', '_blank');">
+            <img src="https://via.placeholder.com/600x300?text=Example+of+News" alt="Starstoke at Festival" loading="lazy">
+            <h3 class="card-title">Starstoke at Festival</h3>
+            <p class="card-subtitle">Label artists to perform at a major music event</p>
+          </div>
+          <div class="news-banner-item" onclick="window.open('news/new-collection.html', '_blank');">
+            <img src="https://via.placeholder.com/600x300?text=Example+of+News" alt="New Collection" loading="lazy">
+            <h3 class="card-title">New Collection</h3>
+            <p class="card-subtitle">Exclusive clothing line from top designers</p>
+          </div>
+        </div>
+        <div class="news-banner-controls">
+          <div class="news-banner-control active"></div>
+          <div class="news-banner-control"></div>
+          <div class="news-banner-control"></div>
+        </div>
+        <div class="grid">
+          <div class="news-card" onclick="window.open('news/release-dj-nexus.html', '_blank');">
+            <div class="news-image" style="background-image: url('https://via.placeholder.com/600x200?text=Example+of+News');"></div>
+            <div class="news-content">
+              <div class="news-date">October 5, 2025</div>
+              <h3 class="card-title">DJ Nexus Release</h3>
+              <p class="card-subtitle">Album "Digital Dreams" — 12 tracks redefining reality</p>
+            </div>
+          </div>
+          <div class="news-card" onclick="window.open('news/festival.html', '_blank');">
+            <div class="news-image" style="background-image: url('https://via.placeholder.com/600x200?text=Example+of+News');"></div>
+            <div class="news-content">
+              <div class="news-date">October 1, 2025</div>
+              <h3 class="card-title">Starstoke at Festival</h3>
+              <p class="card-subtitle">Label artists to perform at a major music event</p>
+            </div>
+          </div>
+          <div class="news-card" onclick="window.open('news/new-collection.html', '_blank');">
+            <div class="news-image" style="background-image: url('https://via.placeholder.com/600x200?text=Example+of+News');"></div>
+            <div class="news-content">
+              <div class="news-date">September 28, 2025</div>
+              <h3 class="card-title">New Collection</h3>
+              <p class="card-subtitle">Exclusive clothing line from top designers</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="shop">
+        <h2 class="section-title">Shop</h2>
+        <div class="currency-selector">
+          <button class="currency-btn active" data-currency="THB">THB</button>
+          <button class="currency-btn" data-currency="RUB">RUB</button>
+          <button class="currency-btn" data-currency="USDT">USDT</button>
+        </div>
+        <div class="merch-showcase">
+          <div class="merch-item active" data-category="clothing" onclick="window.open('shop/t-shirt.html', 'popup', 'width=600,height=400');">
+            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Starstoke T-Shirt" loading="lazy">
+            <h3 class="card-title">Starstoke T-Shirt</h3>
+            <p class="card-subtitle">Minimalist design, premium quality</p>
+            <div class="card-price">100 <span class="currency">THB</span></div>
+          </div>
+          <div class="merch-item" data-category="accessories" onclick="window.open('shop/cap.html', 'popup', 'width=600,height=400');">
+            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Limited Cap" loading="lazy">
+            <h3 class="card-title">Limited Cap</h3>
+            <p class="card-subtitle">Limited edition, top standard</p>
+            <div class="card-price">100 <span class="currency">THB</span></div>
+          </div>
+          <div class="merch-item" data-category="footwear" onclick="window.open('shop/sneakers.html', 'popup', 'width=600,height=400');">
+            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Sneakers Collab" loading="lazy">
+            <h3 class="card-title">Sneakers Collab</h3>
+            <p class="card-subtitle">Collaborative collection with leading brands</p>
+            <div class="card-price">100 <span class="currency">THB</span></div>
+          </div>
+          <div class="merch-item" data-category="accessories" onclick="window.open('shop/accessories.html', 'popup', 'width=600,height=400');">
+            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Accessories" loading="lazy">
+            <h3 class="card-title">Accessories</h3>
+            <p class="card-subtitle">Headphones, bags, and other essentials</p>
+            <div class="card-price">100 <span class="currency">THB</span></div>
+          </div>
+        </div>
+        <div class="merch-controls">
+          <div class="merch-control active"></div>
+          <div class="merch-control"></div>
+          <div class="merch-control"></div>
+          <div class="merch-control"></div>
+        </div>
+        <div class="grid">
+          <div class="card" data-category="clothing" onclick="window.open('shop/clothing.html', 'popup', 'width=600,height=400');">
+            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Clothing" loading="lazy">
+            <h3 class="card-title">Clothing</h3>
+            <p class="card-subtitle">T-shirts, hoodies, and other wardrobe essentials</p>
+            <div class="card-price">100 <span class="currency">THB</span></div>
+          </div>
+          <div class="card" data-category="accessories" onclick="window.open('shop/accessories.html', 'popup', 'width=600,height=400');">
+            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Accessories" loading="lazy">
+            <h3 class="card-title">Accessories</h3>
+            <p class="card-subtitle">Unique items for style</p>
+            <div class="card-price">100 <span class="currency">THB</span></div>
+          </div>
+          <div class="card" data-category="footwear" onclick="window.open('shop/footwear.html', 'popup', 'width=600,height=400');">
+            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Footwear" loading="lazy">
+            <h3 class="card-title">Footwear</h3>
+            <p class="card-subtitle">Collaborations with top brands</p>
+            <div class="card-price">100 <span class="currency">THB</span></div>
+          </div>
+        </div>
+      </section>
 
       <section class="section" id="artists">
         <h2 class="section-title">Artists</h2>
         <div class="artist-carousel">
           <div class="artist-grid">
-            <div class="card artist-card" onclick="window.open('artists/slut-online.html', '_blank');">
-              <img src="https://via.placeholder.com/280x400?text=Slut+Online" alt="Slut Online" loading="lazy">
+            <div class="card artist-card" onclick="window.open('artists/dj-nexus.html', '_blank');">
+              <img src="https://via.placeholder.com/280x400?text=Artist+Jane+Doe" alt="Artist Jane Doe" loading="lazy">
               <div class="artist-info">
-                <h3 class="card-title">Slut Online</h3>
+                <div class="artist-genre">Electronic / House</div>
+                <h3 class="card-title">Artist Jane Doe</h3>
               </div>
             </div>
-            <div class="card artist-card" onclick="window.open('artists/lindtayl0r.html', '_blank');">
-              <img src="https://via.placeholder.com/280x400?text=lindtayl0r" alt="lindtayl0r" loading="lazy">
+            <div class="card artist-card" onclick="window.open('artists/luna-vibes.html', '_blank');">
+              <img src="https://via.placeholder.com/280x400?text=Artist+Jane+Doe" alt="Artist Jane Doe" loading="lazy">
               <div class="artist-info">
-                <h3 class="card-title">lindtayl0r</h3>
+                <div class="artist-genre">R&B / Soul</div>
+                <h3 class="card-title">Artist Jane Doe</h3>
               </div>
             </div>
-            <div class="card artist-card" onclick="window.open('artists/keisha-pifagor.html', '_blank');">
-              <img src="https://via.placeholder.com/280x400?text=Keisha+Pifagor" alt="Keisha Pifagor" loading="lazy">
+            <div class="card artist-card" onclick="window.open('artists/cyber-flow.html', '_blank');">
+              <img src="https://via.placeholder.com/280x400?text=Artist+Jane+Doe" alt="Artist Jane Doe" loading="lazy">
               <div class="artist-info">
-                <h3 class="card-title">Keisha Pifagor</h3>
-              </div>
-            </div>
-            <div class="card artist-card" onclick="window.open('artists/james-hunt.html', '_blank');">
-              <img src="https://via.placeholder.com/280x400?text=James+Hunt" alt="James Hunt" loading="lazy">
-              <div class="artist-info">
-                <h3 class="card-title">James Hunt</h3>
-              </div>
-            </div>
-            <div class="card artist-card" onclick="window.open('artists/xsdc.html', '_blank');">
-              <img src="https://via.placeholder.com/280x400?text=XSDC" alt="XSDC" loading="lazy">
-              <div class="artist-info">
-                <h3 class="card-title">XSDC</h3>
-              </div>
-            </div>
-            <div class="card artist-card" onclick="window.open('artists/nexxxus.html', '_blank');">
-              <img src="https://via.placeholder.com/280x400?text=NexXxus" alt="NexXxus" loading="lazy">
-              <div class="artist-info">
-                <h3 class="card-title">NexXxus</h3>
+                <div class="artist-genre">Hip-Hop / Trap</div>
+                <h3 class="card-title">Artist Jane Doe</h3>
               </div>
             </div>
           </div>
@@ -69,8 +1026,100 @@
         </div>
       </section>
 
-      <!-- Remaining sections (tv, about, contact, check-this-out, footer) remain unchanged -->
+      <section class="section" id="tv">
+        <h2 class="section-title">Starstoke TV</h2>
+        <div class="tv-showcase">
+          <div class="tv-item active" onclick="window.open('tv/video1.html', '_blank');">
+            <img src="https://via.placeholder.com/600x300?text=Starstoke+TV+Video" alt="Starstoke TV Video 1" loading="lazy">
+            <h3 class="card-title">Live Performance</h3>
+            <p class="card-subtitle">Exclusive live session by Starstoke artists</p>
+          </div>
+          <div class="tv-item" onclick="window.open('tv/video2.html', '_blank');">
+            <img src="https://via.placeholder.com/600x300?text=Starstoke+TV+Video" alt="Starstoke TV Video 2" loading="lazy">
+            <h3 class="card-title">Behind the Scenes</h3>
+            <p class="card-subtitle">A look at the making of our latest album</p>
+          </div>
+          <div class="tv-item" onclick="window.open('tv/video3.html', '_blank');">
+            <img src="https://via.placeholder.com/600x300?text=Starstoke+TV+Video" alt="Starstoke TV Video 3" loading="lazy">
+            <h3 class="card-title">Artist Interview</h3>
+            <p class="card-subtitle">In-depth talk with our top artists</p>
+          </div>
+        </div>
+        <div class="tv-controls">
+          <div class="tv-control active"></div>
+          <div class="tv-control"></div>
+          <div class="tv-control"></div>
+        </div>
+        <div class="grid">
+          <div class="tv-card" onclick="window.open('tv/video1.html', '_blank');">
+            <img src="https://via.placeholder.com/300x300?text=Starstoke+TV+Video" alt="Live Performance" loading="lazy">
+            <h3 class="card-title">Live Performance</h3>
+            <p class="card-subtitle">Exclusive live session by Starstoke artists</p>
+          </div>
+          <div class="tv-card" onclick="window.open('tv/video2.html', '_blank');">
+            <img src="https://via.placeholder.com/300x300?text=Starstoke+TV+Video" alt="Behind the Scenes" loading="lazy">
+            <h3 class="card-title">Behind the Scenes</h3>
+            <p class="card-subtitle">A look at the making of our latest album</p>
+          </div>
+          <div class="tv-card" onclick="window.open('tv/video3.html', '_blank');">
+            <img src="https://via.placeholder.com/300x300?text=Starstoke+TV+Video" alt="Artist Interview" loading="lazy">
+            <h3 class="card-title">Artist Interview</h3>
+            <p class="card-subtitle">In-depth talk with our top artists</p>
+          </div>
+        </div>
+      </section>
 
+      <section class="section" id="about">
+        <h2 class="section-title">About</h2>
+        <p>Starstoke is an independent music, sound, and graphic design production label. Created for artists, our community provides space and assistance to help you share your own vision equally. Thank you for being our star to stoke!</p>
+      </section>
+
+      <section class="section" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <form id="contact-form" action="https://formspree.io/f/your-form-hash" method="POST">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Your@email.com" required>
+          </div>
+          <div class="form-group">
+            <select name="category" required>
+              <option value="">Select category</option>
+              <option value="artist">Artist</option>
+              <option value="producer">Producer</option>
+              <option value="dj">DJ</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="url" name="links" placeholder="https://on.soundcloud.com/gShwnGE3RKMUyBKHi7">
+          </div>
+          <div class="form-group">
+            <textarea name="message" placeholder="Describe your work" required></textarea>
+          </div>
+          <button type="submit">Submit Application</button>
+        </form>
+      </section>
+
+      <section class="section" id="check-this-out">
+        <h2 class="section-title">Check This Out!</h2>
+        <p class="section-subtitle">Starstoke recommend</p>
+        <div class="check-this-out">
+          <!-- Content can be added here -->
+        </div>
+      </section>
+
+      <footer>
+        <h2 class="logo" style="font-size: 1.8rem; margin-bottom: 15px;">St<span class="star">★</span>rstoke</h2>
+        <div class="social-links">
+          <a href="https://www.instagram.com/starstoke777?igsh=eWFtYWJyZjcxeWlv&utm_source=qr">Instagram</a>
+          <a href="https://on.soundcloud.com/gShwnGE3RKMUyBKHi7">Soundcloud</a>
+          <a href="https://youtube.com/@starstoketv?si=7t31o1fBdyO8SmLE">Youtube</a>
+          <a href="#">Telegram</a>
+        </div>
+        <p class="copyright">© 2025 Starstoke Label. All rights reserved.</p>
+      </footer>
     </div>
   </div>
 
@@ -78,9 +1127,6 @@
   <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Scroll to top on page load
-      window.scrollTo(0, 0);
-
       // Initialize Vanta.js with mobile optimization
       try {
         const isMobile = window.innerWidth <= 768;
