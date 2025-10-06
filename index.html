@@ -54,7 +54,7 @@
     .content-wrapper {
       position: relative;
       z-index: 2;
-      padding: 30px;
+      padding: 20px;
     }
 
     .container {
@@ -70,14 +70,15 @@
       background: rgba(0, 0, 0, 0.8);
       backdrop-filter: blur(12px);
       z-index: 1000;
-      padding: 20px 0;
+      padding: 15px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .nav-links {
       display: flex;
       justify-content: center;
-      gap: 40px;
+      gap: 30px;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
@@ -86,14 +87,15 @@
       font-size: 1rem;
       font-weight: 100;
       letter-spacing: 0.2em;
-      transition: color 0.5s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: color 0.4s cubic-bezier(0.33, 0, 0.66, 1);
       position: relative;
+      padding: 10px;
     }
 
     .nav-links a:not(:last-child)::after {
       content: '';
       position: absolute;
-      right: -20px;
+      right: -15px;
       top: 50%;
       transform: translateY(-50%);
       width: 1px;
@@ -108,7 +110,7 @@
 
     header {
       text-align: center;
-      padding: 140px 20px 100px;
+      padding: 100px 20px 80px;
       position: relative;
       background: rgba(0, 0, 0, 0.6);
       border-radius: 30px;
@@ -117,7 +119,7 @@
     }
 
     .logo {
-      font-size: clamp(3.5rem, 8vw, 8rem);
+      font-size: clamp(2.5rem, 6vw, 5rem);
       font-weight: 100;
       letter-spacing: 0.2em;
       color: #fff;
@@ -146,7 +148,7 @@
     }
 
     .tagline {
-      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
       color: #ccc;
       max-width: 600px;
       margin: 0 auto;
@@ -167,13 +169,13 @@
     }
 
     .section {
-      margin-bottom: 120px;
+      margin-bottom: 80px;
       opacity: 0;
       transform: translateY(50px);
-      transition: opacity 1s cubic-bezier(0.33, 0, 0.66, 1), transform 1s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: opacity 0.8s cubic-bezier(0.33, 0, 0.66, 1), transform 0.8s cubic-bezier(0.33, 0, 0.66, 1);
       background: rgba(0, 0, 0, 0.6);
       border-radius: 30px;
-      padding: 50px;
+      padding: 40px;
       backdrop-filter: blur(12px);
     }
 
@@ -183,9 +185,9 @@
     }
 
     .section-title {
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
       font-weight: 100;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
       text-align: center;
       letter-spacing: 0.2em;
       background: linear-gradient(135deg, #FFF8E1 0%, #FFE0B2 100%);
@@ -195,19 +197,19 @@
     }
 
     .section-subtitle {
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: #ccc;
       text-align: center;
       font-weight: 100;
       letter-spacing: 0.15em;
       margin-top: -40px;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
     }
 
     .news-banner {
       position: relative;
-      height: 600px;
-      margin-bottom: 40px;
+      height: 400px;
+      margin-bottom: 30px;
       overflow: hidden;
       border-radius: 30px;
       background: rgba(255, 255, 255, 0.02);
@@ -220,7 +222,7 @@
       width: 100%;
       height: 100%;
       opacity: 0;
-      transition: opacity 1.5s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: opacity 1s cubic-bezier(0.33, 0, 0.66, 1);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -237,21 +239,22 @@
       max-width: 100%;
       max-height: 50%;
       object-fit: cover;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       border-radius: 20px;
+      loading: lazy;
     }
 
     .news-banner-item .card-title {
-      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
       font-weight: 100;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       text-align: center;
       letter-spacing: 0.15em;
     }
 
     .news-banner-item .card-subtitle {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      max-width: 800px;
+      font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+      max-width: 90%;
       text-align: center;
       font-weight: 100;
       color: #ccc;
@@ -261,17 +264,17 @@
     .news-banner-controls {
       display: flex;
       justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 8px;
+      margin-top: 15px;
     }
 
     .news-banner-control {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.2);
       cursor: pointer;
-      transition: background 0.5s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: background 0.4s cubic-bezier(0.33, 0, 0.66, 1);
     }
 
     .news-banner-control.active {
@@ -280,8 +283,8 @@
 
     .merch-showcase {
       position: relative;
-      height: 400px;
-      margin-bottom: 40px;
+      height: 350px;
+      margin-bottom: 30px;
       overflow: hidden;
       border-radius: 30px;
       background: rgba(255, 255, 255, 0.02);
@@ -294,7 +297,7 @@
       width: 100%;
       height: 100%;
       opacity: 0;
-      transition: opacity 0.8s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: opacity 0.6s cubic-bezier(0.33, 0, 0.66, 1);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -310,24 +313,25 @@
       max-width: 100%;
       max-height: 60%;
       object-fit: contain;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       border-radius: 20px;
+      loading: lazy;
     }
 
     .merch-controls {
       display: flex;
       justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 8px;
+      margin-top: 15px;
     }
 
     .merch-control {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.2);
       cursor: pointer;
-      transition: background 0.5s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: background 0.4s cubic-bezier(0.33, 0, 0.66, 1);
     }
 
     .merch-control.active {
@@ -337,21 +341,23 @@
     .currency-selector {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      margin-bottom: 40px;
+      gap: 15px;
+      margin-bottom: 30px;
     }
 
     .currency-btn {
-      padding: 10px 20px;
+      padding: 8px 15px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 20px;
       color: #fff;
       font-weight: 100;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       cursor: pointer;
-      transition: all 0.5s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
       letter-spacing: 0.15em;
+      min-width: 60px;
+      text-align: center;
     }
 
     .currency-btn.active {
@@ -361,34 +367,35 @@
 
     .currency-btn:hover:not(.active) {
       background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 248, 225, 0.3);
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
     }
 
     .card, .news-card, .check-this-out-card, .artist-card {
       cursor: pointer;
-      transition: transform 0.5s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: transform 0.4s cubic-bezier(0.33, 0, 0.66, 1);
     }
 
     .card:hover, .news-card:hover, .check-this-out-card:hover, .artist-card:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 20px rgba(255, 248, 225, 0.2);
+      box-shadow: 0 0 15px rgba(255, 248, 225, 0.2);
     }
 
     .card {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 30px;
-      padding: 50px 30px;
+      padding: 40px 20px;
       backdrop-filter: blur(12px);
-      transition: all 0.5s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
       position: relative;
       overflow: hidden;
+      text-align: center;
     }
 
     .card::before {
@@ -400,36 +407,44 @@
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(255, 248, 225, 0.2), transparent);
       opacity: 0;
-      transition: opacity 0.5s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: opacity 0.4s cubic-bezier(0.33, 0, 0.66, 1);
     }
 
     .card:hover {
       transform: translateY(-5px);
       border-color: rgba(255, 248, 225, 0.1);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 
     .card:hover::before {
       opacity: 1;
     }
 
-    .card-title {
-      font-size: 1.4rem;
-      font-weight: 100;
+    .card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
       margin-bottom: 15px;
+      loading: lazy;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 100;
+      margin-bottom: 10px;
       letter-spacing: 0.15em;
     }
 
     .card-subtitle {
       color: #ccc;
-      font-size: 0.9rem;
-      margin-bottom: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
       font-weight: 100;
       letter-spacing: 0.1em;
     }
 
     .card-price {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: 100;
       background: linear-gradient(135deg, #FFF8E1, #FFE0B2);
       -webkit-background-clip: text;
@@ -445,12 +460,12 @@
 
     .artist-grid {
       display: flex;
-      transition: transform 0.8s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: transform 0.6s cubic-bezier(0.33, 0, 0.66, 1);
     }
 
     .artist-card {
       flex: 0 0 33.33%;
-      height: 400px;
+      height: 350px;
       padding: 0;
       position: relative;
       background: linear-gradient(135deg, rgba(50, 50, 50, 0.2), rgba(20, 20, 20, 0.4));
@@ -464,6 +479,7 @@
       height: 100%;
       object-fit: cover;
       border-radius: 20px;
+      loading: lazy;
     }
 
     .artist-card::after {
@@ -478,12 +494,12 @@
       bottom: 0;
       left: 0;
       right: 0;
-      padding: 30px;
+      padding: 20px;
       z-index: 1;
     }
 
     .artist-genre {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: #ccc;
       letter-spacing: 0.15em;
       margin-bottom: 8px;
@@ -497,7 +513,8 @@
       display: flex;
       justify-content: space-between;
       transform: translateY(-50%);
-      padding: 0 20px;
+      padding: 0 15px;
+      z-index: 2;
     }
 
     .artist-control {
@@ -510,7 +527,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: all 0.5s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
     }
 
     .artist-control:hover {
@@ -522,18 +539,18 @@
     .check-this-out {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
+      gap: 20px;
     }
 
     .check-this-out-card {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 20px;
-      padding: 60px 30px;
+      padding: 50px 20px;
       text-align: center;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: 100;
-      transition: all 0.5s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
       letter-spacing: 0.15em;
     }
 
@@ -541,33 +558,33 @@
       background: rgba(255, 255, 255, 0.05);
       border-color: rgba(255, 248, 225, 0.1);
       transform: scale(1.03);
-      box-shadow: 0 0 20px rgba(255, 248, 225, 0.2);
+      box-shadow: 0 0 15px rgba(255, 248, 225, 0.2);
     }
 
     form {
-      max-width: 600px;
+      max-width: 500px;
       margin: 0 auto;
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 30px;
-      padding: 50px;
+      padding: 40px;
       backdrop-filter: blur(12px);
     }
 
     .form-group {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     input, textarea, select {
       width: 100%;
-      padding: 16px 20px;
+      padding: 12px 15px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 12px;
       color: #fff;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-family: inherit;
-      transition: all 0.5s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
       font-weight: 100;
       letter-spacing: 0.1em;
     }
@@ -587,7 +604,7 @@
 
     textarea {
       resize: vertical;
-      min-height: 120px;
+      min-height: 100px;
     }
 
     select {
@@ -596,27 +613,27 @@
       background: rgba(255, 255, 255, 0.05);
       background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23ccc' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
-      background-position: right 16px center;
-      padding-right: 40px;
+      background-position: right 15px center;
+      padding-right: 35px;
     }
 
     button {
       width: 100%;
-      padding: 18px;
+      padding: 15px;
       background: linear-gradient(135deg, #FFF8E1, #FFE0B2);
       color: #000;
       border: none;
       border-radius: 12px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 100;
       cursor: pointer;
-      transition: all 0.5s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
       letter-spacing: 0.2em;
     }
 
     button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(255, 248, 225, 0.3);
+      box-shadow: 0 8px 15px rgba(255, 248, 225, 0.3);
     }
 
     .news-card {
@@ -624,37 +641,38 @@
       border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 30px;
       overflow: hidden;
-      transition: all 0.5s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
     }
 
     .news-card:hover {
       transform: translateY(-5px);
       border-color: rgba(255, 248, 225, 0.1);
-      box-shadow: 0 0 20px rgba(255, 248, 225, 0.2);
+      box-shadow: 0 0 15px rgba(255, 248, 225, 0.2);
     }
 
     .news-image {
-      height: 200px;
-      background: linear-gradient(135deg, rgba(80, 80, 80, 0.2), rgba(30, 30, 30, 0.4));
+      height: 150px;
+      background-size: cover;
+      background-position: center;
     }
 
     .news-content {
-      padding: 30px;
+      padding: 20px;
     }
 
     .news-date {
       color: #999;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       letter-spacing: 0.15em;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       font-weight: 100;
     }
 
     footer {
       text-align: center;
-      padding: 100px 20px 60px;
+      padding: 80px 20px 40px;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
-      margin-top: 120px;
+      margin-top: 80px;
       background: rgba(0, 0, 0, 0.6);
       border-radius: 30px;
       backdrop-filter: blur(12px);
@@ -663,22 +681,24 @@
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      margin-top: 40px;
+      gap: 15px;
+      margin-top: 30px;
       flex-wrap: wrap;
     }
 
     .social-links a {
-      padding: 12px 30px;
+      padding: 10px 25px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 30px;
       color: #fff;
       text-decoration: none;
       font-weight: 100;
-      font-size: 0.85rem;
-      transition: all 0.5s cubic-bezier(0.33, 0, 0.66, 1);
+      font-size: 0.8rem;
+      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
       letter-spacing: 0.15em;
+      min-width: 80px;
+      text-align: center;
     }
 
     .social-links a:hover {
@@ -690,61 +710,87 @@
 
     .copyright {
       color: #999;
-      margin-top: 40px;
-      font-size: 0.85rem;
+      margin-top: 30px;
+      font-size: 0.8rem;
       font-weight: 100;
       letter-spacing: 0.15em;
     }
 
     @media (max-width: 768px) {
+      .content-wrapper {
+        padding: 15px;
+      }
+
       .nav-links {
-        gap: 20px;
-        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
       }
 
       .nav-links a {
-        font-size: 0.85rem;
-        letter-spacing: 0.15em;
+        font-size: 0.9rem;
+        padding: 8px;
       }
 
       .nav-links a:not(:last-child)::after {
-        right: -10px;
+        right: -7.5px;
         height: 15px;
       }
 
       header {
-        padding: 100px 20px 80px;
+        padding: 60px 15px 40px;
+      }
+
+      .logo {
+        font-size: clamp(2rem, 8vw, 3rem);
+      }
+
+      .tagline {
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+        padding: 0 15px;
       }
 
       .section {
-        margin-bottom: 80px;
-        padding: 30px;
+        margin-bottom: 60px;
+        padding: 30px 15px;
       }
 
       .section-title {
-        margin-bottom: 40px;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 30px;
+      }
+
+      .section-subtitle {
+        font-size: 0.8rem;
+        margin-top: -20px;
+        margin-bottom: 30px;
       }
 
       .grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 20px;
       }
 
       .news-banner,
       .merch-showcase {
-        height: 400px;
+        height: 300px;
       }
 
       .news-banner-item .card-title {
-        font-size: clamp(2rem, 4vw, 3rem);
+        font-size: clamp(1.5rem, 3vw, 2rem);
       }
 
-      form {
-        padding: 40px 20px;
+      .news-banner-item .card-subtitle {
+        font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+      }
+
+      .news-image {
+        height: 120px;
       }
 
       .artist-card {
+        flex: 0 0 100%;
         height: 300px;
+        margin: 0;
       }
 
       .artist-controls {
@@ -752,8 +798,39 @@
       }
 
       .artist-control {
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      form {
+        padding: 30px 15px;
+        max-width: 100%;
+      }
+
+      input, textarea, select {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+      }
+
+      button {
+        padding: 12px;
+        font-size: 0.8rem;
+      }
+
+      .currency-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        min-width: 50px;
+      }
+
+      .social-links a {
+        padding: 8px 20px;
+        font-size: 0.75rem;
+        min-width: 70px;
       }
     }
 
@@ -793,17 +870,17 @@
         <h2 class="section-title">News Block</h2>
         <div class="news-banner">
           <div class="news-banner-item active" onclick="window.open('news/release-dj-nexus.html', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Example+of+News" alt="Example of News">
+            <img src="https://via.placeholder.com/600x300?text=Example+of+News" alt="Example of News" loading="lazy">
             <h3 class="card-title">DJ Nexus Release</h3>
             <p class="card-subtitle">Album "Digital Dreams" — 12 tracks redefining reality</p>
           </div>
           <div class="news-banner-item" onclick="window.open('news/festival.html', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Example+of+News" alt="Example of News">
+            <img src="https://via.placeholder.com/600x300?text=Example+of+News" alt="Example of News" loading="lazy">
             <h3 class="card-title">Starstoke at Festival</h3>
             <p class="card-subtitle">Label artists to perform at a major music event</p>
           </div>
           <div class="news-banner-item" onclick="window.open('news/new-collection.html', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Example+of+News" alt="Example of News">
+            <img src="https://via.placeholder.com/600x300?text=Example+of+News" alt="Example of News" loading="lazy">
             <h3 class="card-title">New Collection</h3>
             <p class="card-subtitle">Exclusive clothing line from top designers</p>
           </div>
@@ -850,25 +927,25 @@
         </div>
         <div class="merch-showcase">
           <div class="merch-item active" data-category="clothing" onclick="window.open('shop/t-shirt.html', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Item example">
+            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Item example" loading="lazy">
             <h3 class="card-title">Starstoke T-Shirt</h3>
             <p class="card-subtitle">Minimalist design, premium quality</p>
             <div class="card-price">100 <span class="currency">THB</span></div>
           </div>
           <div class="merch-item" data-category="accessories" onclick="window.open('shop/cap.html', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Item example">
+            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Item example" loading="lazy">
             <h3 class="card-title">Limited Cap</h3>
             <p class="card-subtitle">Limited edition, top standard</p>
             <div class="card-price">100 <span class="currency">THB</span></div>
           </div>
           <div class="merch-item" data-category="footwear" onclick="window.open('shop/sneakers.html', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Item example">
+            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Item example" loading="lazy">
             <h3 class="card-title">Sneakers Collab</h3>
             <p class="card-subtitle">Collaborative collection with leading brands</p>
             <div class="card-price">100 <span class="currency">THB</span></div>
           </div>
           <div class="merch-item" data-category="accessories" onclick="window.open('shop/accessories.html', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Item example">
+            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Item example" loading="lazy">
             <h3 class="card-title">Accessories</h3>
             <p class="card-subtitle">Headphones, bags, and other essentials</p>
             <div class="card-price">100 <span class="currency">THB</span></div>
@@ -882,19 +959,19 @@
         </div>
         <div class="grid">
           <div class="card" data-category="clothing" onclick="window.open('shop/clothing.html', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Item example">
+            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Item example" loading="lazy">
             <h3 class="card-title">Clothing</h3>
             <p class="card-subtitle">T-shirts, hoodies, and other wardrobe essentials</p>
             <div class="card-price">100 <span class="currency">THB</span></div>
           </div>
           <div class="card" data-category="accessories" onclick="window.open('shop/accessories.html', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Item example">
+            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Item example" loading="lazy">
             <h3 class="card-title">Accessories</h3>
             <p class="card-subtitle">Unique items for style</p>
             <div class="card-price">100 <span class="currency">THB</span></div>
           </div>
           <div class="card" data-category="footwear" onclick="window.open('shop/footwear.html', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Item example">
+            <img src="https://via.placeholder.com/300x300?text=Item+example" alt="Item example" loading="lazy">
             <h3 class="card-title">Footwear</h3>
             <p class="card-subtitle">Collaborations with top brands</p>
             <div class="card-price">100 <span class="currency">THB</span></div>
@@ -907,21 +984,21 @@
         <div class="artist-carousel">
           <div class="artist-grid">
             <div class="card artist-card" onclick="window.open('artists/dj-nexus.html', '_blank');">
-              <img src="https://via.placeholder.com/280x400?text=Artist+Jane+Doe" alt="Artist Jane Doe">
+              <img src="https://via.placeholder.com/280x400?text=Artist+Jane+Doe" alt="Artist Jane Doe" loading="lazy">
               <div class="artist-info">
                 <div class="artist-genre">Electronic / House</div>
                 <h3 class="card-title">Artist Jane Doe</h3>
               </div>
             </div>
             <div class="card artist-card" onclick="window.open('artists/luna-vibes.html', '_blank');">
-              <img src="https://via.placeholder.com/280x400?text=Artist+Jane+Doe" alt="Artist Jane Doe">
+              <img src="https://via.placeholder.com/280x400?text=Artist+Jane+Doe" alt="Artist Jane Doe" loading="lazy">
               <div class="artist-info">
                 <div class="artist-genre">R&B / Soul</div>
                 <h3 class="card-title">Artist Jane Doe</h3>
               </div>
             </div>
             <div class="card artist-card" onclick="window.open('artists/cyber-flow.html', '_blank');">
-              <img src="https://via.placeholder.com/280x400?text=Artist+Jane+Doe" alt="Artist Jane Doe">
+              <img src="https://via.placeholder.com/280x400?text=Artist+Jane+Doe" alt="Artist Jane Doe" loading="lazy">
               <div class="artist-info">
                 <div class="artist-genre">Hip-Hop / Trap</div>
                 <h3 class="card-title">Artist Jane Doe</h3>
@@ -951,6 +1028,7 @@
       <section class="section" id="contact">
         <h2 class="section-title">Contact Us</h2>
         <form id="contact-form" action="https://formspree.io/f/your-form-hash" method="POST">
+          <!-- Replace 'your-form-hash' with a valid Formspree ID -->
           <div class="form-group">
             <input type="text" name="name" placeholder="Your name" required>
           </div>
@@ -985,7 +1063,7 @@
       </section>
 
       <footer>
-        <h2 class="logo" style="font-size: 2.5rem; margin-bottom: 20px;">St<span class="star">★</span>rstoke</h2>
+        <h2 class="logo" style="font-size: 2rem; margin-bottom: 20px;">St<span class="star">★</span>rstoke</h2>
         <div class="social-links">
           <a href="https://www.instagram.com/starstoke777?igsh=eWFtYWJyZjcxeWlv&utm_source=qr">Instagram</a>
           <a href="https://on.soundcloud.com/gShwnGE3RKMUyBKHi7">Soundcloud</a>
@@ -1000,9 +1078,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
   <script>
-    // Initialize Vanta.js with error handling
+    // Initialize Vanta.js with mobile optimization
     document.addEventListener('DOMContentLoaded', () => {
       try {
+        const isMobile = window.innerWidth <= 768;
         let vantaEffect = VANTA.NET({
           el: "#vanta-bg",
           mouseControls: false,
@@ -1014,60 +1093,62 @@
           scaleMobile: 1.00,
           color: 0xFFF8E1,
           backgroundColor: 0x000000,
-          points: 20.0,
-          maxDistance: 28.0,
-          spacing: 20.0,
+          points: isMobile ? 10.0 : 20.0,
+          maxDistance: isMobile ? 20.0 : 28.0,
+          spacing: isMobile ? 15.0 : 20.0,
           showDots: true,
-          lineOpacity: 0.3
+          lineOpacity: isMobile ? 0.2 : 0.3
         });
 
-        // Slow rotation and zoom animation
-        function animateVanta() {
-          if (vantaEffect && vantaEffect.three && vantaEffect.three.camera) {
-            vantaEffect.three.camera.rotation.y += 0.0003;
-          }
-          requestAnimationFrame(animateVanta);
-        }
-        animateVanta();
-
-        // Smoother color change
-        const colors = [0xFFF8E1, 0xFFE0B2, 0xFFCCBC, 0xB2EBF2, 0xD1C4E9, 0xC8E6C9];
-        let currentColorIndex = 0;
-        function changeColor() {
-          const nextColorIndex = (currentColorIndex + 1) % colors.length;
-          const startColor = colors[currentColorIndex];
-          const endColor = colors[nextColorIndex];
-          let progress = 0;
-
-          function interpolateColor() {
-            progress += 0.015;
-            if (progress >= 1) {
-              currentColorIndex = nextColorIndex;
-              vantaEffect.setOptions({ color: endColor, lineOpacity: 0.3 });
-              setTimeout(changeColor, 5000);
-              return;
+        // Slow rotation and zoom animation (disabled on mobile for performance)
+        if (!isMobile) {
+          function animateVanta() {
+            if (vantaEffect && vantaEffect.three && vantaEffect.three.camera) {
+              vantaEffect.three.camera.rotation.y += 0.0003;
             }
-            const r = Math.floor((1 - progress) * ((startColor >> 16) & 255) + progress * ((endColor >> 16) & 255));
-            const g = Math.floor((1 - progress) * ((startColor >> 8) & 255) + progress * ((endColor >> 8) & 255));
-            const b = Math.floor((1 - progress) * (startColor & 255) + progress * (endColor & 255));
-            const newColor = (r << 16) + (g << 8) + b;
-            vantaEffect.setOptions({ color: newColor, lineOpacity: 0.3 });
-            requestAnimationFrame(interpolateColor);
+            requestAnimationFrame(animateVanta);
           }
-          interpolateColor();
-        }
-        setTimeout(changeColor, 5000);
+          animateVanta();
 
-        // Simulate zoom
-        let zoomDirection = 1;
-        setInterval(() => {
-          let currentMaxDistance = vantaEffect.options.maxDistance;
-          currentMaxDistance += zoomDirection * 0.3;
-          if (currentMaxDistance > 35 || currentMaxDistance < 20) {
-            zoomDirection *= -1;
+          // Smoother color change
+          const colors = [0xFFF8E1, 0xFFE0B2, 0xFFCCBC, 0xB2EBF2, 0xD1C4E9, 0xC8E6C9];
+          let currentColorIndex = 0;
+          function changeColor() {
+            const nextColorIndex = (currentColorIndex + 1) % colors.length;
+            const startColor = colors[currentColorIndex];
+            const endColor = colors[nextColorIndex];
+            let progress = 0;
+
+            function interpolateColor() {
+              progress += 0.015;
+              if (progress >= 1) {
+                currentColorIndex = nextColorIndex;
+                vantaEffect.setOptions({ color: endColor, lineOpacity: isMobile ? 0.2 : 0.3 });
+                setTimeout(changeColor, 5000);
+                return;
+              }
+              const r = Math.floor((1 - progress) * ((startColor >> 16) & 255) + progress * ((endColor >> 16) & 255));
+              const g = Math.floor((1 - progress) * ((startColor >> 8) & 255) + progress * ((endColor >> 8) & 255));
+              const b = Math.floor((1 - progress) * (startColor & 255) + progress * (endColor & 255));
+              const newColor = (r << 16) + (g << 8) + b;
+              vantaEffect.setOptions({ color: newColor, lineOpacity: isMobile ? 0.2 : 0.3 });
+              requestAnimationFrame(interpolateColor);
+            }
+            interpolateColor();
           }
-          vantaEffect.setOptions({ maxDistance: currentMaxDistance });
-        }, 100);
+          setTimeout(changeColor, 5000);
+
+          // Simulate zoom
+          let zoomDirection = 1;
+          setInterval(() => {
+            let currentMaxDistance = vantaEffect.options.maxDistance;
+            currentMaxDistance += zoomDirection * 0.3;
+            if (currentMaxDistance > 35 || currentMaxDistance < 20) {
+              zoomDirection *= -1;
+            }
+            vantaEffect.setOptions({ maxDistance: currentMaxDistance });
+          }, 100);
+        }
       } catch (error) {
         console.error('Vanta.js failed to initialize:', error);
         document.getElementById('vanta-bg').style.background = '#000';
@@ -1159,7 +1240,9 @@
 
       function showArtistItem(index) {
         index = (index + totalArtists) % totalArtists;
-        artistGrid.style.transform = `translateX(-${index * 33.33}%)`;
+        const isMobile = window.innerWidth <= 768;
+        const translateValue = isMobile ? -index * 100 : -index * (100 / 3);
+        artistGrid.style.transform = `translateX(${translateValue}%)`;
         currentArtistIndex = index;
       }
 
@@ -1176,6 +1259,11 @@
       setInterval(() => {
         showArtistItem(currentArtistIndex + 1);
       }, 5000);
+
+      // Handle window resize for artist carousel
+      window.addEventListener('resize', () => {
+        showArtistItem(currentArtistIndex);
+      });
 
       // Currency selector
       const currencyButtons = document.querySelectorAll('.currency-btn');
