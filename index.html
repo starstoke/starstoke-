@@ -591,54 +591,7 @@
       font-weight: 100;
     }
 
-    .lang-switch {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-      display: flex;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 30px;
-      padding: 8px;
-      backdrop-filter: blur(20px);
-    }
-
-    .lang-btn {
-      padding: 8px 20px;
-      background: transparent;
-      border: none;
-      color: #999;
-      cursor: pointer;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 100;
-      transition: all 0.3s ease;
-      letter-spacing: 0.05em;
-    }
-
-    .lang-btn.active {
-      background: linear-gradient(135deg, #FFD700, #FFA500);
-      color: #000;
-    }
-
-    .lang-btn:hover:not(.active) {
-      color: #fff;
-    }
-
     @media (max-width: 768px) {
-      .lang-switch {
-        top: 10px;
-        right: 10px;
-        padding: 6px;
-      }
-
-      .lang-btn {
-        padding: 6px 16px;
-        font-size: 0.8rem;
-      }
-
       .nav-links {
         gap: 15px;
         flex-wrap: wrap;
@@ -702,11 +655,6 @@
   <div id="vanta-bg"></div>
   <div class="grain-overlay"></div>
 
-  <div class="lang-switch">
-    <button class="lang-btn active" data-lang="en">EN</button>
-    <button class="lang-btn" data-lang="ru">RU</button>
-  </div>
-
   <nav>
     <div class="container">
       <div class="nav-links">
@@ -723,7 +671,7 @@
     <div class="container">
       <header>
         <h1 class="logo">St<span class="star">★</span>rstoke</h1>
-        <p class="tagline">Independent music label. Shaping the future of sound with exceptional artists.</p>
+        <p class="tagline">Independent music label created for artists</p>
       </header>
 
       <section class="section" id="news">
@@ -857,8 +805,7 @@
 
       <section class="section" id="about">
         <h2 class="section-title">About</h2>
-        <p>Starstoke Label is an independent music label founded to promote unique artists and create music that shapes the future of sound. We collaborate with talented musicians, producers, and designers to create not just music, but a lifestyle.</p>
-        <p>Our mission is to support creativity and innovation in the music industry, providing a platform for self-expression and experimentation.</p>
+        <p>Starstoke is an independent music label founded to promote unique artists and shape the new self-explanatory narrative of sound & visuals. We collaborate with talented musicians, producers, designers, content creators to expand our vision. Join us to spread your own!</p>
       </section>
 
       <section class="section" id="contact">
@@ -899,9 +846,9 @@
       <footer>
         <h2 class="logo" style="font-size: 2.5rem; margin-bottom: 20px;">St<span class="star">★</span>rstoke</h2>
         <div class="social-links">
-          <a href="#">Instagram</a>
+          <a href="https://www.instagram.com/starstoke777?igsh=eWFtYWJyZjcxeWlv&utm_source=qr">Instagram</a>
           <a href="#">Soundcloud</a>
-          <a href="#">Youtube</a>
+          <a href="https://youtube.com/@starstoketv?si=7t31o1fBdyO8SmLE">Youtube</a>
           <a href="#">Telegram</a>
         </div>
         <p class="copyright">© 2025 Starstoke Label. All rights reserved.</p>
@@ -912,158 +859,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
   <script>
-    // Language switcher data
-    const translations = {
-      en: {
-        nav: ['News', 'Shop', 'Artists', 'About', 'Contact Us'],
-        tagline: 'Independent music label. Shaping the future of sound with exceptional artists.',
-        news_title: 'News Block',
-        news_items: [
-          {
-            title: 'DJ Nexus Release',
-            subtitle: 'Album "Digital Dreams" — 12 tracks redefining reality',
-            date: 'October 5, 2025'
-          },
-          {
-            title: 'Starstoke at Festival',
-            subtitle: 'Label artists to perform at a major music event',
-            date: 'October 1, 2025'
-          },
-          {
-            title: 'New Collection',
-            subtitle: 'Exclusive clothing line from top designers',
-            date: 'September 28, 2025'
-          }
-        ],
-        shop_title: 'Shop',
-        shop_items: [
-          {
-            title: 'Starstoke T-Shirt',
-            subtitle: 'Minimalist design, premium quality',
-            price: 'From $30'
-          },
-          {
-            title: 'Limited Cap',
-            subtitle: 'Limited edition, top standard',
-            price: 'From $20'
-          },
-          {
-            title: 'Sneakers Collab',
-            subtitle: 'Collaborative collection with leading brands',
-            price: 'From $80'
-          },
-          {
-            title: 'Accessories',
-            subtitle: 'Headphones, bags, and other essentials',
-            price: 'From $10'
-          }
-        ],
-        shop_grid: [
-          { title: 'Clothing', subtitle: 'T-shirts, hoodies, and other wardrobe essentials', price: 'From $20' },
-          { title: 'Accessories', subtitle: 'Unique items for style', price: 'From $10' },
-          { title: 'Footwear', subtitle: 'Collaborations with top brands', price: 'From $80' }
-        ],
-        artists_title: 'Artists',
-        artists_cards: [
-          { genre: 'HipHop / VoiceOver', title: 'Keisha Pifagor' },
-          { genre: 'Sounddesign / Electric/ Generative gesign', title: 'Slut0nline' },
-          { genre: 'Power noise / EDM / Composition ', title: 'lindtayl0r' }
-        ],
-        about_title: 'About',
-        about_text: [
-          'Starstoke Label is an independent music label founded to promote unique artists and create music that shapes the future of sound. We collaborate with talented musicians, producers, and designers to create not just music, but a lifestyle.',
-          'Our mission is to support creativity and innovation in the music industry, providing a platform for self-expression and experimentation.'
-        ],
-        contact_title: 'Contact Us',
-        form: {
-          name: 'Your name',
-          email: 'Your@email.com',
-          category: 'Select category',
-          category_options: ['Artist', 'Producer', 'DJ', 'Other'],
-          links: 'Soundcloud, Youtube, Spotify',
-          message: 'Describe your work',
-          submit: 'Submit Application'
-        },
-        partners_title: 'Partners',
-        footer_social: ['Instagram', 'Soundcloud', 'Youtube', 'Telegram'],
-        copyright: '© 2025 Starstoke Label. All rights reserved.'
-      },
-      ru: {
-        nav: ['Новости', 'Магазин', 'Артисты', 'О нас', 'Связаться с нами'],
-        tagline: 'Независимый музыкальный лейбл. Формируем будущее звука с выдающимися артистами.',
-        news_title: 'Блок новостей',
-        news_items: [
-          {
-            title: 'Релиз DJ Nexus',
-            subtitle: 'Альбом "Цифровые мечты" — 12 треков, переосмысливающих реальность',
-            date: '5 октября 2025'
-          },
-          {
-            title: 'Starstoke на фестивале',
-            subtitle: 'Артисты лейбла выступят на крупном музыкальном событии',
-            date: '1 октября 2025'
-          },
-          {
-            title: 'Новая коллекция',
-            subtitle: 'Эксклюзивная линия одежды от ведущих дизайнеров',
-            date: '28 сентября 2025'
-          }
-        ],
-        shop_title: 'Магазин',
-        shop_items: [
-          {
-            title: 'Футболка Starstoke',
-            subtitle: 'Минималистичный дизайн, премиальное качество',
-            price: 'От $30'
-          },
-          {
-            title: 'Лимитированная кепка',
-            subtitle: 'Лимитированная серия, высший стандарт',
-            price: 'От $20'
-          },
-          {
-            title: 'Кроссовки Collab',
-            subtitle: 'Коллаборация с ведущими брендами',
-            price: 'От $80'
-          },
-          {
-            title: 'Аксессуары',
-            subtitle: 'Наушники, сумки и другие необходимые вещи',
-            price: 'От $10'
-          }
-        ],
-        shop_grid: [
-          { title: 'Одежда', subtitle: 'Футболки, худи и другие предметы гардероба', price: 'От $20' },
-          { title: 'Аксессуары', subtitle: 'Уникальные предметы для стиля', price: 'От $10' },
-          { title: 'Обувь', subtitle: 'Коллаборации с ведущими брендами', price: 'От $80' }
-        ],
-        artists_title: 'Артисты',
-        artists_cards: [
-          { genre: 'Электроника / Хаус', title: 'DJ Nexus' },
-          { genre: 'R&B / Соул', title: 'Luna Vibes' },
-          { genre: 'Хип-хоп / Трэп', title: 'Cyber Flow' }
-        ],
-        about_title: 'О нас',
-        about_text: [
-          'Starstoke Label — независимый музыкальный лейбл, основанный для продвижения уникальных артистов и создания музыки, которая формирует будущее звука. Мы сотрудничаем с талантливыми музыкантами, продюсерами и дизайнерами, чтобы создавать не просто музыку, а стиль жизни.',
-          'Наша миссия — поддерживать творчество и инновации в музыкальной индустрии, предоставляя платформу для самовыражения и экспериментов.'
-        ],
-        contact_title: 'Связаться с нами',
-        form: {
-          name: 'Ваше имя',
-          email: 'Ваш@email.com',
-          category: 'Выберите категорию',
-          category_options: ['Артист', 'Продюсер', 'Ди-джей', 'Другое'],
-          links: 'Soundcloud, Youtube, Spotify',
-          message: 'Опишите вашу работу',
-          submit: 'Отправить заявку'
-        },
-        partners_title: 'Партнеры',
-        footer_social: ['Instagram', 'Soundcloud', 'Youtube', 'Telegram'],
-        copyright: '© 2025 Starstoke Label. Все права защищены.'
-      }
-    };
-
     // Initialize Vanta.js with error handling
     document.addEventListener('DOMContentLoaded', () => {
       try {
@@ -1136,143 +931,6 @@
         console.error('Vanta.js failed to initialize:', error);
         document.getElementById('vanta-bg').style.background = '#000';
       }
-
-      // Language switcher
-      const langButtons = document.querySelectorAll('.lang-btn');
-      const updateContent = (lang) => {
-        try {
-          const data = translations[lang];
-
-          // Update navigation
-          const navLinks = document.querySelectorAll('.nav-links a');
-          navLinks.forEach((link, i) => {
-            if (data.nav[i]) link.textContent = data.nav[i];
-          });
-
-          // Update header
-          const tagline = document.querySelector('.tagline');
-          if (tagline) tagline.textContent = data.tagline;
-
-          // Update news section
-          const newsTitle = document.querySelector('#news .section-title');
-          if (newsTitle) newsTitle.textContent = data.news_title;
-          const newsBannerItems = document.querySelectorAll('.news-banner-item');
-          newsBannerItems.forEach((item, i) => {
-            if (data.news_items[i]) {
-              const title = item.querySelector('.card-title');
-              const subtitle = item.querySelector('.card-subtitle');
-              if (title) title.textContent = data.news_items[i].title;
-              if (subtitle) subtitle.textContent = data.news_items[i].subtitle;
-            }
-          });
-          const newsCards = document.querySelectorAll('.news-card');
-          newsCards.forEach((card, i) => {
-            if (data.news_items[i]) {
-              const date = card.querySelector('.news-date');
-              const title = card.querySelector('.card-title');
-              const subtitle = card.querySelector('.card-subtitle');
-              if (date) date.textContent = data.news_items[i].date;
-              if (title) title.textContent = data.news_items[i].title;
-              if (subtitle) subtitle.textContent = data.news_items[i].subtitle;
-            }
-          });
-
-          // Update shop section
-          const shopTitle = document.querySelector('#shop .section-title');
-          if (shopTitle) shopTitle.textContent = data.shop_title;
-          const merchItems = document.querySelectorAll('.merch-item');
-          merchItems.forEach((item, i) => {
-            if (data.shop_items[i]) {
-              const title = item.querySelector('.card-title');
-              const subtitle = item.querySelector('.card-subtitle');
-              const price = item.querySelector('.card-price');
-              if (title) title.textContent = data.shop_items[i].title;
-              if (subtitle) subtitle.textContent = data.shop_items[i].subtitle;
-              if (price) price.textContent = data.shop_items[i].price;
-            }
-          });
-          const shopCards = document.querySelectorAll('#shop .grid .card');
-          shopCards.forEach((card, i) => {
-            if (data.shop_grid[i]) {
-              const title = card.querySelector('.card-title');
-              const subtitle = card.querySelector('.card-subtitle');
-              const price = card.querySelector('.card-price');
-              if (title) title.textContent = data.shop_grid[i].title;
-              if (subtitle) subtitle.textContent = data.shop_grid[i].subtitle;
-              if (price) price.textContent = data.shop_grid[i].price;
-            }
-          });
-
-          // Update artists section
-          const artistsTitle = document.querySelector('#artists .section-title');
-          if (artistsTitle) artistsTitle.textContent = data.artists_title;
-          const artistCards = document.querySelectorAll('.artist-card');
-          artistCards.forEach((card, i) => {
-            if (data.artists_cards[i]) {
-              const genre = card.querySelector('.artist-genre');
-              const title = card.querySelector('.card-title');
-              if (genre) genre.textContent = data.artists_cards[i].genre;
-              if (title) title.textContent = data.artists_cards[i].title;
-            }
-          });
-
-          // Update about section
-          const aboutTitle = document.querySelector('#about .section-title');
-          if (aboutTitle) aboutTitle.textContent = data.about_title;
-          const aboutParagraphs = document.querySelectorAll('#about p');
-          aboutParagraphs.forEach((p, i) => {
-            if (data.about_text[i]) p.textContent = data.about_text[i];
-          });
-
-          // Update contact section
-          const contactTitle = document.querySelector('#contact .section-title');
-          if (contactTitle) contactTitle.textContent = data.contact_title;
-          const form = document.querySelector('#contact-form');
-          if (form) {
-            const nameInput = form.querySelector('input[name="name"]');
-            const emailInput = form.querySelector('input[name="email"]');
-            const categorySelect = form.querySelector('select[name="category"]');
-            const linksInput = form.querySelector('input[name="links"]');
-            const messageTextarea = form.querySelector('textarea[name="message"]');
-            const submitButton = form.querySelector('button');
-            if (nameInput) nameInput.placeholder = data.form.name;
-            if (emailInput) emailInput.placeholder = data.form.email;
-            if (categorySelect) categorySelect.firstElementChild.textContent = data.form.category;
-            const categoryOptions = categorySelect.querySelectorAll('option:not(:first-child)');
-            categoryOptions.forEach((option, i) => {
-              if (data.form.category_options[i]) option.textContent = data.form.category_options[i];
-            });
-            if (linksInput) linksInput.placeholder = data.form.links;
-            if (messageTextarea) messageTextarea.placeholder = data.form.message;
-            if (submitButton) submitButton.textContent = data.form.submit;
-          }
-
-          // Update partners section
-          const partnersTitle = document.querySelector('#partners .section-title');
-          if (partnersTitle) partnersTitle.textContent = data.partners_title;
-
-          // Update footer
-          const socialLinks = document.querySelectorAll('.social-links a');
-          socialLinks.forEach((link, i) => {
-            if (data.footer_social[i]) link.textContent = data.footer_social[i];
-          });
-          const copyright = document.querySelector('.copyright');
-          if (copyright) copyright.textContent = data.copyright;
-        } catch (error) {
-          console.error('Error updating content:', error);
-        }
-      };
-
-      langButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          langButtons.forEach(btn => btn.classList.remove('active'));
-          button.classList.add('active');
-          updateContent(button.dataset.lang);
-        });
-      });
-
-      // Initialize with English
-      updateContent('en');
 
       // Section visibility observer
       const sections = document.querySelectorAll('.section');
