@@ -1,144 +1,140 @@
-.logo {
-      font-size: clamp(2rem, 5vw, 4rem);
-      font-weight: 100;
-      letter-spacing: 0.2em;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Starstoke Label</title>
+  <meta name="description" content="Starstoke Label – Independent Music Label created for artists.">
+  <meta name="keywords" content="music label, independent music, artists, Starstoke Label">
+  <meta property="og:title" content="Starstoke Label">
+  <meta property="og:description" content="Independent Music Label created for artists.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.starstokelabel.com">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Optimized Google Fonts with font-display: swap -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap">
+
+  <!-- Vanta.js dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      tagline: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       color: #fff;
-      margin-bottom: 20px;
-      animation: fadeInUp 1.2s cubic-bezier(0.33, 0, 0.66, 1);
-      font-family: 'Inter', sans-serif;
-    }
-
-    .logo .star {
-      display: inline-block;
-      color: #FFF8E1;
-      animation: sparkle 2.5s ease-in-out infinite;
-      text-shadow: 0 0 15px rgba(255, 248, 225, 0.4),
-                   0 0 30px rgba(255, 248, 225, 0.2);
-    }
-
-    @keyframes sparkle {
-      0%, 100% { 
-        transform: scale(1) rotate(0deg);
-        opacity: 1;
-      }
-      50% { 
-        transform: scale(1.1) rotate(180deg);
-        opacity: 0.9;
-      }
-    }
-
-    .tagline {
-      font-size: clamp(0.85rem, 1.8vw, 1rem);
-      color: #ccc;
-      max-width: 600px;
-      margin: 0 auto 10px; /* Added margin-bottom for spacing */
+      line-height: 1.8;
+      overflow-x: hidden;
+      background: #000;
+      position: relative;
       font-weight: 100;
       letter-spacing: 0.15em;
-      animation: fadeInUp 1.2s cubic-bezier(0.33, 0, 0.66, 1) 0.3s backwards;
     }
 
-    .read-more {
-      display: inline-block;
+    #vanta-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .grain-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      opacity: 0.03;
+      z-index: 1;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
+      padding: 80px 15px 15px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px); /* Vendor prefix for Safari */
+      z-index: 1000;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
       color: #fff;
       text-decoration: none;
-      font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+      font-size: 0.9rem;
       font-weight: 100;
       letter-spacing: 0.15em;
       transition: color 0.4s cubic-bezier(0.33, 0, 0.66, 1);
-      animation: fadeInUp 1.2s cubic-bezier(0.33, 0, 0.66, 1) 0.5s backwards;
+      position: relative;
+      padding: 8px 10px;
+      white-space: nowrap;
     }
 
-    .read-more:hover,
-    .read-more:focus {
+    .nav-links a:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
       color: #FFF8E1;
       text-shadow: 0 0 10px rgba(255, 248, 225, 0.5);
-      outline: none;
+      outline: none; /* Remove default outline for better aesthetics */
     }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      tootian: 1;
-        transform: translateY(0);
-      }
+    header {
+      text-align: center;
+      padding: 80px 20px 60px;
+      position: relative;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 30px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px); /* Vendor prefix for Safari */
+      margin-bottom: 50px;
     }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .nav-links {
-        gap: 10px;
-      }
-      .nav-links a {
-        font-size: 0.8rem;
-        padding: 6px 8px;
-      }
-      .nav-links a:not(:last-child)::after {
-        right: -5px;
-        height: 12px;
-      }
-      .logo {
-        font-size: clamp(1.5rem, 4vw, 3rem);
-      }
-      .tagline {
-        font-size: clamp(0.75rem, 1.5vw, 0.9rem);
-      }
-      .read-more {
-        font-size: clamp(0.7rem, 1.4vw, 0.8rem);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .content-wrapper {
-        padding: 60px 10px 10px;
-      }
-      header {
-        padding: 60px 15px 40px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div id="vanta-bg"></div>
-  <div class="grain-overlay"></div>
-  <nav>
-    <div class="container">
-      <div class="nav-links" role="navigation" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#artists">Artists</a>
-        <a href="#releases">Releases</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
-  <div class="content-wrapper">
-    <header>
-      <div class="container">
-        <h1 class="logo">Star<span class="star">*</span>stoke Label</h1>
-        <p class="tagline">HYPERBEAST Slut Online Thaipei performance</p>
-        <a href="https://hypebeast.com/zh/2024/3/uwp-presents-slut-online" class="read-more" target="_blank" rel="noopener noreferrer">Click to read more..!</a>
-      </div>
-    </header>
-  </div>
-
-  <script>
-    // Initialize Vanta.js Waves effect
-    VANTA.WAVES({
-      el: "#vanta-bg",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0x1a1a1a,
-      shininess: 30.00,
-      waveHeight: 15.00,
-      waveSpeed: 0.75,
-      zoom: 0.65
-    });
-  </script>
-</body>
-</html>
