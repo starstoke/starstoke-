@@ -6,6 +6,7 @@
   <title>Starstoke Label</title>
   <meta name="description" content="Starstoke Label – Independent Music Label created for artists.">
   <style>
+    /* Previous styles unchanged */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
 
     * {
@@ -380,7 +381,7 @@
     }
 
     .currency-btn:hover:not(.active) {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 248, 225, 0.1);
       border-color: rgba(255, 248, 225, 0.3);
     }
 
@@ -1090,6 +1091,12 @@
                 <h3 class="card-title">blowwindblow</h3>
               </div>
             </div>
+            <div class="card artist-card">
+              <img src="https://via.placeholder.com/600x400?text=Ada+Metanoia" alt="Ada Metanoia" loading="lazy">
+              <div class="artist-info">
+                <h3 class="card-title">Ada Metanoia</h3>
+              </div>
+            </div>
           </div>
           <div class="artist-controls">
             <div class="artist-control prev"><svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2L2 10L10 18" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
@@ -1171,10 +1178,8 @@
       <img id="modal-img" src="" alt="">
       <h3 id="modal-name"></h3>
       <p id="modal-bio"></p>
-      <div class="modal-social-buttons">
-        <a id="modal-ig" href="#">Instagram</a>
-        <a id="modal-spotify" href="#">Spotify</a>
-        <a id="modal-sc" href="#">SoundCloud</a>
+      <div class="modal-social-buttons" id="modal-social-buttons">
+        <!-- Dynamically populated -->
       </div>
     </div>
   </div>
@@ -1403,17 +1408,29 @@
 
       // Artist modal data
       const artists = [
-        { name: "Slut Online", bio: "Digital performer and audiovisual music performer. Artist’s work fuses post-internet aesthetics, sensuality, and chaos. Absolutely unique perspective turns every piece into an act of digital intimacy and endurance.", instagram: "https://www.instagram.com/slut0nline?igsh=MXJ4M2xhYmp6d2Fmeg==", spotify: "https://open.spotify.com/artist/5qiD7XFQezJibUa5WMYC1X?si=W0hY9ZmgRD-SJpTRdpUtug", soundcloud: "https://on.soundcloud.com/RTpH2xfFXmwG8SC9Yy" },
+        { 
+          name: "Slut Online", 
+          bio: "Digital performer and audiovisual music performer. Artist’s work fuses post-internet aesthetics, sensuality, and chaos. Absolutely unique perspective turns every piece into an act of digital intimacy and endurance.", 
+          instagram: "https://www.instagram.com/slut0nline?igsh=MXJ4M2xhYmp6d2Fmeg==", 
+          spotify: "https://open.spotify.com/artist/5qiD7XFQezJibUa5WMYC1X?si=W0hY9ZmgRD-SJpTRdpUtug", 
+          soundcloud: "https://on.soundcloud.com/RTpH2xfFXmwG8SC9Yy" 
+        },
         { name: "lindtayl0r", bio: "Bio coming soon...", instagram: "#", spotify: "#", soundcloud: "#" },
         { name: "XSDC", bio: "Bio coming soon...", instagram: "#", spotify: "#", soundcloud: "#" },
         { name: "James Junt", bio: "Bio coming soon...", instagram: "#", spotify: "#", soundcloud: "#" },
         { name: "Vacuum", bio: "Bio coming soon...", instagram: "#", spotify: "#", soundcloud: "#" },
         { name: "NExXxUS", bio: "Bio coming soon...", instagram: "#", spotify: "#", soundcloud: "#" },
         { name: "Keisha Pifagor", bio: "Brooklyn, NYC based sound producer, vocal narrator and songwriter.", instagram: "#", spotify: "#", soundcloud: "#" },
-        { name: "blowwindblow", bio: "Bio coming soon...", instagram: "#", spotify: "#", soundcloud: "#" }
+        { name: "blowwindblow", bio: "Bio coming soon...", instagram: "#", spotify: "#", soundcloud: "#" },
+        { 
+          name: "Ada Metanoia", 
+          bio: "Ethereal doom-metal, destined for cross-dimensional walkings, beneath the veil of an unborn past.", 
+          socials: "https://band.link/HW5hV" 
+        }
       ];
 
       const modal = document.getElementById('artist-modal');
+      const modalSocialButtons = document.getElementById('modal-social-buttons');
 
       artistItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -1424,9 +1441,23 @@
             document.getElementById('modal-img').alt = artist.name;
             document.getElementById('modal-name').textContent = artist.name;
             document.getElementById('modal-bio').textContent = artist.bio;
-            document.getElementById('modal-ig').href = artist.instagram;
-            document.getElementById('modal-spotify').href = artist.spotify;
-            document.getElementById('modal-sc').href = artist.soundcloud;
+
+            // Clear existing buttons
+            modalSocialButtons.innerHTML = '';
+
+            // Populate social buttons based on artist
+            if (artist.name === "Ada Metanoia") {
+              modalSocialButtons.innerHTML = `
+                <a href="${artist.socials}" target="_blank">Socials</a>
+              `;
+            } else {
+              modalSocialButtons.innerHTML = `
+                <a id="modal-ig" href="${artist.instagram}" target="_blank">Instagram</a>
+                <a id="modal-spotify" href="${artist.spotify}" target="_blank">Spotify</a>
+                <a id="modal-sc" href="${artist.soundcloud}" target="_blank">SoundCloud</a>
+              `;
+            }
+
             modal.style.display = 'flex';
           }
         });
