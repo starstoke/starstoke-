@@ -6,7 +6,7 @@
   <title>Starstoke Label</title>
   <meta name="description" content="Starstoke Label – Independent Music Label created for artists.">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
     * {
       margin: 0;
@@ -19,14 +19,15 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Cormorant Garamond', serif;
       color: #fff;
       line-height: 1.8;
       overflow-x: hidden;
       background: #000;
       position: relative;
-      font-weight: 100;
-      letter-spacing: 0.15em;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      font-style: italic;
     }
 
     #vanta-bg {
@@ -90,8 +91,8 @@
       color: #fff;
       text-decoration: none;
       font-size: 0.9rem;
-      font-weight: 100;
-      letter-spacing: 0.15em;
+      font-weight: 300;
+      letter-spacing: 0.1em;
       transition: color 0.4s cubic-bezier(0.33, 0, 0.66, 1);
       position: relative;
       padding: 8px 10px;
@@ -110,8 +111,8 @@
     }
 
     .nav-links a:hover {
-      color: #FFF8E1;
-      text-shadow: 0 0 10px rgba(255, 248, 225, 0.5);
+      color: #FFB1C8;
+      text-shadow: 0 0 10px rgba(255, 177, 200, 0.5);
     }
 
     header {
@@ -126,20 +127,20 @@
 
     .logo {
       font-size: clamp(2rem, 5vw, 4rem);
-      font-weight: 100;
+      font-weight: 400;
       letter-spacing: 0.2em;
       color: #fff;
       margin-bottom: 20px;
-      animation: fadeInUp 1.2s cubic-bezier(0.33, 0, 0.66, 1);
-      font-family: 'Inter', sans-serif;
+      animation: fadeInUp 1.2s cubic-bezier(0.33, 0, 0.66, 1), sparkleText 3s ease-in-out infinite;
+      font-family: 'Cormorant Garamond', serif;
     }
 
     .logo .star {
       display: inline-block;
-      color: #FFF8E1;
+      color: #FFD700;
       animation: sparkle 2.5s ease-in-out infinite;
-      text-shadow: 0 0 15px rgba(255, 248, 225, 0.4),
-                   0 0 30px rgba(255, 248, 225, 0.2);
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.4),
+                   0 0 30px rgba(255, 215, 0, 0.2);
     }
 
     @keyframes sparkle {
@@ -153,13 +154,26 @@
       }
     }
 
+    @keyframes sparkleText {
+      0%, 100% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
+                     0 0 10px rgba(255, 177, 200, 0.2),
+                     0 0 20px rgba(64, 224, 208, 0.1);
+      }
+      50% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                     0 0 20px rgba(255, 177, 200, 0.4),
+                     0 0 30px rgba(64, 224, 208, 0.2);
+      }
+    }
+
     .tagline {
       font-size: clamp(0.85rem, 1.8vw, 1rem);
       color: #ccc;
       max-width: 600px;
       margin: 0 auto;
-      font-weight: 100;
-      letter-spacing: 0.15em;
+      font-weight: 300;
+      letter-spacing: 0.1em;
       animation: fadeInUp 1.2s cubic-bezier(0.33, 0, 0.66, 1) 0.3s backwards;
     }
 
@@ -196,19 +210,20 @@
       margin-bottom: 40px;
       text-align: center;
       letter-spacing: 0.2em;
-      background: linear-gradient(135deg, #FFF8E1 0%, #FFE0B2 100%);
+      background: linear-gradient(135deg, #FFB1C8 0%, #FFD700 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       text-transform: uppercase;
+      animation: sparkleText 3s ease-in-out infinite;
     }
 
     .section-subtitle {
       font-size: 0.85rem;
       color: #ccc;
       text-align: center;
-      font-weight: 100;
-      letter-spacing: 0.15em;
+      font-weight: 300;
+      letter-spacing: 0.1em;
       margin-top: -30px;
       margin-bottom: 40px;
     }
@@ -232,7 +247,7 @@
       opacity: 0;
       transition: opacity 1s cubic-bezier(0.33, 0, 0.66, 1);
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
       flex-direction: column;
       cursor: pointer;
@@ -265,25 +280,26 @@
     .news-banner-item .card-title, .tv-item .card-title {
       font-size: clamp(2.4rem, 4.8vw, 3rem);
       font-weight: 700;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Cormorant Garamond', serif;
       margin-bottom: 10px;
-      text-align: left;
+      text-align: center;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      background: linear-gradient(135deg, #FFF8E1 0%, #FFE0B2 100%);
+      background: linear-gradient(135deg, #FFB1C8 0%, #FFD700 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-shadow: 0 0 15px rgba(255, 248, 225, 0.6);
+      text-shadow: 0 0 15px rgba(255, 177, 200, 0.6);
       z-index: 1;
       max-width: 80%;
+      animation: sparkleText 3s ease-in-out infinite;
     }
 
     .news-banner-item .card-subtitle, .tv-item .card-subtitle {
       font-size: clamp(0.8rem, 1.6vw, 0.9rem);
       max-width: 80%;
-      text-align: left;
-      font-weight: 100;
+      text-align: center;
+      font-weight: 300;
       color: #fff;
       letter-spacing: 0.1em;
       z-index: 1;
@@ -311,7 +327,7 @@
     }
 
     .news-banner-control.active, .tv-control.active {
-      background: #FFF8E1;
+      background: #FFD700;
       transform: scale(1.2);
     }
 
@@ -369,7 +385,7 @@
     }
 
     .merch-control.active {
-      background: #FFF8E1;
+      background: #FFD700;
       transform: scale(1.2);
     }
 
@@ -386,7 +402,7 @@
 
     .card:hover, .news-card:hover, .check-this-out-card:hover, .artist-card:hover, .tv-card:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 15px rgba(255, 248, 225, 0.2);
+      box-shadow: 0 0 15px rgba(255, 177, 200, 0.2);
     }
 
     .card, .tv-card {
@@ -408,14 +424,14 @@
       left: 0;
       right: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255, 248, 225, 0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 177, 200, 0.2), transparent);
       opacity: 0;
       transition: opacity 0.4s cubic-bezier(0.33, 0, 0.66, 1);
     }
 
     .card:hover, .tv-card:hover {
       transform: translateY(-5px);
-      border-color: rgba(255, 248, 225, 0.1);
+      border-color: rgba(255, 177, 200, 0.1);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 
@@ -437,20 +453,25 @@
       margin-bottom: 8px;
       letter-spacing: 0.15em;
       text-transform: uppercase;
+      background: linear-gradient(135deg, #FFB1C8, #FFD700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: sparkleText 3s ease-in-out infinite;
     }
 
     .card-subtitle {
       color: #ccc;
       font-size: 0.8rem;
       margin-bottom: 12px;
-      font-weight: 100;
+      font-weight: 300;
       letter-spacing: 0.1em;
     }
 
     .card-price {
       font-size: 1.3rem;
-      font-weight: 100;
-      background: linear-gradient(135deg, #FFF8E1, #FFE0B2);
+      font-weight: 300;
+      background: linear-gradient(135deg, #FFB1C8, #FFD700);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -507,7 +528,7 @@
       color: #ccc;
       letter-spacing: 0.15em;
       margin-bottom: 6px;
-      font-weight: 100;
+      font-weight: 300;
     }
 
     .artist-controls {
@@ -535,9 +556,9 @@
     }
 
     .artist-control:hover {
-      background: rgba(255, 248, 225, 0.1);
-      border-color: rgba(255, 248, 225, 0.3);
-      box-shadow: 0 0 10px rgba(255, 248, 225, 0.2);
+      background: rgba(255, 177, 200, 0.1);
+      border-color: rgba(255, 177, 200, 0.3);
+      box-shadow: 0 0 10px rgba(255, 177, 200, 0.2);
     }
 
     .check-this-out {
@@ -553,16 +574,16 @@
       padding: 40px 15px;
       text-align: center;
       font-size: 1.3rem;
-      font-weight: 100;
+      font-weight: 300;
       transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
-      letter-spacing: 0.15em;
+      letter-spacing: 0.1em;
     }
 
     .check-this-out-card:hover {
       background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 248, 225, 0.1);
+      border-color: rgba(255, 177, 200, 0.1);
       transform: scale(1.03);
-      box-shadow: 0 0 15px rgba(255, 248, 225, 0.2);
+      box-shadow: 0 0 15px rgba(255, 177, 200, 0.2);
     }
 
     .check-this-out-button {
@@ -576,11 +597,12 @@
       text-decoration: none;
       font-size: 0.8rem;
       transition: all 0.4s;
+      font-weight: 300;
     }
 
     .check-this-out-button:hover {
-      background: rgba(255, 248, 225, 0.1);
-      border-color: rgba(255, 248, 225, 0.2);
+      background: rgba(255, 177, 200, 0.1);
+      border-color: rgba(255, 177, 200, 0.2);
     }
 
     form {
@@ -605,22 +627,23 @@
       border-radius: 12px;
       color: #fff;
       font-size: 0.8rem;
-      font-family: inherit;
+      font-family: 'Cormorant Garamond', serif;
       transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
-      font-weight: 100;
+      font-weight: 300;
       letter-spacing: 0.1em;
+      font-style: italic;
     }
 
     input:focus, textarea:focus, select:focus {
       outline: none;
-      border-color: rgba(255, 248, 225, 0.2);
+      border-color: rgba(255, 177, 200, 0.2);
       background: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 0 10px rgba(255, 248, 225, 0.2);
+      box-shadow: 0 0 10px rgba(255, 177, 200, 0.2);
     }
 
     input::placeholder, textarea::placeholder {
       color: #999;
-      font-weight: 100;
+      font-weight: 300;
       letter-spacing: 0.1em;
     }
 
@@ -642,20 +665,21 @@
     button {
       width: 100%;
       padding: 12px;
-      background: linear-gradient(135deg, #FFF8E1, #FFE0B2);
+      background: linear-gradient(135deg, #FFB1C8, #FFD700);
       color: #000;
       border: none;
       border-radius: 12px;
       font-size: 0.8rem;
-      font-weight: 100;
+      font-weight: 300;
       cursor: pointer;
       transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
       letter-spacing: 0.2em;
+      font-family: 'Cormorant Garamond', serif;
     }
 
     button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 15px rgba(255, 248, 225, 0.3);
+      box-shadow: 0 8px 15px rgba(255, 177, 200, 0.3);
     }
 
     .news-card {
@@ -668,8 +692,8 @@
 
     .news-card:hover {
       transform: translateY(-5px);
-      border-color: rgba(255, 248, 225, 0.1);
-      box-shadow: 0 0 15px rgba(255, 248, 225, 0.2);
+      border-color: rgba(255, 177, 200, 0.1);
+      box-shadow: 0 0 15px rgba(255, 177, 200, 0.2);
     }
 
     .news-image {
@@ -687,7 +711,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.15em;
       margin-bottom: 8px;
-      font-weight: 100;
+      font-weight: 300;
     }
 
     .news-footer {
@@ -695,7 +719,7 @@
       font-size: 0.75rem;
       color: #ccc;
       margin-top: 20px;
-      font-weight: 100;
+      font-weight: 300;
       letter-spacing: 0.15em;
     }
 
@@ -724,7 +748,7 @@
       border-radius: 30px;
       color: #fff;
       text-decoration: none;
-      font-weight: 100;
+      font-weight: 300;
       font-size: 0.75rem;
       transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
       letter-spacing: 0.15em;
@@ -733,17 +757,17 @@
     }
 
     .social-links a:hover {
-      background: rgba(255, 248, 225, 0.1);
-      border-color: rgba(255, 248, 225, 0.2);
+      background: rgba(255, 177, 200, 0.1);
+      border-color: rgba(255, 177, 200, 0.2);
       transform: translateY(-2px);
-      box-shadow: 0 0 10px rgba(255, 248, 225, 0.2);
+      box-shadow: 0 0 10px rgba(255, 177, 200, 0.2);
     }
 
     .copyright {
       color: #999;
       margin-top: 25px;
       font-size: 0.75rem;
-      font-weight: 100;
+      font-weight: 300;
       letter-spacing: 0.15em;
     }
 
@@ -780,12 +804,19 @@
     #modal-name {
       font-size: 1.8rem;
       margin-bottom: 10px;
+      font-weight: 700;
+      animation: sparkleText 3s ease-in-out infinite;
+      background: linear-gradient(135deg, #FFB1C8, #FFD700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     #modal-bio {
       font-size: 0.9rem;
       color: #ccc;
       margin-bottom: 20px;
+      font-weight: 300;
     }
 
     .modal-social-buttons {
@@ -804,11 +835,12 @@
       text-decoration: none;
       font-size: 0.8rem;
       transition: all 0.4s;
+      font-weight: 300;
     }
 
     .modal-social-buttons a:hover {
-      background: rgba(255, 248, 225, 0.1);
-      border-color: rgba(255, 248, 225, 0.2);
+      background: rgba(255, 177, 200, 0.1);
+      border-color: rgba(255, 177, 200, 0.2);
     }
 
     @media (max-width: 768px) {
@@ -963,18 +995,18 @@
         <h2 class="section-title">News Blog</h2>
         <div class="news-banner">
           <div class="news-banner-item active" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="https://via.placeholder.com/1200x400?text=DJ+Nexus+Release" alt="DJ Nexus Release" loading="lazy">
-            <h3 class="card-title">DJ Nexus Release</h3>
+            <img src="https://via.placeholder.com/1200x400?text=Slut+Online+in+Taipei" alt="Slut Online in Taipei" loading="lazy">
+            <h3 class="card-title">UWP PRESENTS: SLUT ONLINE IN TAIPEI</h3>
             <p class="card-subtitle">Album "Digital Dreams" — 12 tracks redefining reality</p>
           </div>
           <div class="news-banner-item" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="https://via.placeholder.com/1200x400?text=Starstoke+at+Festival" alt="Starstoke at Festival" loading="lazy">
-            <h3 class="card-title">Starstoke at Festival</h3>
+            <img src="https://via.placeholder.com/1200x400?text=XhaixotiX+Gao+Xiao+Gao+Live" alt="XhaixotiX Gao Xiao Gao Live" loading="lazy">
+            <h3 class="card-title">Starstoke presents: XhaixotiX Gao Xiao Gao Live!</h3>
             <p class="card-subtitle">Label artists to perform at a major music event</p>
           </div>
           <div class="news-banner-item" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="https://via.placeholder.com/1200x400?text=New+Collection" alt="New Collection" loading="lazy">
-            <h3 class="card-title">New Collection</h3>
+            <img src="https://via.placeholder.com/1200x400?text=Swing+Fist+Promo+Party" alt="Swing Fist Promo Party" loading="lazy">
+            <h3 class="card-title">Starstoke a.k.a Swing fist promo party // Live Performance stage digest.</h3>
             <p class="card-subtitle">Exclusive clothing line from top designers</p>
           </div>
         </div>
@@ -1037,7 +1069,7 @@
               </div>
             </div>
             <div class="card artist-card">
-              <img src="https://via.placeholder.com/600x400?text=James+Junt" alt="James Hunt" loading="lazy">
+              <img src="https://via.placeholder.com/600x400?text=James+Junt" alt="James Junt" loading="lazy">
               <div class="artist-info">
                 <h3 class="card-title">James Junt</h3>
               </div>
@@ -1085,8 +1117,7 @@
         <div class="tv-showcase">
           <div class="tv-item active" onclick="window.open('https://starstoke.github.io/Broadcast/', '_blank');">
             <img src="-8590732687137490012-ezgif.com-video-to-gif-converter.gif" alt="Starstoke TV Preview" loading="lazy">
-            <h3 class="card-title">StarstokeTV Watch Live!</h3>
-            <p class="card-subtitle">Tune in!</p>
+            <h3 class="card-title">Tune in!</h3>
           </div>
         </div>
         <div class="grid">
@@ -1185,7 +1216,7 @@
           minWidth: 200.00,
           scale: 1.00,
           scaleMobile: 1.00,
-          color: 0xFFF8E1,
+          color: 0xFFB1C8,
           backgroundColor: 0x000000,
           points: isMobile ? 8.0 : 15.0,
           maxDistance: isMobile ? 18.0 : 25.0,
@@ -1203,7 +1234,7 @@
           }
           animateVanta();
 
-          const colors = [0xFFF8E1, 0xFFE0B2, 0xFFCCBC, 0xB2EBF2];
+          const colors = [0xFFB1C8, 0xFFD700, 0x40E0D0, 0x7DF9FF];
           let currentColorIndex = 0;
           function changeColor() {
             const nextColorIndex = (currentColorIndex + 1) % colors.length;
