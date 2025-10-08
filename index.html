@@ -353,38 +353,6 @@
       background: #FFF8E1;
     }
 
-    .currency-selector {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 25px;
-    }
-
-    .currency-btn {
-      padding: 6px 12px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      color: #fff;
-      font-weight: 100;
-      font-size: 0.8rem;
-      cursor: pointer;
-      transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
-      letter-spacing: 0.15em;
-      min-width: 50px;
-      text-align: center;
-    }
-
-    .currency-btn.active {
-      background: linear-gradient(135deg, #FFF8E1, #FFE0B2);
-      color: #000;
-    }
-
-    .currency-btn:hover:not(.active) {
-      background: rgba(255, 248, 225, 0.1);
-      border-color: rgba(255, 248, 225, 0.3);
-    }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -577,6 +545,24 @@
       box-shadow: 0 0 15px rgba(255, 248, 225, 0.2);
     }
 
+    .check-this-out-button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all 0.4s;
+    }
+
+    .check-this-out-button:hover {
+      background: rgba(255, 248, 225, 0.1);
+      border-color: rgba(255, 248, 225, 0.2);
+    }
+
     form {
       max-width: 450px;
       margin: 0 auto;
@@ -682,6 +668,15 @@
       letter-spacing: 0.15em;
       margin-bottom: 8px;
       font-weight: 100;
+    }
+
+    .news-footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #ccc;
+      margin-top: 20px;
+      font-weight: 100;
+      letter-spacing: 0.15em;
     }
 
     footer {
@@ -904,12 +899,6 @@
         font-size: 0.75rem;
       }
 
-      .currency-btn {
-        padding: 5px 10px;
-        font-size: 0.75rem;
-        min-width: 45px;
-      }
-
       .social-links a {
         padding: 6px 15px;
         font-size: 0.7rem;
@@ -958,19 +947,19 @@
         <h2 class="section-title">News Blog</h2>
         <div class="news-banner">
           <div class="news-banner-item active" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Updates+Soon" alt="Updates Soon 1" loading="lazy">
-            <h3 class="card-title">Updates Soon ! 1</h3>
-            <p class="card-subtitle">Stay tuned for more information…</p>
+            <img src="https://via.placeholder.com/600x300?text=DJ+Nexus+Release" alt="DJ Nexus Release" loading="lazy">
+            <h3 class="card-title">DJ Nexus Release</h3>
+            <p class="card-subtitle">Album "Digital Dreams" — 12 tracks redefining reality</p>
           </div>
           <div class="news-banner-item" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Updates+Soon" alt="Updates Soon 2" loading="lazy">
-            <h3 class="card-title">Updates Soon ! 2</h3>
-            <p class="card-subtitle">Stay tuned for more information…</p>
+            <img src="https://via.placeholder.com/600x300?text=Starstoke+at+Festival" alt="Starstoke at Festival" loading="lazy">
+            <h3 class="card-title">Starstoke at Festival</h3>
+            <p class="card-subtitle">Label artists to perform at a major music event</p>
           </div>
           <div class="news-banner-item" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="https://via.placeholder.com/600x300?text=Updates+Soon" alt="Updates Soon 3" loading="lazy">
-            <h3 class="card-title">Updates Soon ! 3</h3>
-            <p class="card-subtitle">Stay tuned for more information…</p>
+            <img src="https://via.placeholder.com/600x300?text=New+Collection" alt="New Collection" loading="lazy">
+            <h3 class="card-title">New Collection</h3>
+            <p class="card-subtitle">Exclusive clothing line from top designers</p>
           </div>
         </div>
         <div class="news-banner-controls">
@@ -980,39 +969,35 @@
         </div>
         <div class="grid">
           <div class="news-card" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <div class="news-image" style="background-image: url('https://via.placeholder.com/600x200?text=Updates+Soon');"></div>
+            <div class="news-image" style="background-image: url('https://via.placeholder.com/600x200?text=DJ+Nexus+Release');"></div>
             <div class="news-content">
               <div class="news-date">October 5, 2025</div>
-              <h3 class="card-title">Updates Soon ! 1</h3>
-              <p class="card-subtitle">Stay tuned for more information…</p>
+              <h3 class="card-title">DJ Nexus Release</h3>
+              <p class="card-subtitle">Album "Digital Dreams" — 12 tracks redefining reality</p>
             </div>
           </div>
           <div class="news-card" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <div class="news-image" style="background-image: url('https://via.placeholder.com/600x200?text=Updates+Soon');"></div>
+            <div class="news-image" style="background-image: url('https://via.placeholder.com/600x200?text=Starstoke+at+Festival');"></div>
             <div class="news-content">
               <div class="news-date">October 1, 2025</div>
-              <h3 class="card-title">Updates Soon ! 2</h3>
-              <p class="card-subtitle">Stay tuned for more information…</p>
+              <h3 class="card-title">Starstoke at Festival</h3>
+              <p class="card-subtitle">Label artists to perform at a major music event</p>
             </div>
           </div>
           <div class="news-card" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <div class="news-image" style="background-image: url('https://via.placeholder.com/600x200?text=Updates+Soon');"></div>
+            <div class="news-image" style="background-image: url('https://via.placeholder.com/600x200?text=New+Collection');"></div>
             <div class="news-content">
               <div class="news-date">September 28, 2025</div>
-              <h3 class="card-title">Updates Soon ! 3</h3>
-              <p class="card-subtitle">Stay tuned for more information…</p>
+              <h3 class="card-title">New Collection</h3>
+              <p class="card-subtitle">Exclusive clothing line from top designers</p>
             </div>
           </div>
         </div>
+        <p class="news-footer">Click to see all the hottest news, events and artist digests on Starstoke News Blog!</p>
       </section>
 
       <section class="section" id="shop">
         <h2 class="section-title">Shop</h2>
-        <div class="currency-selector">
-          <button class="currency-btn active" data-currency="THB">THB</button>
-          <button class="currency-btn" data-currency="RUB">RUB</button>
-          <button class="currency-btn" data-currency="USDT">USDT</button>
-        </div>
         <div class="merch-showcase">
           <div class="merch-item active" data-category="clothing" onclick="window.open('https://starstoke.github.io/Shop/', 'popup', 'width=600,height=400');">
             <img src="https://via.placeholder.com/300x300?text=Starstoke+T-Shirt" alt="Starstoke T-Shirt" loading="lazy">
@@ -1031,10 +1016,10 @@
         </div>
         <div class="grid">
           <div class="card" data-category="clothing" onclick="window.open('https://starstoke.github.io/Shop/', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Starstoke+T-Shirt" alt="Clothes" loading="lazy">
-            <h3 class="card-title">Clothes</h3>
+            <img src="https://via.placeholder.com/300x300?text=Starstoke+T-Shirt" alt="Starstoke T-Shirt" loading="lazy">
+            <h3 class="card-title">Explore Starstoke Shop</h3>
             <p class="card-subtitle">Clothing items from Starstoke merch and partners!</p>
-            <div class="card-price">100 <span class="currency">THB</span></div>
+            <div class="card-price">100</div>
           </div>
         </div>
       </section>
@@ -1121,7 +1106,7 @@
 
       <section class="section" id="about">
         <h2 class="section-title">About</h2>
-        <p>Starstoke is an independent music, sound, and graphic design production label. Created for artists, our community provides space and assistance to help you share your own vision equally. Thank you for being our star to stoke!</p>
+        <p>Starstoke is an independent music, sound, and graphic design production label platform. Created for artists, our community, including shop and TV broadcast, provides space and assistance to help you share your own vision equally. Thank you for being our star to stoke!</p>
       </section>
 
       <section class="section" id="contact">
@@ -1156,7 +1141,11 @@
         <h2 class="section-title">Check This Out!</h2>
         <p class="section-subtitle">Starstoke recommend</p>
         <div class="check-this-out">
-          <!-- Content can be added here -->
+          <div class="check-this-out-card">
+            <p>Wasabi</p>
+            <p class="card-subtitle">“Wasabi” House Art-Music-People performance community, based in Thailand.</p>
+            <a href="https://lnk.bio/WasabiHouse?fbclid=PAZnRzaANS1kFleHRuA2FlbQIxMQABp9QAn5RT3fEt41k3SUXqh9BWpRN_BjybqxSJ7p7WZhZbkxcg1ideCN11hJ8k_aem_PxtE5rJRD72lWqwCIQ7ZCQ" target="_blank" class="check-this-out-button">Socials</a>
+          </div>
         </div>
       </section>
 
@@ -1368,20 +1357,6 @@
 
       // Initialize first artist as active
       showArtistItem(0);
-
-      // Currency selector
-      const currencyButtons = document.querySelectorAll('.currency-btn');
-      const prices = document.querySelectorAll('.card-price .currency');
-      currencyButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          currencyButtons.forEach(btn => btn.classList.remove('active'));
-          button.classList.add('active');
-          const currency = button.dataset.currency;
-          prices.forEach(price => {
-            price.textContent = currency;
-          });
-        });
-      });
 
       // Contact form submission
       const contactForm = document.getElementById('contact-form');
