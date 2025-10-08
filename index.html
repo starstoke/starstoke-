@@ -6,7 +6,6 @@
   <title>Starstoke Label</title>
   <meta name="description" content="Starstoke Label – Independent Music Label created for artists.">
   <style>
-    /* Previous styles unchanged */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
 
     * {
@@ -216,13 +215,14 @@
 
     .news-banner, .tv-showcase {
       position: relative;
-      height: 350px;
+      height: 400px;
       margin-bottom: 25px;
       overflow: hidden;
       border-radius: 30px;
       background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
     .news-banner-item, .tv-item {
@@ -232,11 +232,13 @@
       opacity: 0;
       transition: opacity 1s cubic-bezier(0.33, 0, 0.66, 1);
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       flex-direction: column;
       cursor: pointer;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+      background-size: cover;
+      background-position: center;
+      padding: 20px;
     }
 
     .news-banner-item.active, .tv-item.active {
@@ -244,56 +246,73 @@
     }
 
     .news-banner-item img, .tv-item img {
-      max-width: 90%;
-      max-height: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      margin-bottom: 12px;
-      border-radius: 20px;
-      loading: lazy;
+      border-radius: 30px;
+      z-index: -1;
+      filter: brightness(0.7);
+      transition: filter 0.4s ease;
+    }
+
+    .news-banner-item:hover img, .tv-item:hover img {
+      filter: brightness(0.85);
     }
 
     .news-banner-item .card-title, .tv-item .card-title {
-      font-size: clamp(2.2rem, 4.5vw, 2.8rem);
+      font-size: clamp(2.4rem, 4.8vw, 3rem);
       font-weight: 700;
       font-family: 'Inter', sans-serif;
       margin-bottom: 10px;
-      text-align: center;
+      text-align: left;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       background: linear-gradient(135deg, #FFF8E1 0%, #FFE0B2 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-shadow: 0 0 10px rgba(255, 248, 225, 0.5);
+      text-shadow: 0 0 15px rgba(255, 248, 225, 0.6);
+      z-index: 1;
+      max-width: 80%;
     }
 
     .news-banner-item .card-subtitle, .tv-item .card-subtitle {
-      font-size: clamp(0.75rem, 1.4vw, 0.85rem);
-      max-width: 90%;
-      text-align: center;
+      font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+      max-width: 80%;
+      text-align: left;
       font-weight: 100;
-      color: #ccc;
+      color: #fff;
       letter-spacing: 0.1em;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 8px 12px;
+      border-radius: 10px;
     }
 
     .news-banner-controls, .tv-controls {
       display: flex;
       justify-content: center;
-      gap: 8px;
-      margin-top: 12px;
+      gap: 10px;
+      margin-top: 15px;
+      position: relative;
+      z-index: 2;
     }
 
     .news-banner-control, .tv-control {
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.3);
       cursor: pointer;
-      transition: background 0.4s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: background 0.4s cubic-bezier(0.33, 0, 0.66, 1), transform 0.4s;
     }
 
     .news-banner-control.active, .tv-control.active {
       background: #FFF8E1;
+      transform: scale(1.2);
     }
 
     .merch-showcase {
@@ -336,21 +355,22 @@
     .merch-controls {
       display: flex;
       justify-content: center;
-      gap: 8px;
-      margin-top: 12px;
+      gap: 10px;
+      margin-top: 15px;
     }
 
     .merch-control {
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.3);
       cursor: pointer;
-      transition: background 0.4s cubic-bezier(0.33, 0, 0.66, 1);
+      transition: background 0.4s cubic-bezier(0.33, 0, 0.66, 1), transform 0.4s;
     }
 
     .merch-control.active {
       background: #FFF8E1;
+      transform: scale(1.2);
     }
 
     .grid {
@@ -846,7 +866,7 @@
       }
 
       .news-banner, .merch-showcase, .tv-showcase {
-        height: 280px;
+        height: 300px;
       }
 
       .news-banner-item .card-title, .tv-item .card-title {
@@ -855,10 +875,6 @@
 
       .news-banner-item .card-subtitle, .tv-item .card-subtitle {
         font-size: clamp(0.65rem, 1.4vw, 0.75rem);
-      }
-
-      .news-banner-item img, .tv-item img {
-        max-height: 45%;
       }
 
       .news-image {
@@ -947,26 +963,25 @@
         <h2 class="section-title">News Blog</h2>
         <div class="news-banner">
           <div class="news-banner-item active" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="IMG_7535.jpeg" alt="UWP PRESENTS:SLUT ONLINE IN TAIPEI" loading="lazy">
-            <h3 class="card-title">UWP PRESENTS:SLUT ONLINE IN TAIPEI</h3>
-            <p class="card-subtitle">Audio-Visual Performance</p>
+            <img src="https://via.placeholder.com/1200x400?text=DJ+Nexus+Release" alt="DJ Nexus Release" loading="lazy">
+            <h3 class="card-title">DJ Nexus Release</h3>
+            <p class="card-subtitle">Album "Digital Dreams" — 12 tracks redefining reality</p>
           </div>
           <div class="news-banner-item" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="IMG_7536.jpeg" alt="Starstoke presents: XhaiotiX Gao Xiao gao Live!" loading="lazy">
-            <h3 class="card-title">Starstoke presents: XhaiotiX Gao Xiao gao Live!</h3>
-            <p class="card-subtitle">Label artists performs at a major music event</p>
+            <img src="https://via.placeholder.com/1200x400?text=Starstoke+at+Festival" alt="Starstoke at Festival" loading="lazy">
+            <h3 class="card-title">Starstoke at Festival</h3>
+            <p class="card-subtitle">Label artists to perform at a major music event</p>
           </div>
           <div class="news-banner-item" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="IMG_7537.jpeg" alt="Swing" loading="lazy">
-            <h3 class="card-title">Starstoke a.k.a Swing first promo party</h3>
-            <p class="card-subtitle">Live Performance stage digest</p>
+            <img src="https://via.placeholder.com/1200x400?text=New+Collection" alt="New Collection" loading="lazy">
+            <h3 class="card-title">New Collection</h3>
+            <p class="card-subtitle">Exclusive clothing line from top designers</p>
           </div>
         </div>
         <div class="news-banner-controls">
           <div class="news-banner-control active"></div>
           <div class="news-banner-control"></div>
           <div class="news-banner-control"></div>
-        </div>
         </div>
         <p class="news-footer">Click to see all the hottest news, events and artist digests on Starstoke News Blog!</p>
       </section>
