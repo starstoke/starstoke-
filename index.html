@@ -336,64 +336,6 @@
       transform: scale(1.2);
     }
 
-    .merch-showcase {
-      position: relative;
-      height: 340px; /* Slightly increased for better proportion */
-      margin-bottom: 25px;
-      overflow: hidden;
-      border-radius: 30px;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
-    }
-
-    .merch-item {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 0.6s cubic-bezier(0.33, 0, 0.66, 1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .merch-item.active {
-      opacity: 1;
-    }
-
-    .merch-item img {
-      max-width: 90%;
-      max-height: 55%;
-      object-fit: contain;
-      margin-bottom: 12px;
-      border-radius: 20px;
-      loading: lazy;
-    }
-
-    .merch-controls {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 15px;
-    }
-
-    .merch-control {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.3);
-      cursor: pointer;
-      transition: background 0.4s cubic-bezier(0.33, 0, 0.66, 1), transform 0.4s;
-    }
-
-    .merch-control.active {
-      background: #FFD700;
-      transform: scale(1.2);
-    }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1026,28 +968,11 @@
 
       <section class="section" id="shop">
         <h2 class="section-title">Shop</h2>
-        <div class="merch-showcase">
-          <div class="merch-item active" data-category="clothing" onclick="window.open('https://starstoke.github.io/Shop/', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Starstoke+T-Shirt" alt="Starstoke T-Shirt" loading="lazy">
-          </div>
-          <div class="merch-item" data-category="accessories" onclick="window.open('https://starstoke.github.io/Shop/', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Limited+Cap" alt="Limited Cap" loading="lazy">
-          </div>
-          <div class="merch-item" data-category="footwear" onclick="window.open('https://starstoke.github.io/Shop/', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Sneakers+Collab" alt="Sneakers Collab" loading="lazy">
-          </div>
-        </div>
-        <div class="merch-controls">
-          <div class="merch-control active"></div>
-          <div class="merch-control"></div>
-          <div class="merch-control"></div>
-        </div>
         <div class="grid">
           <div class="card" data-category="clothing" onclick="window.open('https://starstoke.github.io/Shop/', 'popup', 'width=600,height=400');">
-            <img src="https://via.placeholder.com/300x300?text=Starstoke+T-Shirt" alt="Starstoke T-Shirt" loading="lazy">
+            <img src="https://via.placeholder.com/300x300?text=Explore+Starstoke+Shop" alt="Explore Starstoke Shop" loading="lazy">
             <h3 class="card-title">Explore Starstoke Shop</h3>
             <p class="card-subtitle">Clothing items from Starstoke merch and partners!</p>
-            <div class="card-price">100</div>
           </div>
         </div>
       </section>
@@ -1326,30 +1251,6 @@
       setInterval(() => {
         const nextNewsIndex = (currentNewsIndex + 1) % newsBannerItems.length;
         showNewsBannerItem(nextNewsIndex);
-      }, 6000);
-
-      // Merch carousel
-      const merchItems = document.querySelectorAll('.merch-item');
-      const merchControls = document.querySelectorAll('.merch-control');
-      let currentMerchIndex = 0;
-
-      function showMerchItem(index) {
-        merchItems.forEach((item, i) => {
-          item.classList.toggle('active', i === index);
-        });
-        merchControls.forEach((control, i) => {
-          control.classList.toggle('active', i === index);
-        });
-        currentMerchIndex = index;
-      }
-
-      merchControls.forEach((control, index) => {
-        control.addEventListener('click', () => showMerchItem(index));
-      });
-
-      setInterval(() => {
-        const nextMerchIndex = (currentMerchIndex + 1) % merchItems.length;
-        showMerchItem(nextMerchIndex);
       }, 6000);
 
       // Artist carousel
