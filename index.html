@@ -199,7 +199,7 @@
       transition: opacity 0.8s cubic-bezier(0.33, 0, 0.66, 1), transform 0.8s cubic-bezier(0.33, 0, 0.66, 1);
       background: rgba(0, 0, 0, 0.6);
       border-radius: 30px;
-      padding: 40px; /* Increased padding for better spacing */
+      padding: 40px;
       backdrop-filter: blur(12px);
     }
 
@@ -233,16 +233,16 @@
       margin-bottom: 40px;
     }
 
-    .news-banner, .tv-showcase {
+    .news-banner {
       position: relative;
-      height: 420px; /* Slightly increased height for better layout */
+      height: 420px;
       margin-bottom: 25px;
       overflow: hidden;
       border-radius: 30px;
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(12px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 20px rgba(125, 249, 255, 0.3), 0 4px 20px rgba(0, 0, 0, 0.3); /* Added subtle glow */
     }
 
     .news-banner-item, .tv-item {
@@ -845,7 +845,7 @@
         gap: 15px;
       }
 
-      .news-banner, .merch-showcase, .tv-showcase {
+      .news-banner, .tv-showcase {
         height: 300px;
       }
 
@@ -944,18 +944,12 @@
         <div class="news-banner">
           <div class="news-banner-item active" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
             <img src="IMG_7535.jpeg" alt="Slut Online in Taipei" loading="lazy">
-            
-            
           </div>
           <div class="news-banner-item" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
             <img src="IMG_7536.jpeg" alt="XhaixotiX Gao Xiao Gao Live" loading="lazy">
-            
-            
           </div>
           <div class="news-banner-item" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
             <img src="IMG_7537.jpeg" alt="Swing Fist Promo Party" loading="lazy">
-           
-           
           </div>
         </div>
         <div class="news-banner-controls">
@@ -997,24 +991,6 @@
               <img src="IMG_7546.jpeg" alt="XSDC" loading="lazy">
               <div class="artist-info">
                 <h3 class="card-title">XSDC</h3>
-              </div>
-            </div>
-            <div class="card artist-card">
-              <img src="https://via.placeholder.com/600x400?text=James+Junt" alt="James Junt" loading="lazy">
-              <div class="artist-info">
-                <h3 class="card-title">James Junt</h3>
-              </div>
-            </div>
-            <div class="card artist-card">
-              <img src="https://via.placeholder.com/600x400?text=Vacuum" alt="Vacuum" loading="lazy">
-              <div class="artist-info">
-                <h3 class="card-title">Vacuum</h3>
-              </div>
-            </div>
-            <div class="card artist-card">
-              <img src="https://via.placeholder.com/600x400?text=NExXxUS" alt="NExXxUS" loading="lazy">
-              <div class="artist-info">
-                <h3 class="card-title">NExXxUS</h3>
               </div>
             </div>
             <div class="card artist-card">
@@ -1174,11 +1150,11 @@
             let progress = 0;
 
             function interpolateColor() {
-              progress += 0.01; // Slower interpolation
+              progress += 0.01;
               if (progress >= 1) {
                 currentColorIndex = nextColorIndex;
                 vantaEffect.setOptions({ color: endColor, lineOpacity: isMobile ? 0.15 : 0.25 });
-                setTimeout(changeColor, 10000); // Slower change: 10 seconds
+                setTimeout(changeColor, 10000);
                 return;
               }
               const r = Math.floor((1 - progress) * ((startColor >> 16) & 255) + progress * ((endColor >> 16) & 255));
@@ -1260,7 +1236,7 @@
 
       function showArtistItem(index) {
         const totalItems = artistItems.length;
-        index = (index + totalItems) % totalItems; // Ensure index stays in bounds
+        index = (index + totalItems) % totalItems;
         artistItems.forEach((item, i) => {
           item.classList.toggle('active', i === index);
         });
@@ -1318,7 +1294,10 @@
           spotify: "https://open.spotify.com/artist/5qiD7XFQezJibUa5WMYC1X?si=W0hY9ZmgRD-SJpTRdpUtug", 
           soundcloud: "https://on.soundcloud.com/RTpH2xfFXmwG8SC9Yy" 
         },
-        { name: "lindtayl0r", bio: "Bio coming soon...", instagram: "#", spotify: "#", soundcloud: "#" },
+        { 
+          name: "lindtayl0r", 
+          bio: "Soundscape & media production."
+        },
         { 
           name: "XSDC", 
           bio: "Born and raised in rural Siberia, duet XS & DC renovate sounds, combining neo-wave lyrics about love, cosmic magnitude and power of simple sound with deep impulsive electronic music.", 
@@ -1326,11 +1305,18 @@
           spotify: "#", 
           soundcloud: "#" 
         },
-        { name: "James Junt", bio: "Bio coming soon...", instagram: "#", spotify: "#", soundcloud: "#" },
-        { name: "Vacuum", bio: "Bio coming soon...", instagram: "#", spotify: "#", soundcloud: "#" },
-        { name: "NExXxUS", bio: "Bio coming soon...", instagram: "#", spotify: "#", soundcloud: "#" },
-        { name: "Keisha Pifagor", bio: "Brooklyn, NYC based sound producer, vocal narrator and songwriter.", instagram: "#", spotify: "#", soundcloud: "#" },
-        { name: "blowwindblow", bio: "Bio coming soon...", instagram: "#", spotify: "#", soundcloud: "#" },
+        { 
+          name: "Keisha Pifagor", 
+          bio: "Brooklyn, NYC based sound producer, vocal narrator and songwriter.", 
+          instagram: "#", 
+          spotify: "#", 
+          soundcloud: "#" 
+        },
+        { 
+          name: "blowwindblow", 
+          bio: "Nature ambience sound production. Artist uses real life outdoor sounds as a creative field to expand its vision in an audio format.", 
+          soundcloud: "https://on.soundcloud.com/bh6dmBUm8U8p9c3rZQ" 
+        },
         { 
           name: "Ada Metanoia", 
           bio: "Ethereal doom-metal, destined for cross-dimensional walkings, beneath the veil of an unborn past.", 
@@ -1355,7 +1341,14 @@
             modalSocialButtons.innerHTML = '';
 
             // Populate social buttons based on artist
-            if (artist.name === "Ada Metanoia") {
+            if (artist.name === "lindtayl0r") {
+              // No social buttons for lindtayl0r
+              modalSocialButtons.innerHTML = '';
+            } else if (artist.name === "blowwindblow") {
+              modalSocialButtons.innerHTML = `
+                <a href="${artist.soundcloud}" target="_blank">SoundCloud</a>
+              `;
+            } else if (artist.name === "Ada Metanoia") {
               modalSocialButtons.innerHTML = `
                 <a href="${artist.socials}" target="_blank">Socials</a>
               `;
