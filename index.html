@@ -54,31 +54,38 @@
     .content-wrapper {
       position: relative;
       z-index: 2;
-      padding: 60px 10px 10px; /* Reduced top padding to minimize gap under header */
+      padding: 100px 10px; /* Equal top and bottom padding */
+      min-height: calc(100vh - 140px); /* Ensure footer stays at bottom */
+      display: flex;
+      flex-direction: column;
     }
 
     .container {
-      max-width: 1000px; /* Reduced max-width for smaller diameter */
+      max-width: 1000px;
+      width: 100%;
       margin: 0 auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
       text-align: center;
-      padding: 10px; /* Further reduced padding for smaller header */
+      padding: 10px;
       position: fixed;
       top: 0;
       left: 50%;
       transform: translateX(-50%);
-      max-width: 1000px; /* Same width as container */
+      max-width: 1000px;
       width: 100%;
-      background: rgba(0, 0, 0, 0.05); /* Match section transparency */
-      backdrop-filter: blur(16px); /* Match section blur */
-      border-radius: 20px 20px 0 0; /* Rounded top, flat bottom to connect */
+      background: rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(16px);
+      border-radius: 20px 20px 0 0;
       z-index: 3;
     }
 
     .logo img {
-      width: 120px; /* Adjust size as needed */
+      width: 120px;
       height: auto;
       display: inline-block;
       animation: softGlow 3s ease-in-out infinite;
@@ -98,14 +105,17 @@
     }
 
     .section {
-      margin-bottom: 0; /* Removed bottom margin to connect with footer */
+      margin-bottom: 0;
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s cubic-bezier(0.33, 0, 0.66, 1), transform 0.8s cubic-bezier(0.33, 0, 0.66, 1);
-      background: rgba(0, 0, 0, 0.05); /* Maximally transparent */
+      background: rgba(0, 0, 0, 0.05);
       backdrop-filter: blur(16px);
-      border-radius: 0; /* Flat top and bottom to connect */
-      padding: 20px; /* Reduced padding for smaller diameter */
+      border-radius: 0;
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      align-items: center;
     }
 
     .section.visible {
@@ -119,6 +129,7 @@
       gap: 8px;
       row-gap: 16px;
       justify-content: space-between;
+      width: 100%;
     }
 
     .showcase {
@@ -128,16 +139,16 @@
       border-radius: 4px; /* Squarer corners */
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
-      box-shadow: 0 0 20px rgba(255, 177, 200, 0.3), 0 0 15px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 215, 0, 0.3); /* Added golden glow */
+      box-shadow: 0 0 20px rgba(255, 177, 200, 0.3), 0 0 15px rgba(255, 255, 255, 0.3); /* Pink and white glow only */
       cursor: pointer;
       aspect-ratio: 4 / 1;
       width: calc(50% - 4px);
-      max-width: 480px; /* Adjusted for smaller showcases */
+      max-width: 480px;
     }
 
     .showcase:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 30px rgba(255, 177, 200, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 215, 0, 0.5); /* Enhanced golden glow on hover */
+      box-shadow: 0 0 30px rgba(255, 177, 200, 0.5), 0 0 20px rgba(255, 255, 255, 0.5); /* Pink and white glow only */
     }
 
     .showcase img {
@@ -149,11 +160,10 @@
     footer {
       text-align: center;
       padding: 40px 10px 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      margin-top: 0; /* Removed top margin to connect with section */
-      background: rgba(0, 0, 0, 0.05); /* Maximally transparent */
+      background: rgba(0, 0, 0, 0.05);
       backdrop-filter: blur(12px);
-      border-radius: 0 0 20px 20px; /* Flat top, rounded bottom to connect */
+      border-radius: 0 0 20px 20px;
+      margin-top: auto; /* Push to bottom */
     }
 
     .social-links {
@@ -165,17 +175,17 @@
     }
 
     .social-links a {
-      padding: 12px 24px; /* Larger padding */
+      padding: 12px 24px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 0; /* Square corners */
       color: #fff;
       text-decoration: none;
       font-weight: 300;
-      font-size: 0.9rem; /* Larger font size */
+      font-size: 0.9rem;
       transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
       letter-spacing: 0.15em;
-      min-width: 120px; /* Larger min-width for squarer appearance */
+      min-width: 120px;
       text-align: center;
     }
 
@@ -269,11 +279,17 @@
 
     @media (max-width: 768px) {
       .content-wrapper {
-        padding: 50px 8px 8px;
+        padding: 80px 8px; /* Increased top padding for spacing */
+        min-height: calc(100vh - 120px);
+      }
+
+      .container {
+        width: 90%; /* Slightly smaller for mobile */
       }
 
       header {
         padding: 8px;
+        max-width: 90%;
       }
 
       .logo img {
@@ -281,24 +297,19 @@
       }
 
       .section {
-        margin-bottom: 0;
         padding: 15px;
         backdrop-filter: blur(10px);
       }
 
       .grid {
-        gap: 6px;
-        row-gap: 12px;
+        gap: 4px; /* Tighter gap */
+        row-gap: 8px; /* Tighter row gap */
       }
 
       .showcase {
-        aspect-ratio: 3 / 1;
-        width: calc(50% - 3px);
+        aspect-ratio: 2 / 1; /* Less elongated for mobile */
+        width: calc(50% - 2px);
         max-width: 320px;
-      }
-
-      .modal-content {
-        max-width: 90%;
       }
 
       .social-links a {
