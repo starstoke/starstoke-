@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Swing Label</title>
   <meta name="description" content="Swing Label – Independent Music Label created for artists.">
+  <!-- Google Fonts with <link> tags to avoid import issues -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
     * {
       margin: 0;
       padding: 0;
@@ -20,7 +22,7 @@
     }
 
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', 'Arial', sans-serif; /* Added fallback fonts */
       color: #fff;
       line-height: 1.8;
       overflow-x: hidden;
@@ -74,7 +76,7 @@
     }
 
     .logo {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Playfair Display', 'Georgia', serif; /* Added fallback fonts */
       font-size: clamp(2rem, 5vw, 4rem);
       font-weight: 700;
       letter-spacing: 0.15em;
@@ -133,8 +135,10 @@
 
     .grid {
       display: flex;
-      flex-direction: column;
-      gap: 30px;
+      flex-wrap: wrap;
+      gap: 20px;
+      row-gap: 30px;
+      justify-content: center;
     }
 
     .showcase {
@@ -147,9 +151,9 @@
       box-shadow: 0 0 20px rgba(255, 177, 200, 0.3);
       cursor: pointer;
       aspect-ratio: 4 / 1;
-      width: 70%;
-      max-width: 840px;
-      margin: 0 auto;
+      width: 45%;
+      max-width: 540px;
+      margin: 0 5px;
     }
 
     .showcase:hover {
@@ -242,7 +246,7 @@
     }
 
     #modal-name {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Playfair Display', 'Georgia', serif;
       font-size: 1.8rem;
       margin-bottom: 10px;
       font-weight: 700;
@@ -304,13 +308,15 @@
       }
 
       .grid {
-        gap: 20px;
+        gap: 15px;
+        row-gap: 20px;
       }
 
       .showcase {
         aspect-ratio: 3 / 1;
-        width: 80%;
-        max-width: 720px;
+        width: 50%;
+        max-width: 360px;
+        margin: 0 5px;
       }
 
       .modal-content {
@@ -340,16 +346,28 @@
       <section class="section">
         <div class="grid">
           <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="IMG_7535.jpeg" alt="" loading="lazy">
+            <img src="IMG_7535.jpeg" alt="Swing Promo Party" loading="lazy">
+          </div>
+          <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
+            <img src="https://via.placeholder.com/300x300?text=Starstoke+Opening" alt="Starstoke Opening Event" loading="lazy">
+          </div>
+          <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
+            <img src="https://via.placeholder.com/300x300?text=Etopole+Digest" alt="Etopole Visual Digest" loading="lazy">
+          </div>
+          <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
+            <img src="https://via.placeholder.com/300x300?text=Hyperbeast+Live" alt="Hyperbeast Live" loading="lazy">
           </div>
           <div class="showcase" onclick="window.open('https://starstoke.github.io/Shop/', '_blank');">
-            <img src="https://via.placeholder.com/300x300?text=Explore+Swing+Shop" alt="" loading="lazy">
+            <img src="https://via.placeholder.com/300x300?text=Explore+Swing+Shop" alt="Swing Shop" loading="lazy">
           </div>
           <div class="showcase" onclick="window.open('https://starstoke.github.io/Artists/', '_blank');">
-            <img src="IMG_7534.jpeg" alt="" loading="lazy">
+            <img src="IMG_7534.jpeg" alt="Artists" loading="lazy">
           </div>
           <div class="showcase" onclick="window.open('https://starstoke.github.io/Broadcast/', '_blank');">
-            <img src="-8590732687137490012-ezgif.com-video-to-gif-converter.gif" alt="" loading="lazy">
+            <img src="-8590732687137490012-ezgif.com-video-to-gif-converter.gif" alt="Broadcast" loading="lazy">
+          </div>
+          <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
+            <img src="https://via.placeholder.com/300x300?text=Malina+Scar+Party" alt="Malina Scar Birthday" loading="lazy">
           </div>
         </div>
       </section>
@@ -405,7 +423,7 @@
           maxDistance: isMobile ? 18.0 : 25.0,
           spacing: isMobile ? 12.0 : 18.0,
           showDots: true,
-          lineOpacity: isMobile ? 0.2 : 0.3 // Slightly increased for visibility
+          lineOpacity: isMobile ? 0.2 : 0.3
         });
 
         if (!isMobile) {
@@ -433,11 +451,11 @@
             let progress = 0;
 
             function interpolateColor() {
-              progress += 0.008; // Slower transition for gentle fading
+              progress += 0.008;
               if (progress >= 1) {
                 currentColorIndex = nextColorIndex;
                 vantaEffect.setOptions({ color: endColor, lineOpacity: isMobile ? 0.2 : 0.3 });
-                setTimeout(changeColor, 8000); // Shorter interval for more frequent twinkling
+                setTimeout(changeColor, 8000);
                 return;
               }
               const r = Math.floor((1 - progress) * ((startColor >> 16) & 255) + progress * ((endColor >> 16) & 255));
@@ -453,7 +471,7 @@
         }
       } catch (error) {
         console.error('Vanta.js failed to initialize:', error);
-        document.getElementById('vanta-bg').style.background = 'linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%)'; // Cosmic gradient fallback
+        document.getElementById('vanta-bg').style.background = 'linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%)';
       }
 
       // Section visibility observer
