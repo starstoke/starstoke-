@@ -24,7 +24,7 @@
       color: #fff;
       line-height: 1.8;
       overflow-x: hidden;
-      background: #000;
+      background: transparent; /* Changed to transparent background */
       position: relative;
       font-weight: 300;
       letter-spacing: 0.05em;
@@ -55,64 +55,12 @@
     .content-wrapper {
       position: relative;
       z-index: 2;
-      padding: 80px 15px 15px;
+      padding: 20px 15px 15px; /* Adjusted padding to account for removed nav */
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
-      z-index: 1000;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      max-height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      transition: color 0.4s cubic-bezier(0.33, 0, 0.66, 1);
-      position: relative;
-      padding: 8px 10px;
-      white-space: nowrap;
-    }
-
-    .nav-links a:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      right: -10px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 1px;
-      height: 16px;
-      background: rgba(255, 255, 255, 0.3);
-    }
-
-    .nav-links a:hover {
-      color: #FFB1C8;
-      text-shadow: 0 0 10px rgba(255, 177, 200, 0.5);
     }
 
     header {
@@ -172,10 +120,10 @@
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s cubic-bezier(0.33, 0, 0.66, 1), transform 0.8s cubic-bezier(0.33, 0, 0.66, 1);
-      background: rgba(0, 0, 0, 0.6);
+      background: transparent; /* Changed to transparent with blur */
+      backdrop-filter: blur(12px); /* Kept blur effect */
       border-radius: 30px;
       padding: 40px;
-      backdrop-filter: blur(12px);
     }
 
     .section.visible {
@@ -186,21 +134,22 @@
     .grid {
       display: flex;
       flex-direction: column;
-      gap: 60px; /* Increased gap between showcases */
+      gap: 60px;
     }
 
     .showcase {
-      background: rgba(255, 255, 255, 0.02);
+      background: transparent; /* Changed to transparent with blur */
+      backdrop-filter: blur(12px); /* Added blur effect */
       border: 1px solid rgba(255, 177, 200, 0.2);
       border-radius: 20px;
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
       box-shadow: 0 0 20px rgba(255, 177, 200, 0.3);
       cursor: pointer;
-      aspect-ratio: 4 / 1; /* Increased aspect ratio for longer, narrower showcases */
-      width: 80%; /* Reduced width for smaller showcases */
-      max-width: 960px; /* Optional: limits maximum width */
-      margin: 0 auto; /* Centers the showcase */
+      aspect-ratio: 4 / 1;
+      width: 80%;
+      max-width: 960px;
+      margin: 0 auto;
     }
 
     .showcase:hover {
@@ -337,22 +286,7 @@
 
     @media (max-width: 768px) {
       .content-wrapper {
-        padding: 70px 10px 10px;
-      }
-
-      .nav-links {
-        gap: 12px;
-        justify-content: center;
-      }
-
-      .nav-links a {
-        font-size: 0.8rem;
-        padding: 6px 8px;
-      }
-
-      .nav-links a:not(:last-child)::after {
-        right: -6px;
-        height: 10px;
+        padding: 20px 10px 10px; /* Adjusted for removed nav */
       }
 
       .header {
@@ -369,12 +303,12 @@
       }
 
       .grid {
-        gap: 40px; /* Slightly reduced gap for mobile */
+        gap: 40px;
       }
 
       .showcase {
-        aspect-ratio: 3 / 1; /* Adjusted for mobile */
-        width: 90%; /* Slightly wider on mobile */
+        aspect-ratio: 3 / 1;
+        width: 90%;
       }
 
       .modal-content {
@@ -394,19 +328,6 @@
 <body>
   <div id="vanta-bg"></div>
   <div class="grain-overlay"></div>
-
-  <nav>
-    <div class="container">
-      <div class="nav-links">
-        <a href="#news">News</a>
-        <a href="#shop">Shop</a>
-        <a href="#artists">Artists</a>
-        <a href="#tv">TV</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact Us</a>
-      </div>
-    </div>
-  </nav>
 
   <div class="content-wrapper">
     <div class="container">
@@ -540,23 +461,6 @@
       });
 
       sections.forEach(section => observer.observe(section));
-
-      // Smooth scrolling for nav links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          const target = document.querySelector(targetId);
-          if (target) {
-            const offset = 70;
-            const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
-            window.scrollTo({
-              top: elementPosition - offset,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
 
       const modal = document.getElementById('artist-modal');
       modal.addEventListener('click', (e) => {
