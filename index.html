@@ -54,7 +54,7 @@
     .content-wrapper {
       position: relative;
       z-index: 2;
-      padding: 100px 10px 10px; /* Adjusted top padding for smaller header */
+      padding: 60px 10px 10px; /* Reduced top padding to minimize gap under header */
     }
 
     .container {
@@ -64,14 +64,16 @@
 
     header {
       text-align: center;
-      padding: 20px 10px; /* Reduced padding for smaller, thinner header */
+      padding: 10px; /* Further reduced padding for smaller header */
       position: fixed;
       top: 0;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 1000px; /* Same width as container */
       width: 100%;
-      background: transparent;
-      backdrop-filter: blur(12px);
-      border-radius: 0 0 20px 20px;
+      background: rgba(0, 0, 0, 0.05); /* Match section transparency */
+      backdrop-filter: blur(16px); /* Match section blur */
+      border-radius: 20px 20px 0 0; /* Rounded top, flat bottom to connect */
       z-index: 3;
     }
 
@@ -96,13 +98,13 @@
     }
 
     .section {
-      margin-bottom: 60px;
+      margin-bottom: 0; /* Removed bottom margin to connect with footer */
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s cubic-bezier(0.33, 0, 0.66, 1), transform 0.8s cubic-bezier(0.33, 0, 0.66, 1);
       background: rgba(0, 0, 0, 0.05); /* Maximally transparent */
       backdrop-filter: blur(16px);
-      border-radius: 20px;
+      border-radius: 0; /* Flat top and bottom to connect */
       padding: 20px; /* Reduced padding for smaller diameter */
     }
 
@@ -122,11 +124,11 @@
     .showcase {
       background: transparent;
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 177, 200, 0.2);
-      border-radius: 8px;
+      border: 1px solid rgba(255, 215, 0, 0.2); /* Thin golden border */
+      border-radius: 4px; /* Squarer corners */
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
-      box-shadow: 0 0 20px rgba(255, 177, 200, 0.3), 0 0 15px rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 20px rgba(255, 177, 200, 0.3), 0 0 15px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 215, 0, 0.3); /* Added golden glow */
       cursor: pointer;
       aspect-ratio: 4 / 1;
       width: calc(50% - 4px);
@@ -135,7 +137,7 @@
 
     .showcase:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 30px rgba(255, 177, 200, 0.5), 0 0 20px rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 30px rgba(255, 177, 200, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 215, 0, 0.5); /* Enhanced golden glow on hover */
     }
 
     .showcase img {
@@ -148,10 +150,10 @@
       text-align: center;
       padding: 40px 10px 20px;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
-      margin-top: 40px;
+      margin-top: 0; /* Removed top margin to connect with section */
       background: rgba(0, 0, 0, 0.05); /* Maximally transparent */
       backdrop-filter: blur(12px);
-      border-radius: 20px;
+      border-radius: 0 0 20px 20px; /* Flat top, rounded bottom to connect */
     }
 
     .social-links {
@@ -163,17 +165,17 @@
     }
 
     .social-links a {
-      padding: 6px 16px;
+      padding: 12px 24px; /* Larger padding */
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
+      border-radius: 0; /* Square corners */
       color: #fff;
       text-decoration: none;
       font-weight: 300;
-      font-size: 0.7rem;
+      font-size: 0.9rem; /* Larger font size */
       transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
       letter-spacing: 0.15em;
-      min-width: 60px;
+      min-width: 120px; /* Larger min-width for squarer appearance */
       text-align: center;
     }
 
@@ -267,11 +269,11 @@
 
     @media (max-width: 768px) {
       .content-wrapper {
-        padding: 80px 8px 8px;
+        padding: 50px 8px 8px;
       }
 
-      .header {
-        padding: 15px 8px;
+      header {
+        padding: 8px;
       }
 
       .logo img {
@@ -279,7 +281,7 @@
       }
 
       .section {
-        margin-bottom: 40px;
+        margin-bottom: 0;
         padding: 15px;
         backdrop-filter: blur(10px);
       }
@@ -297,6 +299,12 @@
 
       .modal-content {
         max-width: 90%;
+      }
+
+      .social-links a {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+        min-width: 100px;
       }
     }
 
@@ -398,7 +406,7 @@
           minWidth: 200.00,
           scale: 1.00,
           scaleMobile: 1.00,
-          color: 0xFFB1C8,
+          color: 0xFFB1C8, // Static pink color
           backgroundColor: 0x000000,
           points: isMobile ? 8.0 : 15.0,
           maxDistance: isMobile ? 18.0 : 25.0,
@@ -415,39 +423,6 @@
             requestAnimationFrame(animateVanta);
           }
           animateVanta();
-
-          const colors = [
-            0xFFB1C8,
-            0xFF69B4,
-            0xA1C4FD,
-            0xD8B5FF,
-            0xB2F5EA
-          ];
-          let currentColorIndex = 0;
-          function changeColor() {
-            const nextColorIndex = (currentColorIndex + 1) % colors.length;
-            const startColor = colors[currentColorIndex];
-            const endColor = colors[nextColorIndex];
-            let progress = 0;
-
-            function interpolateColor() {
-              progress += 0.008;
-              if (progress >= 1) {
-                currentColorIndex = nextColorIndex;
-                vantaEffect.setOptions({ color: endColor, lineOpacity: isMobile ? 0.2 : 0.3 });
-                setTimeout(changeColor, 8000);
-                return;
-              }
-              const r = Math.floor((1 - progress) * ((startColor >> 16) & 255) + progress * ((endColor >> 16) & 255));
-              const g = Math.floor((1 - progress) * ((startColor >> 8) & 255) + progress * ((endColor >> 8) & 255));
-              const b = Math.floor((1 - progress) * (startColor & 255) + progress * (endColor & 255));
-              const newColor = (r << 16) + (g << 8) + b;
-              vantaEffect.setOptions({ color: newColor, lineOpacity: isMobile ? 0.2 : 0.3 });
-              requestAnimationFrame(interpolateColor);
-            }
-            interpolateColor();
-          }
-          setTimeout(changeColor, 8000);
         }
       } catch (error) {
         console.error('Vanta.js failed to initialize:', error);
