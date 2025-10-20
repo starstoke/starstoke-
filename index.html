@@ -24,7 +24,7 @@
       color: #fff;
       line-height: 1.8;
       overflow-x: hidden;
-      background: transparent; /* Changed to transparent background */
+      background: transparent;
       position: relative;
       font-weight: 300;
       letter-spacing: 0.05em;
@@ -55,7 +55,7 @@
     .content-wrapper {
       position: relative;
       z-index: 2;
-      padding: 20px 15px 15px; /* Adjusted padding to account for removed nav */
+      padding: 20px 15px 15px;
     }
 
     .container {
@@ -120,8 +120,8 @@
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s cubic-bezier(0.33, 0, 0.66, 1), transform 0.8s cubic-bezier(0.33, 0, 0.66, 1);
-      background: transparent; /* Changed to transparent with blur */
-      backdrop-filter: blur(12px); /* Kept blur effect */
+      background: transparent;
+      backdrop-filter: blur(12px);
       border-radius: 30px;
       padding: 40px;
     }
@@ -138,8 +138,8 @@
     }
 
     .showcase {
-      background: transparent; /* Changed to transparent with blur */
-      backdrop-filter: blur(12px); /* Added blur effect */
+      background: transparent; /* Ensured fully transparent */
+      backdrop-filter: blur(12px); /* Maintained blur effect */
       border: 1px solid rgba(255, 177, 200, 0.2);
       border-radius: 20px;
       overflow: hidden;
@@ -286,7 +286,7 @@
 
     @media (max-width: 768px) {
       .content-wrapper {
-        padding: 20px 10px 10px; /* Adjusted for removed nav */
+        padding: 20px 10px 10px;
       }
 
       .header {
