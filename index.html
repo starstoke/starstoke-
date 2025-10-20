@@ -77,43 +77,20 @@
       text-align: center;
       padding: 5px;
       position: static;
-      background: rgba(0, 0, 0, 0.05);
       backdrop-filter: blur(16px);
       border-radius: 20px 20px 0 0;
       z-index: 3;
     }
 
     .logo {
-      animation: softGlow 3s ease-in-out infinite;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .logo-placeholder {
-      width: 200px; /* Adjust size as needed */
-      height: 100px; /* Adjust size as needed */
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 1px dashed #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #ccc;
-      font-size: 0.8rem;
-      text-align: center;
-    }
-
-    @keyframes softGlow {
-      0%, 100% {
-        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.6))
-                drop-shadow(0 0 10px rgba(255, 255, 255, 0.4))
-                drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
-      }
-      50% {
-        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))
-                drop-shadow(0 0 20px rgba(255, 255, 255, 0.6))
-                drop-shadow(0 0 30px rgba(255, 255, 255, 0.4));
-      }
+    .logo img {
+      width: 200px;
+      height: 100px;
     }
 
     .section {
@@ -140,14 +117,12 @@
     .showcase {
       background: transparent;
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 215, 0, 0.2);
       border-radius: 4px;
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
-      box-shadow: 0 0 20px rgba(255, 177, 200, 0.3), 0 0 15px rgba(255, 255, 255, 0.3);
       cursor: pointer;
       aspect-ratio: 2 / 1; /* Made more compact by changing aspect ratio */
-      width: calc(33.33% - 0px); /* Changed to three per row for compactness */
+      width: calc(50% - 0px); /* Changed to two per row */
       max-width: 320px; /* Reduced max-width for compactness */
     }
 
@@ -169,7 +144,6 @@
 
     .social-links a {
       padding: 12px 24px;
-      background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 0;
       color: #fff;
@@ -183,7 +157,6 @@
     }
 
     .social-links a:hover {
-      background: rgba(255, 177, 200, 0.05);
       border-color: rgba(255, 177, 200, 0.1);
       transform: translateY(-2px);
       box-shadow: 0 0 10px rgba(255, 177, 200, 0.1);
@@ -285,7 +258,7 @@
         transform: none;
       }
 
-      .logo-placeholder {
+      .logo img {
         width: 150px; /* Smaller for mobile */
         height: 75px;
       }
@@ -309,7 +282,6 @@
         padding: 8px 16px;
         font-size: 0.8rem;
         min-width: 80px;
-        background: rgba(255, 255, 255, 0.02);
         border: 1px solid rgba(255, 255, 255, 0.05);
       }
 
@@ -336,7 +308,7 @@
     <div class="container">
       <header>
         <div class="logo">
-          <div class="logo-placeholder">Upload Logo Here</div> <!-- Placeholder for logo photo -->
+          <img src="IMG_8101.png" alt="Logo">
         </div>
       </header>
 
@@ -361,12 +333,6 @@
             
           </div>
           <div class="showcase" onclick="window.open('https://starstoke.github.io/Broadcast/', '_blank');">
-            
-          </div>
-          <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            
-          </div>
-          <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
             
           </div>
           <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
