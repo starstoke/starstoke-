@@ -67,9 +67,9 @@
       text-align: center;
       padding: 80px 20px 60px;
       position: relative;
-      background: rgba(0, 0, 0, 0.6);
+      background: transparent; /* Changed to transparent for glass effect */
+      backdrop-filter: blur(12px); /* Frosted glass effect */
       border-radius: 30px;
-      backdrop-filter: blur(12px);
       margin-bottom: 50px;
     }
 
@@ -120,8 +120,8 @@
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s cubic-bezier(0.33, 0, 0.66, 1), transform 0.8s cubic-bezier(0.33, 0, 0.66, 1);
-      background: transparent;
-      backdrop-filter: blur(12px);
+      background: transparent; /* Ensured transparent for glass effect */
+      backdrop-filter: blur(16px); /* Increased blur for stronger frosted glass effect */
       border-radius: 30px;
       padding: 40px;
     }
@@ -134,12 +134,12 @@
     .grid {
       display: flex;
       flex-direction: column;
-      gap: 60px;
+      gap: 30px; /* Reduced gap to bring showcases closer */
     }
 
     .showcase {
-      background: transparent; /* Ensured fully transparent */
-      backdrop-filter: blur(12px); /* Maintained blur effect */
+      background: transparent;
+      backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 177, 200, 0.2);
       border-radius: 20px;
       overflow: hidden;
@@ -147,8 +147,8 @@
       box-shadow: 0 0 20px rgba(255, 177, 200, 0.3);
       cursor: pointer;
       aspect-ratio: 4 / 1;
-      width: 80%;
-      max-width: 960px;
+      width: 70%; /* Reduced width for smaller showcases */
+      max-width: 840px; /* Adjusted max-width to maintain proportionality */
       margin: 0 auto;
     }
 
@@ -300,15 +300,17 @@
       .section {
         margin-bottom: 50px;
         padding: 25px 10px;
+        backdrop-filter: blur(10px); /* Slightly reduced blur for mobile */
       }
 
       .grid {
-        gap: 40px;
+        gap: 20px; /* Reduced gap for mobile to bring showcases closer */
       }
 
       .showcase {
         aspect-ratio: 3 / 1;
-        width: 90%;
+        width: 80%; /* Reduced width for mobile */
+        max-width: 720px; /* Adjusted max-width for mobile */
       }
 
       .modal-content {
