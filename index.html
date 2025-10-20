@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Swing Label</title>
   <meta name="description" content="Swing Label – Independent Music Label created for artists.">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -22,7 +22,7 @@
       font-family: 'Montserrat', sans-serif;
       color: #fff;
       line-height: 1.8;
-      overflow-x: hidden;
+      overflow: hidden; /* Remove all scrolling */
       background: transparent;
       position: relative;
       font-weight: 300;
@@ -54,10 +54,10 @@
     .content-wrapper {
       position: relative;
       z-index: 2;
-      padding: 100px 10px;
-      min-height: calc(100vh - 120px); /* Adjusted for smaller header */
+      height: 100vh; /* Fit entire viewport */
       display: flex;
       flex-direction: column;
+      padding: 20px 8px; /* Reduced padding for mobile fit */
     }
 
     .container {
@@ -71,7 +71,7 @@
 
     header {
       text-align: center;
-      padding: 8px;
+      padding: 6px;
       position: fixed;
       top: 0;
       left: 50%;
@@ -85,7 +85,7 @@
     }
 
     .logo img {
-      width: 100px; /* Smaller logo for mobile */
+      width: 80px; /* Smaller logo */
       height: auto;
       display: inline-block;
       animation: softGlow 3s ease-in-out infinite;
@@ -107,12 +107,12 @@
     .section {
       margin-bottom: 0;
       opacity: 0;
-      transform: translateY(50px);
+      transform: translateY(20px);
       transition: opacity 0.8s cubic-bezier(0.33, 0, 0.66, 1), transform 0.8s cubic-bezier(0.33, 0, 0.66, 1);
       background: rgba(0, 0, 0, 0.05);
       backdrop-filter: blur(16px);
       border-radius: 0;
-      padding: 15px;
+      padding: 10px;
       flex: 1;
       display: flex;
       align-items: center;
@@ -127,24 +127,30 @@
     .grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 4px; /* Tighter gap */
-      row-gap: 8px; /* Tighter row gap */
-      justify-content: center; /* Center showcases */
+      gap: 0; /* No gap between showcases */
+      row-gap: 0; /* No row gap */
+      justify-content: center;
       width: 100%;
     }
 
     .showcase {
-      background: transparent;
+      background: rgba(255, 177, 200, 0.2); /* Placeholder background */
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 215, 0, 0.2); /* Thin golden border */
-      border-radius: 4px; /* Squarer corners */
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 4px;
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
-      box-shadow: 0 0 20px rgba(255, 177, 200, 0.3), 0 0 15px rgba(255, 255, 255, 0.3); /* Pink and white glow */
+      box-shadow: 0 0 20px rgba(255, 177, 200, 0.3), 0 0 15px rgba(255, 255, 255, 0.3);
       cursor: pointer;
-      aspect-ratio: 3 / 2; /* Squarer for mobile */
-      width: calc(50% - 2px); /* Tighter spacing */
-      max-width: 300px; /* Smaller for mobile */
+      aspect-ratio: 4 / 1;
+      width: calc(50% - 0px); /* No gap */
+      max-width: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #fff;
     }
 
     .showcase:hover {
@@ -152,15 +158,9 @@
       box-shadow: 0 0 30px rgba(255, 177, 200, 0.5), 0 0 20px rgba(255, 255, 255, 0.5);
     }
 
-    .showcase img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
     footer {
       text-align: center;
-      padding: 40px 10px 20px;
+      padding: 20px 8px 10px;
       background: rgba(0, 0, 0, 0.05);
       backdrop-filter: blur(12px);
       border-radius: 0 0 20px 20px;
@@ -170,23 +170,23 @@
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 8px;
+      margin-top: 10px;
       flex-wrap: wrap;
     }
 
     .social-links a {
-      padding: 12px 24px;
-      background: rgba(255, 255, 255, 0.05);
+      padding: 6px 12px; /* Smaller buttons */
+      background: transparent; /* Fully transparent */
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 0;
       color: #fff;
       text-decoration: none;
       font-weight: 300;
-      font-size: 0.9rem;
+      font-size: 0.7rem; /* Smaller font */
       transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
-      letter-spacing: 0.15em;
-      min-width: 120px;
+      letter-spacing: 0.1em;
+      min-width: 80px; /* Smaller width */
       text-align: center;
     }
 
@@ -199,10 +199,10 @@
 
     .copyright {
       color: #999;
-      margin-top: 20px;
-      font-size: 0.7rem;
+      margin-top: 10px;
+      font-size: 0.6rem;
       font-weight: 300;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.1em;
     }
 
     #artist-modal {
@@ -280,52 +280,54 @@
 
     @media (max-width: 768px) {
       .content-wrapper {
-        padding: 80px 8px; /* Increased top padding for logo spacing */
-        min-height: calc(100vh - 100px);
+        padding: 20px 8px; /* Reduced for mobile fit */
+        height: 100vh;
       }
 
       .container {
-        width: 92%; /* Slightly smaller for mobile */
+        width: 95%;
       }
 
       header {
-        padding: 6px;
-        max-width: 92%;
+        padding: 4px;
+        max-width: 95%;
       }
 
       .logo img {
-        width: 80px; /* Even smaller logo for mobile */
+        width: 60px; /* Smaller for mobile */
       }
 
       .section {
-        padding: 12px;
+        padding: 8px;
         backdrop-filter: blur(10px);
       }
 
       .grid {
-        gap: 2px; /* Very tight gap */
-        row-gap: 4px; /* Very tight row gap */
+        gap: 0; /* No gap */
+        row-gap: 0; /* No row gap */
       }
 
       .showcase {
-        aspect-ratio: 1 / 1; /* Square for mobile */
-        width: calc(50% - 1px); /* Very tight spacing */
-        max-width: 160px; /* Smaller showcases */
-        min-height: 160px; /* Ensure touch target size */
-      }
-
-      .showcase img {
-        object-fit: cover;
+        aspect-ratio: 3 / 2; /* Rectangular for mobile */
+        width: calc(50% - 0px); /* No gap */
+        max-width: 180px; /* Smaller for mobile */
+        min-height: 120px; /* Ensure touch target */
+        font-size: 0.7rem;
       }
 
       .social-links a {
-        padding: 10px 20px;
-        font-size: 0.8rem;
-        min-width: 100px;
+        padding: 4px 10px; /* Even smaller buttons */
+        font-size: 0.6rem;
+        min-width: 60px; /* Smaller width */
       }
 
       footer {
-        padding: 30px 8px 15px;
+        padding: 10px 8px 8px;
+      }
+
+      .copyright {
+        margin-top: 8px;
+        font-size: 0.5rem;
       }
     }
 
@@ -353,34 +355,34 @@
       <section class="section">
         <div class="grid">
           <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="IMG_7535.jpeg" alt="Swing Promo Party" loading="lazy">
+            <div>Swing Promo Party</div>
           </div>
           <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="https://via.placeholder.com/300x300?text=Starstoke+Opening" alt="Starstoke Opening Event" loading="lazy">
+            <div>Starstoke Opening Event</div>
           </div>
           <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="https://via.placeholder.com/300x300?text=Etopole+Digest" alt="Etopole Visual Digest" loading="lazy">
+            <div>Etopole Visual Digest</div>
           </div>
           <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="https://via.placeholder.com/300x300?text=Hyperbeast+Live" alt="Hyperbeast Live" loading="lazy">
+            <div>Hyperbeast Live</div>
           </div>
           <div class="showcase" onclick="window.open('https://starstoke.github.io/Shop/', '_blank');">
-            <img src="https://via.placeholder.com/300x300?text=Explore+Swing+Shop" alt="Swing Shop" loading="lazy">
+            <div>Swing Shop</div>
           </div>
           <div class="showcase" onclick="window.open('https://starstoke.github.io/Artists/', '_blank');">
-            <img src="IMG_7534.jpeg" alt="Artists" loading="lazy">
+            <div>Artists</div>
           </div>
           <div class="showcase" onclick="window.open('https://starstoke.github.io/Broadcast/', '_blank');">
-            <img src="-8590732687137490012-ezgif.com-video-to-gif-converter.gif" alt="Broadcast" loading="lazy">
+            <div>Broadcast</div>
           </div>
           <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="https://via.placeholder.com/300x300?text=Malina+Scar+Party" alt="Malina Scar Birthday" loading="lazy">
+            <div>Malina Scar Birthday</div>
           </div>
           <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="https://via.placeholder.com/300x300?text=New+Event+1" alt="New Event 1" loading="lazy">
+            <div>New Event 1</div>
           </div>
           <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-            <img src="https://via.placeholder.com/300x300?text=New+Event+2" alt="New Event 2" loading="lazy">
+            <div>New Event 2</div>
           </div>
         </div>
       </section>
@@ -398,7 +400,6 @@
 
   <div id="artist-modal">
     <div class="modal-content">
-      <img id="modal-img" src="" alt="">
       <h3 id="modal-name"></h3>
       <p id="modal-bio"></p>
       <div class="modal-social-buttons" id="modal-social-buttons">
@@ -427,13 +428,13 @@
           minWidth: 200.00,
           scale: 1.00,
           scaleMobile: 1.00,
-          color: 0xFFB1C8, // Static pink color
+          color: 0xFFB1C8,
           backgroundColor: 0x000000,
-          points: isMobile ? 6.0 : 15.0, // Reduced points for mobile performance
+          points: isMobile ? 6.0 : 15.0,
           maxDistance: isMobile ? 16.0 : 25.0,
           spacing: isMobile ? 10.0 : 18.0,
           showDots: true,
-          lineOpacity: isMobile ? 0.15 : 0.3 // Slightly lighter for mobile
+          lineOpacity: isMobile ? 0.15 : 0.3
         });
 
         if (!isMobile) {
