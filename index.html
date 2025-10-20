@@ -40,6 +40,7 @@
       height: 100vh;
       z-index: 0;
       pointer-events: none;
+      filter: blur(0.5px) brightness(1.1);
     }
 
     .grain-overlay {
@@ -422,7 +423,7 @@
           maxDistance: isMobile ? 18.0 : 25.0,
           spacing: isMobile ? 12.0 : 18.0,
           showDots: true,
-          lineOpacity: isMobile ? 0.2 : 0.3
+          lineOpacity: isMobile ? 0.1 : 0.15
         });
 
         if (!isMobile) {
