@@ -67,8 +67,8 @@
       text-align: center;
       padding: 80px 20px 60px;
       position: relative;
-      background: transparent; /* Changed to transparent for glass effect */
-      backdrop-filter: blur(12px); /* Frosted glass effect */
+      background: transparent;
+      backdrop-filter: blur(12px);
       border-radius: 30px;
       margin-bottom: 50px;
     }
@@ -120,8 +120,8 @@
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s cubic-bezier(0.33, 0, 0.66, 1), transform 0.8s cubic-bezier(0.33, 0, 0.66, 1);
-      background: transparent; /* Ensured transparent for glass effect */
-      backdrop-filter: blur(16px); /* Increased blur for stronger frosted glass effect */
+      background: transparent;
+      backdrop-filter: blur(16px);
       border-radius: 30px;
       padding: 40px;
     }
@@ -134,7 +134,7 @@
     .grid {
       display: flex;
       flex-direction: column;
-      gap: 30px; /* Reduced gap to bring showcases closer */
+      gap: 30px;
     }
 
     .showcase {
@@ -147,8 +147,8 @@
       box-shadow: 0 0 20px rgba(255, 177, 200, 0.3);
       cursor: pointer;
       aspect-ratio: 4 / 1;
-      width: 70%; /* Reduced width for smaller showcases */
-      max-width: 840px; /* Adjusted max-width to maintain proportionality */
+      width: 70%;
+      max-width: 840px;
       margin: 0 auto;
     }
 
@@ -300,17 +300,17 @@
       .section {
         margin-bottom: 50px;
         padding: 25px 10px;
-        backdrop-filter: blur(10px); /* Slightly reduced blur for mobile */
+        backdrop-filter: blur(10px);
       }
 
       .grid {
-        gap: 20px; /* Reduced gap for mobile to bring showcases closer */
+        gap: 20px;
       }
 
       .showcase {
         aspect-ratio: 3 / 1;
-        width: 80%; /* Reduced width for mobile */
-        max-width: 720px; /* Adjusted max-width for mobile */
+        width: 80%;
+        max-width: 720px;
       }
 
       .modal-content {
@@ -405,7 +405,7 @@
           maxDistance: isMobile ? 18.0 : 25.0,
           spacing: isMobile ? 12.0 : 18.0,
           showDots: true,
-          lineOpacity: isMobile ? 0.15 : 0.25
+          lineOpacity: isMobile ? 0.2 : 0.3 // Slightly increased for visibility
         });
 
         if (!isMobile) {
@@ -417,7 +417,14 @@
           }
           animateVanta();
 
-          const colors = [0xFFB1C8, 0xFF69B4];
+          // Expanded color palette for cosmic, gentle lights
+          const colors = [
+            0xFFB1C8, // Pastel pink
+            0xFF69B4, // Hot pink
+            0xA1C4FD, // Pastel blue
+            0xD8B5FF, // Pastel purple
+            0xB2F5EA  // Pastel green
+          ];
           let currentColorIndex = 0;
           function changeColor() {
             const nextColorIndex = (currentColorIndex + 1) % colors.length;
@@ -426,27 +433,27 @@
             let progress = 0;
 
             function interpolateColor() {
-              progress += 0.01;
+              progress += 0.008; // Slower transition for gentle fading
               if (progress >= 1) {
                 currentColorIndex = nextColorIndex;
-                vantaEffect.setOptions({ color: endColor, lineOpacity: isMobile ? 0.15 : 0.25 });
-                setTimeout(changeColor, 10000);
+                vantaEffect.setOptions({ color: endColor, lineOpacity: isMobile ? 0.2 : 0.3 });
+                setTimeout(changeColor, 8000); // Shorter interval for more frequent twinkling
                 return;
               }
               const r = Math.floor((1 - progress) * ((startColor >> 16) & 255) + progress * ((endColor >> 16) & 255));
               const g = Math.floor((1 - progress) * ((startColor >> 8) & 255) + progress * ((endColor >> 8) & 255));
               const b = Math.floor((1 - progress) * (startColor & 255) + progress * (endColor & 255));
               const newColor = (r << 16) + (g << 8) + b;
-              vantaEffect.setOptions({ color: newColor, lineOpacity: isMobile ? 0.15 : 0.25 });
+              vantaEffect.setOptions({ color: newColor, lineOpacity: isMobile ? 0.2 : 0.3 });
               requestAnimationFrame(interpolateColor);
             }
             interpolateColor();
           }
-          setTimeout(changeColor, 10000);
+          setTimeout(changeColor, 8000);
         }
       } catch (error) {
         console.error('Vanta.js failed to initialize:', error);
-        document.getElementById('vanta-bg').style.background = '#000';
+        document.getElementById('vanta-bg').style.background = 'linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%)'; // Cosmic gradient fallback
       }
 
       // Section visibility observer
