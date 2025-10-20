@@ -54,78 +54,56 @@
     .content-wrapper {
       position: relative;
       z-index: 2;
-      padding: 150px 15px 15px; /* Increased top padding to account for fixed header */
+      padding: 100px 10px 10px; /* Adjusted top padding for smaller header */
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1000px; /* Reduced max-width for smaller diameter */
       margin: 0 auto;
     }
 
     header {
       text-align: center;
-      padding: 40px 20px; /* Reduced padding for fixed header */
-      position: fixed; /* Fix header at top */
+      padding: 20px 10px; /* Reduced padding for smaller, thinner header */
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       background: transparent;
       backdrop-filter: blur(12px);
-      border-radius: 0 0 30px 30px; /* Rounded only at bottom */
-      z-index: 3; /* Above other content */
+      border-radius: 0 0 20px 20px;
+      z-index: 3;
     }
 
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 4rem);
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      color: #fff;
-      margin-bottom: 20px;
-      animation: softGlow 3s ease-in-out infinite;
-    }
-
-    .logo .star {
+    .logo img {
+      width: 120px; /* Adjust size as needed */
+      height: auto;
       display: inline-block;
-      color: #FFD700;
-      animation: sparkle 2.5s ease-in-out infinite;
-      text-shadow: 0 0 15px rgba(255, 215, 0, 0.4),
-                   0 0 30px rgba(255, 215, 0, 0.2);
-    }
-
-    @keyframes sparkle {
-      0%, 100% { 
-        transform: scale(1) rotate(0deg);
-        opacity: 1;
-      }
-      50% { 
-        transform: scale(1.1) rotate(180deg);
-        opacity: 0.9;
-      }
+      animation: softGlow 3s ease-in-out infinite;
     }
 
     @keyframes softGlow {
       0%, 100% {
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.6),
-                     0 0 10px rgba(255, 255, 255, 0.4),
-                     0 0 20px rgba(255, 255, 255, 0.2);
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.6))
+                drop-shadow(0 0 10px rgba(255, 255, 255, 0.4))
+                drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
       }
       50% {
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
-                     0 0 20px rgba(255, 255, 255, 0.6),
-                     0 0 30px rgba(255, 255, 255, 0.4);
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))
+                drop-shadow(0 0 20px rgba(255, 255, 255, 0.6))
+                drop-shadow(0 0 30px rgba(255, 255, 255, 0.4));
       }
     }
 
     .section {
-      margin-bottom: 80px;
+      margin-bottom: 60px;
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.8s cubic-bezier(0.33, 0, 0.66, 1), transform 0.8s cubic-bezier(0.33, 0, 0.66, 1);
-      background: transparent;
+      background: rgba(0, 0, 0, 0.05); /* Maximally transparent */
       backdrop-filter: blur(16px);
-      border-radius: 30px;
-      padding: 40px;
+      border-radius: 20px;
+      padding: 20px; /* Reduced padding for smaller diameter */
     }
 
     .section.visible {
@@ -135,29 +113,29 @@
 
     .grid {
       display: flex;
-      flex-wrap: wrap; /* Allow two showcases per row */
-      gap: 10px; /* Tight horizontal gap */
-      row-gap: 20px; /* Vertical gap between rows */
-      justify-content: space-between; /* Spread showcases to edges */
+      flex-wrap: wrap;
+      gap: 8px;
+      row-gap: 16px;
+      justify-content: space-between;
     }
 
     .showcase {
       background: transparent;
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 177, 200, 0.2);
-      border-radius: 8px; /* Sharper, more rectangular corners */
+      border-radius: 8px;
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
-      box-shadow: 0 0 20px rgba(255, 177, 200, 0.3), 0 0 15px rgba(255, 255, 255, 0.3); /* Pink and white glow */
+      box-shadow: 0 0 20px rgba(255, 177, 200, 0.3), 0 0 15px rgba(255, 255, 255, 0.3);
       cursor: pointer;
       aspect-ratio: 4 / 1;
-      width: calc(50% - 5px); /* Two per row, accounting for gap */
-      max-width: 540px; /* Smaller max-width */
+      width: calc(50% - 4px);
+      max-width: 480px; /* Adjusted for smaller showcases */
     }
 
     .showcase:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 30px rgba(255, 177, 200, 0.5), 0 0 20px rgba(255, 255, 255, 0.5); /* Enhanced glow on hover */
+      box-shadow: 0 0 30px rgba(255, 177, 200, 0.5), 0 0 20px rgba(255, 255, 255, 0.5);
     }
 
     .showcase img {
@@ -168,34 +146,34 @@
 
     footer {
       text-align: center;
-      padding: 60px 15px 30px;
+      padding: 40px 10px 20px;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
-      margin-top: 60px;
-      background: transparent; /* Transparent background */
+      margin-top: 40px;
+      background: rgba(0, 0, 0, 0.05); /* Maximally transparent */
       backdrop-filter: blur(12px);
-      border-radius: 30px;
+      border-radius: 20px;
     }
 
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      margin-top: 25px;
+      gap: 10px;
+      margin-top: 20px;
       flex-wrap: wrap;
     }
 
     .social-links a {
-      padding: 8px 20px;
+      padding: 6px 16px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 30px;
+      border-radius: 20px;
       color: #fff;
       text-decoration: none;
       font-weight: 300;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       transition: all 0.4s cubic-bezier(0.33, 0, 0.66, 1);
       letter-spacing: 0.15em;
-      min-width: 70px;
+      min-width: 60px;
       text-align: center;
     }
 
@@ -208,8 +186,8 @@
 
     .copyright {
       color: #999;
-      margin-top: 25px;
-      font-size: 0.75rem;
+      margin-top: 20px;
+      font-size: 0.7rem;
       font-weight: 300;
       letter-spacing: 0.15em;
     }
@@ -289,32 +267,32 @@
 
     @media (max-width: 768px) {
       .content-wrapper {
-        padding: 120px 10px 10px; /* Adjusted for mobile */
+        padding: 80px 8px 8px;
       }
 
       .header {
-        padding: 30px 10px;
+        padding: 15px 8px;
       }
 
-      .logo {
-        font-size: clamp(1.8rem, 7vw, 2.5rem);
+      .logo img {
+        width: 100px;
       }
 
       .section {
-        margin-bottom: 50px;
-        padding: 25px 10px;
+        margin-bottom: 40px;
+        padding: 15px;
         backdrop-filter: blur(10px);
       }
 
       .grid {
-        gap: 8px;
-        row-gap: 15px;
+        gap: 6px;
+        row-gap: 12px;
       }
 
       .showcase {
         aspect-ratio: 3 / 1;
-        width: calc(50% - 4px); /* Two per row, tighter gap */
-        max-width: 360px;
+        width: calc(50% - 3px);
+        max-width: 320px;
       }
 
       .modal-content {
@@ -338,7 +316,9 @@
   <div class="content-wrapper">
     <div class="container">
       <header>
-        <h1 class="logo">Sw<span class="star">★</span>ng</h1>
+        <div class="logo">
+          <img src="https://via.placeholder.com/120x40?text=Logo" alt="Swing Label Logo" loading="lazy">
+        </div>
       </header>
 
       <section class="section">
@@ -366,6 +346,12 @@
           </div>
           <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
             <img src="https://via.placeholder.com/300x300?text=Malina+Scar+Party" alt="Malina Scar Birthday" loading="lazy">
+          </div>
+          <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
+            <img src="https://via.placeholder.com/300x300?text=New+Event+1" alt="New Event 1" loading="lazy">
+          </div>
+          <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
+            <img src="https://via.placeholder.com/300x300?text=New+Event+2" alt="New Event 2" loading="lazy">
           </div>
         </div>
       </section>
@@ -395,14 +381,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
   <script>
-    // Scroll to top on page load
     window.scrollTo(0, 0);
     window.addEventListener('load', () => {
       window.scrollTo(0, 0);
     });
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Initialize Vanta.js with mobile optimization
       try {
         const isMobile = window.innerWidth <= 768;
         let vantaEffect = VANTA.NET({
@@ -432,13 +416,12 @@
           }
           animateVanta();
 
-          // Expanded color palette for cosmic, gentle lights
           const colors = [
-            0xFFB1C8, // Pastel pink
-            0xFF69B4, // Hot pink
-            0xA1C4FD, // Pastel blue
-            0xD8B5FF, // Pastel purple
-            0xB2F5EA  // Pastel green
+            0xFFB1C8,
+            0xFF69B4,
+            0xA1C4FD,
+            0xD8B5FF,
+            0xB2F5EA
           ];
           let currentColorIndex = 0;
           function changeColor() {
@@ -471,7 +454,6 @@
         document.getElementById('vanta-bg').style.background = 'linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%)';
       }
 
-      // Section visibility observer
       const sections = document.querySelectorAll('.section');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
