@@ -134,7 +134,7 @@
     footer {
       text-align: center;
       padding: 5px;
-      background: #000;
+      background: transparent;
       border-radius: 0 0 20px 20px;
     }
 
@@ -265,10 +265,10 @@
       position: absolute;
       width: 6px;
       height: 6px;
-      background: #FFB1C8;
+      background: #FFD700;
       border-radius: 50%;
       animation: fall 6s linear infinite;
-      box-shadow: 0 0 20px 8px #FFB1C8, 0 0 40px 15px rgba(255, 177, 200, 0.6);
+      box-shadow: 0 0 20px 8px #FFD700, 0 0 40px 15px rgba(255, 215, 0, 0.6);
       top: -6px;
     }
 
@@ -285,22 +285,15 @@
 
     @media (min-width: 769px) {
       .grid {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
       }
 
       .showcase {
-        width: 100%;
+        width: 50%;
         max-width: 500px;
-      }
-
-      .showcase:nth-child(odd) {
-        margin-right: 0;
-      }
-
-      .showcase:nth-child(even) {
-        margin-left: 0;
       }
     }
 
@@ -420,8 +413,8 @@
         twinkle.className = 'twinkle';
         twinkle.style.left = `${Math.random() * 100}vw`;
         twinkle.style.top = `${Math.random() * 100}vh`;
-        const colors = ['#ffffff', '#FFD700', '#FFB1C8'];
-        twinkle.style.backgroundColor = colors[Math.floor(Math.random() * 3)];
+        const colors = ['#C0C0C0'];
+        twinkle.style.backgroundColor = colors[Math.floor(Math.random() * 1)];
         twinkle.style.animationDelay = `${Math.random() * 4}s`;
         twinkle.style.animationDuration = `${2 + Math.random() * 2}s`;
         document.querySelector('.stars-background').appendChild(twinkle);
