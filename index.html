@@ -32,7 +32,7 @@
       flex-direction: column;
     }
 
-    #vanta-bg {
+    .stars-background {
       position: fixed;
       top: 0;
       left: 0;
@@ -40,7 +40,8 @@
       height: 100vh;
       z-index: 0;
       pointer-events: none;
-      filter: blur(0.5px) brightness(1.1);
+      background: #000000;
+      overflow: hidden;
     }
 
     .grain-overlay {
@@ -245,6 +246,43 @@
       border-color: rgba(255, 177, 200, 0.2);
     }
 
+    .twinkle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      animation: twinkle infinite;
+      box-shadow: 0 0 5px currentColor;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .falling-star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #FFB1C8;
+      border-radius: 50%;
+      animation: fall linear infinite;
+      box-shadow: 0 0 10px #FFB1C8, 0 0 20px #FFB1C8;
+      top: -2px;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
     @media (max-width: 768px) {
       .content-wrapper {
         padding: 20px 4px;
@@ -303,7 +341,7 @@
   </style>
 </head>
 <body>
-  <div id="vanta-bg"></div>
+  <div class="stars-background"></div>
   <div class="grain-overlay"></div>
 
   <div class="content-wrapper">
@@ -364,8 +402,6 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
   <script>
     window.scrollTo(0, 0);
     window.addEventListener('load', () => {
@@ -373,38 +409,36 @@
     });
 
     document.addEventListener('DOMContentLoaded', () => {
-      try {
-        const isMobile = window.innerWidth <= 768;
-        let vantaEffect = VANTA.NET({
-          el: "#vanta-bg",
-          mouseControls: !isMobile,
-          touchControls: isMobile,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00,
-          color: 0xFFB1C8,
-          backgroundColor: 0x000000,
-          points: isMobile ? 8.0 : 15.0,
-          maxDistance: isMobile ? 18.0 : 25.0,
-          spacing: isMobile ? 12.0 : 18.0,
-          showDots: true,
-          lineOpacity: isMobile ? 0.1 : 0.15
-        });
 
-        if (!isMobile) {
-          function animateVanta() {
-            if (vantaEffect && vantaEffect.three && vantaEffect.three.camera) {
-              vantaEffect.three.camera.rotation.y += 0.0002;
-            }
-            requestAnimationFrame(animateVanta);
-          }
-          animateVanta();
-        }
-      } catch (error) {
-        console.error('Vanta.js failed to initialize:', error);
-        document.getElementById('vanta-bg').style.background = 'linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%)';
+      // Create twinkling lights
+      function createTwinkle() {
+        const twinkle = document.createElement('div');
+        twinkle.className = 'twinkle';
+        twinkle.style.left = `${Math.random() * 100}vw`;
+        twinkle.style.top = `${Math.random() * 100}vh`;
+        const colors = ['#fff', '#FFD700', '#FFB1C8'];
+        twinkle.style.backgroundColor = colors[Math.floor(Math.random() * 3)];
+        twinkle.style.animationDelay = `${Math.random() * 5}s`;
+        twinkle.style.animationDuration = `${2 + Math.random() * 3}s`;
+        document.querySelector('.stars-background').appendChild(twinkle);
+      }
+
+      // Create falling stars
+      function createFallingStar() {
+        const star = document.createElement('div');
+        star.className = 'falling-star';
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.animationDelay = `${Math.random() * 10}s`;
+        star.style.animationDuration = `${5 + Math.random() * 5}s`;
+        document.querySelector('.stars-background').appendChild(star);
+      }
+
+      for (let i = 0; i < 100; i++) {
+        createTwinkle();
+      }
+
+      for (let i = 0; i < 20; i++) {
+        createFallingStar();
       }
 
       const sections = document.querySelectorAll('.section');
