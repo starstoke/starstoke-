@@ -15,7 +15,7 @@
     }
 
     html, body {
-      height: 100vh;
+      height: 100%;
       overflow: auto;
       scroll-behavior: smooth;
     }
@@ -24,7 +24,7 @@
       font-family: 'Montserrat', sans-serif;
       color: #fff;
       line-height: 1.8;
-      background: transparent;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
       position: relative;
       font-weight: 300;
       letter-spacing: 0.05em;
@@ -32,16 +32,26 @@
       flex-direction: column;
     }
 
-    .stars-background {
+    /* Фон со звёздами */
+    .stars {
+      width: 1px;
+      height: 1px;
+      background: transparent;
+      box-shadow: 
+        100px 200px #fff, 300px 400px #fff, 500px 600px #fff,
+        700px 800px #fff, 900px 1000px #fff, 1100px 1200px #fff,
+        1300px 1400px #fff, 1500px 1600px #fff, 1700px 1800px #fff,
+        1900px 2000px #fff;
+      animation: animStar 100s linear infinite;
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
       z-index: 0;
-      pointer-events: none;
-      background: #000000;
-      overflow: hidden;
+    }
+
+    @keyframes animStar {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-2000px); }
     }
 
     .grain-overlay {
@@ -189,7 +199,7 @@
   </style>
 </head>
 <body>
-  <div class="stars-background"></div>
+  <div class="stars"></div>
   <div class="grain-overlay"></div>
 
   <div class="content-wrapper">
