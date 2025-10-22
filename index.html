@@ -87,6 +87,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
     }
 
     .logo img {
@@ -95,6 +96,17 @@
       height: auto;
       object-fit: contain;
       image-rendering: auto;
+    }
+
+    .logo .center-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 60%;
+      height: auto;
+      object-fit: contain;
+      pointer-events: none;
     }
 
     .section {
@@ -370,6 +382,7 @@
       <header>
         <div class="logo">
           <img src="IMG_8104.png" alt="Swing Label Logo">
+          <img src="IMG_8136.png" alt="Center Overlay" class="center-overlay">
         </div>
       </header>
 
@@ -401,33 +414,26 @@
     <div class="modal-content">
       <h3 id="modal-name"></h3>
       <p id="modal-bio"></p>
-      <div class="modal-social-buttons" id="modal-social-buttons">
-        <!-- Dynamically populated -->
-      </div>
+      <div class="modal-social-buttons" id="modal-social-buttons"></div>
     </div>
   </div>
 
   <script>
     window.scrollTo(0, 0);
-    window.addEventListener('load', () => {
-      window.scrollTo(0, 0);
-    });
+    window.addEventListener('load', () => window.scrollTo(0, 0));
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Create twinkling lights
       function createTwinkle() {
         const twinkle = document.createElement('div');
         twinkle.className = 'twinkle';
         twinkle.style.left = `${Math.random() * 100}vw`;
         twinkle.style.top = `${Math.random() * 100}vh`;
-        const colors = ['#C0C0C0'];
-        twinkle.style.backgroundColor = colors[Math.floor(Math.random() * 1)];
+        twinkle.style.backgroundColor = '#C0C0C0';
         twinkle.style.animationDelay = `${Math.random() * 4}s`;
         twinkle.style.animationDuration = `${2 + Math.random() * 2}s`;
         document.querySelector('.stars-background').appendChild(twinkle);
       }
 
-      // Create falling stars
       function createFallingStar() {
         const star = document.createElement('div');
         star.className = 'falling-star';
@@ -437,35 +443,11 @@
         document.querySelector('.stars-background').appendChild(star);
       }
 
-      // Generate more twinkling lights and falling stars for a richer effect
-      for (let i = 0; i < 150; i++) {
-        createTwinkle();
-      }
-
-      for (let i = 0; i < 30; i++) {
-        createFallingStar();
-      }
-
-      const sections = document.querySelectorAll('.section');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -80px 0px'
-      });
-
-      sections.forEach(section => observer.observe(section));
+      for (let i = 0; i < 150; i++) createTwinkle();
+      for (let i = 0; i < 30; i++) createFallingStar();
 
       const modal = document.getElementById('artist-modal');
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
+      modal.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
     });
   </script>
 </body>
