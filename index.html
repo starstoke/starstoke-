@@ -58,7 +58,6 @@
       align-items: center;
       position: relative;
       animation: logoGlow 6s ease-in-out infinite;
-      margin-top: 1cm;
     }
 
     @keyframes logoGlow {
@@ -68,7 +67,7 @@
 
     .logo img {
       width: 100%;
-      max-width: 200px;
+      max-width: 300px;
       height: auto;
       object-fit: contain;
     }
@@ -97,15 +96,15 @@
       overflow: hidden;
       transition: all 0.3s;
       cursor: pointer;
-      aspect-ratio: 1228 / 418;
-      width: calc(50% - 2px);
-      max-width: 300px;
+      aspect-ratio: 2 / 1;
+      width: calc(50% - 4px);
+      max-width: 480px;
     }
 
     .showcase img {
       width: 100%;
       height: 100%;
-      object-fit: fill;
+      object-fit: cover;
       display: block;
     }
 
@@ -185,27 +184,9 @@
       100% { transform: translateY(100vh); opacity: 0; }
     }
 
-    /* Desktop adjustments */
-    @media (min-width: 768px) {
-      .showcase {
-        max-width: 600px; /* Increased for larger display */
-      }
-      .logo img {
-        max-width: 300px; /* Slightly larger logo */
-      }
-      .social-links a {
-        font-size: 1rem; /* Larger font for links */
-        padding: 12px 24px;
-      }
-      .copyright {
-        font-size: 0.8rem;
-      }
-      .section {
-        padding: 10px;
-      }
-      .grid {
-        gap: 8px;
-      }
+    @media (max-width: 768px) {
+      .showcase { width: calc(50% - 2px); }
+      .logo img { max-width: 200px; }
     }
   </style>
 </head>
@@ -222,20 +203,19 @@
 
     <section class="section">
       <div class="grid">
-        <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');"><img src="IMG_8127.png" alt=""></div>
+        <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');"><img src="IMG_8163.png" alt=""></div>
         <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');"><img src="IMG_8131.png" alt=""></div>
-      </div>
-      <div class="grid" style="margin-top:8px;">
         <div class="showcase" onclick="window.open('https://starstoke.github.io/Shop/', '_blank');"></div>
         <div class="showcase" onclick="window.open('https://starstoke.github.io/Artists/', '_blank');"></div>
-      </div>
-      <div class="grid" style="margin-top:8px;">
         <div class="showcase" onclick="window.open('https://starstoke.github.io/Broadcast/', '_blank');"></div>
         <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');"></div>
       </div>
+
       <div class="grid" style="margin-top:8px;">
         <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');"></div>
         <div class="showcase" onclick="window.open('https://starstoke.github.io/Shop/', '_blank');"></div>
+        <div class="showcase" onclick="window.open('https://starstoke.github.io/Artists/', '_blank');"></div>
+        <div class="showcase" onclick="window.open('https://starstoke.github.io/Broadcast/', '_blank');"></div>
       </div>
     </section>
 
