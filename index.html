@@ -1,271 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Swing Label</title>
-  <meta name="description" content="Swing Label – Independent Music Label created for artists.">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100vh; overflow: auto; scroll-behavior: smooth; }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      color: #fff;
-      background: #000;
-      display: flex;
-      flex-direction: column;
-    }
 
-    .stars-background {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      z-index: 0;
-      background: #000;
-      overflow: hidden;
-    }
 
-    .grain-overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      opacity: 0.03;
-      z-index: 1;
-      pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    }
 
-    .content-wrapper {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
+  
+  
+  
+  
+  
+  
+  
 
-    header {
-      text-align: center;
-      padding: 5px;
-      z-index: 3;
-      background: transparent;
-    }
 
-    .logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      animation: logoGlow 6s ease-in-out infinite;
-    }
+  
 
-    @keyframes logoGlow {
-      0%, 100% { filter: drop-shadow(0 0 0px #FFD700); }
-      50% { filter: drop-shadow(0 0 20px #FFD700); }
-    }
+  
 
-    .logo img {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-      object-fit: contain;
-    }
 
-    .section {
-      padding: 5px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.05);
-      backdrop-filter: blur(16px);
-    }
+  
+    
+      
+        
+      
+    
 
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 4px;
-      width: 100%;
-    }
+    
+      
+        
 
-    .showcase {
-      background: transparent;
-      border: 1px solid #fff;
-      border-radius: 4px;
-      overflow: hidden;
-      transition: all 0.3s;
-      cursor: pointer;
-      aspect-ratio: 2 / 1;
-      width: calc(50% - 4px);
-      max-width: 480px;
-    }
+        
 
-    .showcase img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+      
 
-    footer {
-      text-align: center;
-      padding: 5px;
-    }
+      
+        
+          
+        
+        
 
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 5px;
-      flex-wrap: wrap;
-    }
+      
 
-    .social-links a {
-      padding: 10px 20px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: all 0.4s;
-      letter-spacing: 0.15em;
-    }
+      
+        
 
-    .social-links a:hover {
-      border-color: rgba(255, 177, 200, 0.1);
-      box-shadow: 0 0 10px rgba(255, 177, 200, 0.1);
-    }
+        
 
-    .copyright {
-      color: #999;
-      margin-top: 5px;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-    }
+      
 
-    .twinkle, .golden-twinkle, .falling-star {
-      position: absolute;
-      border-radius: 50%;
-    }
+      
+        
+          
+        
+        
 
-    .twinkle {
-      width: 5px; height: 5px;
-      background: #C0C0C0;
-      animation: twinkle 3s ease-in-out infinite;
-      box-shadow: 0 0 15px 5px #C0C0C0;
-    }
+      
+    
 
-    .golden-twinkle {
-      width: 3px; height: 3px;
-      background: #FFD700;
-      animation: goldenTwinkle 5s ease-in-out infinite;
-      box-shadow: 0 0 10px 3px #FFD700;
-    }
+    
+      
+        
+Instagram
+        
+Soundcloud
+        
+Youtube
+      
+      
+© 2025 Swing Label. All rights reserved.
+    
+  
 
-    .falling-star {
-      width: 6px; height: 6px;
-      background: #C0C0C0;
-      animation: fall 6s linear infinite;
-      box-shadow: 0 0 25px 8px #C0C0C0, 0 0 40px 15px rgba(255,255,255,0.7);
-    }
+  
 
-    @keyframes twinkle {
-      0%,100% { opacity: 0; transform: scale(0.8); }
-      50% { opacity: 1; transform: scale(1.2); }
-    }
 
-    @keyframes goldenTwinkle {
-      0%,100% { opacity: 0; transform: scale(0.8); }
-      50% { opacity: 1; transform: scale(1.1); }
-    }
-
-    @keyframes fall {
-      0% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(100vh); opacity: 0; }
-    }
-
-    @media (max-width: 768px) {
-      .showcase { width: calc(50% - 2px); }
-      .logo img { max-width: 200px; }
-    }
-  </style>
-</head>
-<body>
-  <div class="stars-background"></div>
-  <div class="grain-overlay"></div>
-
-  <div class="content-wrapper">
-    <header>
-      <div class="logo">
-        <img src="IMG_8136.png" alt="Swing Label Logo">
-      </div>
-    </header>
-
-    <section class="section">
-      <div class="grid">
-        <div class="showcase" onclick="window.open('https://starstoke.github.io/About/', '_blank');"></div>
-        <div class="showcase" onclick="window.open('https://starstoke.github.io/About/', '_blank');"></div>
-      </div>
-
-      <div class="grid" style="margin-top:8px;">
-        <div class="showcase" onclick="window.open('https://starstoke.github.io/Shop/', '_blank');">
-          <img src="IMG_8165.png" alt="">
-        </div>
-        <div class="showcase" onclick="window.open('https://starstoke.github.io/Artists/', '_blank');"></div>
-      </div>
-
-      <div class="grid" style="margin-top:8px;">
-        <div class="showcase" onclick="window.open('https://starstoke.github.io/Broadcast/', '_blank');"></div>
-        <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');"></div>
-      </div>
-
-      <div class="grid" style="margin-top:8px;">
-        <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
-          <img src="IMG_8164.png" alt="">
-        </div>
-        <div class="showcase" onclick="window.open('https://starstoke.github.io/Shop/', '_blank');"></div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="social-links">
-        <a href="https://www.instagram.com/starstoke777?igsh=eWFtYWJyZjcxeWlv&utm_source=qr">Instagram</a>
-        <a href="https://on.soundcloud.com/gShwnGE3RKMUyBKHi7">Soundcloud</a>
-        <a href="https://youtube.com/@starstoketv?si=7t31o1fBdyO8SmLE">Youtube</a>
-      </div>
-      <p class="copyright">© 2025 Swing Label. All rights reserved.</p>
-    </footer>
-  </div>
-
-  <script>
-    function createStars() {
-      const bg = document.querySelector('.stars-background');
-      for (let i = 0; i < 180; i++) {
-        const s = document.createElement('div');
-        s.className = 'twinkle';
-        s.style.left = `${Math.random() * 100}vw`;
-        s.style.top = `${Math.random() * 100}vh`;
-        s.style.animationDelay = `${Math.random() * 4}s`;
-        bg.appendChild(s);
-      }
-      for (let i = 0; i < 25; i++) {
-        const fs = document.createElement('div');
-        fs.className = 'falling-star';
-        fs.style.left = `${Math.random() * 100}vw`;
-        fs.style.animationDelay = `${Math.random() * 8}s`;
-        fs.style.animationDuration = `${4 + Math.random() * 4}s`;
-        bg.appendChild(fs);
-      }
-      for (let i = 0; i < 80; i++) {
-        const g = document.createElement('div');
-        g.className = 'golden-twinkle';
-        g.style.left = `${Math.random() * 100}vw`;
-        g.style.top = `${Math.random() * 100}vh`;
-        g.style.animationDelay = `${Math.random() * 5}s`;
-        bg.appendChild(g);
-      }
-    }
-    document.addEventListener('DOMContentLoaded', createStars);
-  </script>
-</body>
-</html>
