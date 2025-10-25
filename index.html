@@ -81,25 +81,29 @@
       backdrop-filter: blur(16px);
     }
 
-    .showcase-row {
+    .grid {
       display: flex;
-      justify-content: center;
-      gap: 10px;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px;
       width: 100%;
-      max-width: 1200px;
-      margin-bottom: 20px;
     }
 
-    .showcase-item {
-      flex: 1;
-      min-width: 200px;
-      max-width: 400px;
+    .showcase {
+      background: transparent;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: all 0.3s;
+      cursor: pointer;
+      aspect-ratio: 2 / 1;
+      width: calc(50% - 4px);
+      max-width: 480px;
     }
 
-    .showcase-item img {
+    .showcase img {
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
       display: block;
     }
@@ -181,6 +185,7 @@
     }
 
     @media (max-width: 768px) {
+      .showcase { width: calc(50% - 2px); }
       .logo img { max-width: 200px; }
     }
   </style>
@@ -197,21 +202,36 @@
     </header>
 
     <section class="section">
-      <div class="showcase-row">
-        <div class="showcase-item">
-          <img src="IMG_8267.jpeg" alt="Showcase Image 1">
+      <div class="grid">
+        <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');"></div>
+        <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');"></div>
+      </div>
+
+      <div class="grid" style="margin-top:8px;">
+        <div class="showcase" onclick="window.open('https://starstoke.github.io/Shop/', '_blank');">
+          <img src="IMG_8165.png" alt="">
         </div>
-        <div class="showcase-item">
-          <img src="IMG_8270.jpeg" alt="Showcase Image 2">
+        <div class="showcase" onclick="window.open('https://starstoke.github.io/Artists/', '_blank');"></div>
+      </div>
+
+      <div class="grid" style="margin-top:8px;">
+        <div class="showcase" onclick="window.open('https://starstoke.github.io/Broadcast/', '_blank');"></div>
+        <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');"></div>
+      </div>
+
+      <div class="grid" style="margin-top:8px;">
+        <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
+          <img src="IMG_8164.png" alt="">
         </div>
+        <div class="showcase" onclick="window.open('https://starstoke.github.io/Shop/', '_blank');"></div>
       </div>
     </section>
 
     <footer>
       <div class="social-links">
-        <a href="https://www.instagram.com/swingmtv?igsh=MTg1dXByZTR4d21keg==">Instagram</a>
-        <a href="https://on.soundcloud.com/tF8Y2TbcGydxExcyRn">Soundcloud</a>
-        <a href="https://www.youtube.com/@SwingBroadcast">Youtube</a>
+        <a href="https://www.instagram.com/starstoke777?igsh=eWFtYWJyZjcxeWlv&utm_source=qr">Instagram</a>
+        <a href="https://on.soundcloud.com/gShwnGE3RKMUyBKHi7">Soundcloud</a>
+        <a href="https://youtube.com/@starstoketv?si=7t31o1fBdyO8SmLE">Youtube</a>
       </div>
       <p class="copyright">© 2025 Swing Label. All rights reserved.</p>
     </footer>
@@ -242,10 +262,10 @@
         g.style.left = `${Math.random() * 100}vw`;
         g.style.top = `${Math.random() * 100}vh`;
         g.style.animationDelay = `${Math.random() * 5}s`;
-        bg.appendChild(fs);
+        bg.appendChild(g);
       }
     }
     document.addEventListener('DOMContentLoaded', createStars);
   </script>
 </body>
-</html>
+</html> 
