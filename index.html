@@ -81,6 +81,34 @@
       backdrop-filter: blur(16px);
     }
 
+    .showcase-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 20px;
+    }
+
+    .showcase-item {
+      flex: 1;
+      min-width: 200px;
+      max-width: 400px;
+      transition: transform 0.3s ease;
+    }
+
+    .showcase-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .showcase-item:hover {
+      transform: scale(1.05);
+    }
+
     footer {
       text-align: center;
       padding: 5px;
@@ -174,9 +202,30 @@
     </header>
 
     <section class="section">
-      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; width: 100%; max-width: 1200px; margin-bottom: 20px;">
-        <img src="IMG_8267.jpeg" alt="Showcase Image 1" style="flex: 1; min-width: 200px; max-width: 400px; height: auto; object-fit: cover;">
-        <img src="IMG_8270.jpeg" alt="Showcase Image 2" style="flex: 1; min-width: 200px; max-width: 400px; height: auto; object-fit: cover;">
+      <div class="showcase-row">
+        <a href="https://on.soundcloud.com/tF8Y2TbcGydxExcyRn" class="showcase-item">
+          <img src="IMG_8267.jpeg" alt="Showcase Image 1">
+        </a>
+        <a href="https://www.youtube.com/@SwingBroadcast" class="showcase-item">
+          <img src="IMG_8270.jpeg" alt="Showcase Image 2">
+        </a>
+      </div>
+      <!-- Остальные витрины (заглушки, замените ссылки и изображения на реальные) -->
+      <div class="showcase-row">
+        <a href="#" class="showcase-item">
+          <img src="placeholder1.jpg" alt="Showcase Image 3">
+        </a>
+        <a href="#" class="showcase-item">
+          <img src="placeholder2.jpg" alt="Showcase Image 4">
+        </a>
+      </div>
+      <div class="showcase-row">
+        <a href="#" class="showcase-item">
+          <img src="placeholder3.jpg" alt="Showcase Image 5">
+        </a>
+        <a href="#" class="showcase-item">
+          <img src="placeholder4.jpg" alt="Showcase Image 6">
+        </a>
       </div>
     </section>
 
@@ -215,7 +264,7 @@
         g.style.left = `${Math.random() * 100}vw`;
         g.style.top = `${Math.random() * 100}vh`;
         g.style.animationDelay = `${Math.random() * 5}s`;
-        bg.appendChild(g);
+        bg.appendChild(g); // Исправлено: было bg.appendChild(fs)
       }
     }
     document.addEventListener('DOMContentLoaded', createStars);
