@@ -85,7 +85,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 4px;
+      gap: 0;
       width: 100%;
     }
 
@@ -97,7 +97,7 @@
       transition: all 0.3s;
       cursor: pointer;
       aspect-ratio: 2 / 1;
-      width: calc(50% - 4px);
+      width: calc(50%);
       max-width: 480px;
     }
 
@@ -185,7 +185,7 @@
     }
 
     @media (max-width: 768px) {
-      .showcase { width: calc(50% - 2px); }
+      .showcase { width: calc(50%); }
       .logo img { max-width: 200px; }
     }
   </style>
@@ -211,7 +211,7 @@
         </div>
       </div>
 
-      <div class="grid" style="margin-top:8px;">
+      <div class="grid">
         <div class="showcase" onclick="window.open('https://starstoke.github.io/Shop/', '_blank');">
           <img src="IMG_8165.png" alt="">
         </div>
@@ -220,14 +220,14 @@
         </div>
       </div>
 
-      <div class="grid" style="margin-top:8px;">
+      <div class="grid">
         <div class="showcase" onclick="window.open('https://starstoke.github.io/Broadcast/', '_blank');">
           <img src="IMG_8269.jpeg" alt="">
         </div>
         <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');"></div>
       </div>
 
-      <div class="grid" style="margin-top:8px;">
+      <div class="grid">
         <div class="showcase" onclick="window.open('https://starstoke.github.io/News/', '_blank');">
           <img src="IMG_8268.jpeg" alt="">
         </div>
@@ -270,7 +270,7 @@
         const g = document.createElement('div');
         g.className = 'golden-twinkle';
         g.style.left = `${Math.random() * 100}vw`;
-        s.style.top = `${Math.random() * 100}vh`;
+        g.style.top = `${Math.random() * 100}vh`;
         g.style.animationDelay = `${Math.random() * 5}s`;
         bg.appendChild(g);
       }
