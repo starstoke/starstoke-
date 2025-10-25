@@ -91,7 +91,7 @@
 
     .showcase {
       background: transparent;
-      border: 1px solid #fff;
+      border: none;
       border-radius: 4px;
       overflow: hidden;
       transition: all 0.3s;
@@ -270,7 +270,7 @@
         const g = document.createElement('div');
         g.className = 'golden-twinkle';
         g.style.left = `${Math.random() * 100}vw`;
-        g.style.top = `${Math.random() * 100}vh`;
+        s.style.top = `${Math.random() * 100}vh`;
         g.style.animationDelay = `${Math.random() * 5}s`;
         bg.appendChild(g);
       }
